@@ -1,0 +1,27 @@
+[
+  {
+    "sender": "sent",
+    "text": "Template 'inicio_conversa_bloco244' enviado para Felipe - NAUTA Atendimento.",
+    "timestamp": 1756172921
+  },
+  {
+    "sender": "sent",
+    "text": "Template 'inicio_conversa_bloco244' enviado para Felipe - NAUTA Atendimento.",
+    "timestamp": 1756832173
+  },
+  {
+    "sender": "sent",
+    "text": "Template 'inicio_conversa_bloco244' enviado para Felipe - NAUTA Atendimento.",
+    "timestamp": 1756929301
+  },
+  {
+    "sender": "received",
+    "text": "Resposta do botão: Quero saber mais (ID: Quero saber mais)",
+    "timestamp": 1756929615
+  },
+  {
+    "sender": "sent",
+    "text": "Que ótimo! 😃\nPara entender melhor como podemos ajudar, me fala um pouco sobre o seu negócio: qual é o segmento e quais os principais desafios que você enfrenta hoje com contabilidade ou finanças?\n\nAssim eu consigo te mostrar uma solução personalizada. 🚀",
+    "timestamp": 1756937430
+  }
+]

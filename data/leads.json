@@ -1,0 +1,1834 @@
+[
+  {
+    "nome": "Clínica Goiás | Clínica Médica, Exames Laboratoriais e Odontologia",
+    "telefone": null,
+    "endereco": "\nAv. Nazareth, 1591 - Jardim Guanabara, Goiânia - GO, 74675-610",
+    "site": "https://clinicagoias.com/",
+    "categoria": "Não encontrado",
+    "status_contato": "novo"
+  },
+  {
+    "nome": "Centro Clínico de Valparaíso",
+    "telefone": null,
+    "endereco": "\nQuadra 18, Etapa A, lote 46, GO, 72876-054",
+    "site": "http://www.ccvalparaiso.com.br/",
+    "categoria": "Não encontrado",
+    "status_contato": "novo"
+  },
+  {
+    "nome": "Clínica Noroeste",
+    "telefone": null,
+    "endereco": "\n12387 - lote - Av. Goiás Norte, 25 - quadra 16 - Res. Recanto do Bosque, Goiânia - GO, 74474-319",
+    "site": "https://clinicanoroestegoiania.com.br/",
+    "categoria": "Não encontrado",
+    "status_contato": "novo"
+  },
+  {
+    "nome": "Goiânia Clínica Cooperativa",
+    "telefone": null,
+    "endereco": "\nR. 102, 48 - St. Sul, Goiânia - GO, 74083-250",
+    "site": "https://www.goianiaclinica.com.br/",
+    "categoria": "Não encontrado",
+    "status_contato": "novo"
+  },
+  {
+    "nome": "POLICLINICA ESTADUAL DA REGIÃO RIO VERMELHO - GOIAS",
+    "telefone": null,
+    "endereco": "\nGoiás, GO, 76600-000",
+    "site": "https://www.policlinicagoias.org.br/",
+    "categoria": "Não encontrado",
+    "status_contato": "novo"
+  },
+  {
+    "nome": "Clínica Vittá Unidade Centro",
+    "telefone": null,
+    "endereco": "\nAv. Independência, 4259 - St. Central, Goiânia - GO, 74050-100",
+    "site": "https://clinicavittagoiania.com.br/",
+    "categoria": "Não encontrado",
+    "status_contato": "novo"
+  },
+  {
+    "nome": "Clínica Brasil",
+    "telefone": null,
+    "endereco": "\nAv. T-1, 110 - St. Bueno, Goiânia - GO, 74210-300",
+    "site": "https://clinicabrasilgoiania.com.br/",
+    "categoria": "Não encontrado",
+    "status_contato": "novo"
+  },
+  {
+    "nome": "Clínica Salve - Saúde Popular - Goiânia Centro",
+    "telefone": null,
+    "endereco": "\nR. 6, 430 - Qd 55 Lt 52 - St. Central, Goiânia - GO, 74023-030",
+    "site": "http://www.salve.com.br/",
+    "categoria": "Não encontrado",
+    "status_contato": "novo"
+  },
+  {
+    "nome": "Clínica Sant'Ana",
+    "telefone": null,
+    "endereco": "\nR. São Paulo, 29 - centro, Goiás - GO, 76600-000",
+    "site": "http://clinicasantanagoias.com.br/",
+    "categoria": "Não encontrado",
+    "status_contato": "novo"
+  },
+  {
+    "nome": "Minha Clínica - Asa Sul",
+    "telefone": null,
+    "endereco": "\nSCS, Quadra 02, Bloco B, Lote 20 Edifício Palácio do Comércio, Sobreloja 02 - Asa Sul, Brasília - DF, 70302-000",
+    "site": "http://www.aminhaclinica.com.br/",
+    "categoria": "Não encontrado",
+    "status_contato": "novo"
+  },
+  {
+    "nome": "Clínica Santa Rita",
+    "telefone": null,
+    "endereco": "\nSDS - Edifício Miguel Badya, 4° andar, Brasília - DF, 70740-610",
+    "site": "http://clinicasantarita.com.br/",
+    "categoria": "Não encontrado",
+    "status_contato": "novo"
+  },
+  {
+    "nome": "Clínica Brasília Especialidades Médicas",
+    "telefone": null,
+    "endereco": "\nCentro Médico Lúcio Costa - 610/611, Via L2 Sul, Bloco 1, Sala 144 - Asa Sul, Brasília - DF, 70200-700",
+    "site": "http://www.clinicabrasilia.com.br/",
+    "categoria": "Não encontrado",
+    "status_contato": "novo"
+  },
+  {
+    "nome": "Jose Antonio advocacia",
+    "telefone": "+5561999948879",
+    "endereco": "\nQ. 202 Conjunto 08 lote 13, primeiro anda - St. Res. Oeste (São Sebastião), Brasília - DF, 71692-522",
+    "site": "http://joseantonioadvogados.adv.br/",
+    "categoria": "Não encontrado",
+    "status_contato": "em_conversacao"
+  },
+  {
+    "nome": "Advocacia & Consultoria Santos Abel",
+    "telefone": "+5561999985603",
+    "endereco": "\nCEP:71691-084, Rua da Gameleira, 250 - loja 03 - Centro, Brasília - DF, 71691-084",
+    "site": "https://advsantosabel.com.br/",
+    "categoria": "Não encontrado",
+    "status_contato": "pendente"
+  },
+  {
+    "nome": "Borges Moura de Melo Advogados",
+    "telefone": "+5561991276593",
+    "endereco": "\nAv. Comercial, 951 - São Sebastião, Brasília - DF, 71691-153",
+    "site": "http://www.bmdmadvogados.com.br/",
+    "categoria": "Não encontrado",
+    "status_contato": "pendente"
+  },
+  {
+    "nome": "Advogado Edson Nunes",
+    "telefone": "+5561996343848",
+    "endereco": "\nAv. Comercial, 2081 - Sala 201/202 - Centro, Brasília - DF, 71691-083",
+    "site": "https://beacons.ai/advedsonnunes",
+    "categoria": "Não encontrado",
+    "status_contato": "pendente"
+  },
+  {
+    "nome": "Ariadna Augusta Advocacia",
+    "telefone": "+5561937974961",
+    "endereco": "\nSetor Habitacional Manqueiral Praça de atividades 3 Lt 03 sala 102, Jardins Mangueiral, Brasília - DF, 71687-476",
+    "site": "https://linktr.ee/Ariadna_Augusta_Adv",
+    "categoria": "Não encontrado",
+    "status_contato": "pendente"
+  },
+  {
+    "nome": "Gabriella Angelos Advocacia",
+    "telefone": "+5561992137871",
+    "endereco": "\nAv. Comercial - Centro, Brasília - DF, 71691-031",
+    "site": "https://www.gabriellaangelos.com/divorcio",
+    "categoria": "Não encontrado",
+    "status_contato": "pendente"
+  },
+  {
+    "nome": "Ronaldo Castro | Advogado Criminalista",
+    "telefone": "+5561994486821",
+    "endereco": "\nAv. Comercial, 2171 - Sala 203 - São Sebastião, Brasília - DF, 71691-153",
+    "site": "https://ronaldocastroadvocacia.com.br/",
+    "categoria": "Não encontrado",
+    "status_contato": "pendente"
+  },
+  {
+    "nome": "Araújo Lima Advogados",
+    "telefone": "+5561933442784",
+    "endereco": "\nConj. Smdb Conjunto 28b, 3, Casa A2, St. Hab Ind Sul - Lago Sul, Brasília - DF, 71680-282",
+    "site": "https://araujo-lima.com/",
+    "categoria": "Não encontrado",
+    "status_contato": "pendente"
+  },
+  {
+    "nome": "Keyne & Advogados Associados S/S",
+    "telefone": "+5561933270672",
+    "endereco": "\nSt. de Habitações Individuais Sul QI 25 casa 10 - Lago Sul, Brasília - DF, 71660-300",
+    "site": "http://www.keyneadvogados.com/",
+    "categoria": "Não encontrado",
+    "status_contato": "pendente"
+  },
+  {
+    "nome": "Galvão & Silva Advocacia",
+    "telefone": "+5561937029969",
+    "endereco": "\nSCS Quadra 8 Bloco B Lotes 50/60 Super Center Sala 203 e 204 - Asa Sul, Brasília - DF, 70333-900",
+    "site": "https://www.galvaoesilva.com/",
+    "categoria": "Não encontrado",
+    "status_contato": "pendente"
+  },
+  {
+    "nome": "SSG Advogados & Associados",
+    "telefone": "+5561985001928",
+    "endereco": "\nRua 45 Lote 131, Sala 02 - Centro - São Sebastião, Brasília - DF, 71691-005",
+    "site": "https://www.instagram.com/ssg.advocacia/",
+    "categoria": "Não encontrado",
+    "status_contato": "pendente"
+  },
+  {
+    "nome": "Leonardo Vilela Advocacia",
+    "telefone": null,
+    "endereco": "\nTaguatinga Shopping QS 01 Lote 40 Torre B, Sala 718 - Taguatinga, Brasília - DF, 71950-904",
+    "site": "http://www.leonardovilela.adv.br/",
+    "categoria": "Não encontrado",
+    "status_contato": "pendente"
+  },
+  {
+    "nome": "Enock Esteves Advogado",
+    "telefone": "+5561995855909",
+    "endereco": "\nLocal, SHCS BL G - Asa Sul, Brasília - DF, 70294-070",
+    "site": "http://www.enockesteves.com.br/",
+    "categoria": "Não encontrado",
+    "status_contato": "pendente"
+  },
+  {
+    "nome": "Nayara Pereira - Advogada Previdenciário - BPC/LOAS - INSS",
+    "telefone": "+5561998451656",
+    "endereco": "\nAv. Comercial, 2091 - Centro, Brasília - DF, 71691-031",
+    "site": "https://www.instagram.com/nayara.pereiraa.adv/",
+    "categoria": "Não encontrado",
+    "status_contato": "pendente"
+  },
+  {
+    "nome": "De Rosa-Siqueira e Advogados Associados",
+    "telefone": "+5561932249595",
+    "endereco": "\nSBN Quadra 02 Bloco H sala 1002/1004 - Brasília, DF, 70040-904",
+    "site": "http://www.drslaw.com.br/",
+    "categoria": "Não encontrado",
+    "status_contato": "pendente"
+  },
+  {
+    "nome": "WEMESON VIEIRA ADVOCACIA ESPECIALIZADA",
+    "telefone": "+5538998537267",
+    "endereco": "\nAv. Comercial, 1191 - São Sebastião, Brasília - DF, 71691-153",
+    "site": "https://wemeson.jusbrasil.com.br/?_gl=1*bqwqp6*_gcl_aw*R0NMLjE3MzAzOTM3MzQuQ2owS0NRancxWXk1QmhELUFSSXNBSTBSYlhiSXV2LXZ4LUFWYzhpWTJzTUEzaHJNeHdnZjA3QzNQaGl4VlJ1Zkhybkp3cjV4bkZOYXFQRWFBdXdWRUFMd193Y0I.*_gcl_au*ODE4ODczNTcyLjE3MzAyMDQ1ODEuNDM4NDIxMTA2LjE3MzUyMTY2ODMuMTczNTIyNDU3MQ..*_ga*MjEwNzk3OTk0MS4xNjkwMzgzMzAx*_ga_QCSXBQ8XPZ*MTczNTI0NDg3MC4zMzYuMC4xNzM1MjQ0ODcwLjYwLjAuMA..",
+    "categoria": "Não encontrado",
+    "status_contato": "pendente"
+  },
+  {
+    "nome": "Olavo Oliveira Oficial",
+    "telefone": "+5561974002570",
+    "endereco": "\nQ 206 conjunto 08 - São Sebastião, Brasília - DF, 71691-475",
+    "site": "http://www.instagram.com/olavooliveiraoficial",
+    "categoria": "Não encontrado",
+    "status_contato": "pendente"
+  },
+  {
+    "nome": "Wanner Medeiros Advocacia",
+    "telefone": "+5561998542396",
+    "endereco": "\nJardim Botânico (Lago Sul) Cond. Quintas da Alvorada - Paranoá, Brasília - DF, 71680-356",
+    "site": "https://wannermedeiros.com.br/",
+    "categoria": "Não encontrado",
+    "status_contato": "pendente"
+  },
+  {
+    "nome": "Gurgel Oliveira Advocacia e Consultoria",
+    "telefone": "+5561992155138",
+    "endereco": "\nQ. 10 Cj. A, 3 - lote 09 - Jardim Botânico, Brasília - DF, 71681-605",
+    "site": "https://www.instagram.com/adv.gurgeloliveira/",
+    "categoria": "Não encontrado",
+    "status_contato": "pendente"
+  },
+  {
+    "nome": "Liporaci Advogados",
+    "telefone": "+5561932461585",
+    "endereco": "\nSt. de Habitações Individuais Sul QI 19 Casa 2 - Lago Sul, Brasília - DF, 71655-140",
+    "site": "http://liporaci.com.br/",
+    "categoria": "Não encontrado",
+    "status_contato": "pendente"
+  },
+  {
+    "nome": "Luis Felipe Silva Advogado",
+    "telefone": "+5561985303058",
+    "endereco": "\nJardins Mangueiral Quadra QC 1 Rua H - Jardim Botânico, Brasília - DF, 71687-216",
+    "site": "https://luisfelipesilva.adv.br/#",
+    "categoria": "Não encontrado",
+    "status_contato": "pendente"
+  },
+  {
+    "nome": "Marcelo R. A. de Oliveira Sociedade Advocacia",
+    "telefone": "+5561982748202",
+    "endereco": "\nCondomínio Mansões Califórnia n 70 - Lago Sul, Brasília - DF, 71680-364",
+    "site": "https://profmarceloreis.adv.br/",
+    "categoria": "Não encontrado",
+    "status_contato": "pendente"
+  },
+  {
+    "nome": "HAT Advocacia",
+    "telefone": "+5561991176788",
+    "endereco": "\nQ. 04 Rua D - TORRE D2 - ap 13 - São Sebastião, Brasília - DF, 70297-400",
+    "site": "https://www.facebook.com/hericakinn",
+    "categoria": "Não encontrado",
+    "status_contato": "pendente"
+  },
+  {
+    "nome": "Cezar Britto e Advogados Associados",
+    "telefone": "+5561935480032",
+    "endereco": "\nConjunto 02 Casa 02 QI 26, St. de Habitações Individuais Sul - Lago Sul, Brasília - DF",
+    "site": "http://www.cezarbritto.adv.br/",
+    "categoria": "Não encontrado",
+    "status_contato": "pendente"
+  },
+  {
+    "nome": "Rodrigues Cunha & Tavares Advogados Associados - Direito à Saúde, Condominial, Imobiliário, Trabalhista, Previdenciário",
+    "telefone": "+5561993089107",
+    "endereco": "\nSRTVS Quadra 701 CENTRO EMPRESARIAL, Conj. D Bloco A, salas 621, 721, 723, 725 e 727 - Asa Sul, Brasília - DF, 70340-907",
+    "site": "http://www.rctadvogados.com.br/",
+    "categoria": "Não encontrado",
+    "status_contato": "pendente"
+  },
+  {
+    "nome": "👷‍♂️Advogado Trabalhista - Wemerson Guimarães Advogados",
+    "telefone": "+5561998413295",
+    "endereco": "\nSBS Q. 2 Ed. Prime Business - Asa Sul, Brasília - DF, 70070-120",
+    "site": "https://www.wguimaraes.adv.br/",
+    "categoria": "Não encontrado",
+    "status_contato": "pendente"
+  },
+  {
+    "nome": "Vistos e Processo de Naturalização Brasileira",
+    "telefone": "+5561981778699",
+    "endereco": "\nQ. 103 praça linear 01 setor A, lote 02 - São Bartolomeu (São Sebastião), Brasília - DF, 71692-200",
+    "site": "http://www.xn--naturalizao-i8a5c.com.br/",
+    "categoria": "Não encontrado",
+    "status_contato": "pendente"
+  },
+  {
+    "nome": "Veloso de Melo Advogados S/S",
+    "telefone": "+5561932251157",
+    "endereco": "\nSt. de Habitações Individuais Sul QI 25 Cj 09 Cs 06 - Lago Sul, Brasília - DF, 71660-290",
+    "site": "http://www.velosodemelo.com.br/",
+    "categoria": "Não encontrado",
+    "status_contato": "pendente"
+  },
+  {
+    "nome": "Advogadas Renata França & Viviane Penha Brasília/DF",
+    "telefone": "+5561999450447",
+    "endereco": "\nSBS Q. 2 Edifício Prime, B. E Sala 705 - Asa Sul, Brasília - DF, 70070-120",
+    "site": "https://www.advogadasbrasilia.com/",
+    "categoria": "Não encontrado",
+    "status_contato": "pendente"
+  },
+  {
+    "nome": "Fórum de São Sebastião - TJDFT",
+    "telefone": "+5561931032851",
+    "endereco": "\nAv. Comercial, 1191 - São Sebastião, Brasília - DF, 71691-153",
+    "site": "http://www.tjdft.jus.br/",
+    "categoria": "Não encontrado",
+    "status_contato": "pendente"
+  },
+  {
+    "nome": "Denise Schipmann | Advogada de Direito da Família",
+    "telefone": "+5561981517760",
+    "endereco": "\nSt. de Mansões Dom Bosco Casa B - Lago Sul, Brasília - DF, 71680-280",
+    "site": "https://deniseschipmann.com.br/",
+    "categoria": "Não encontrado",
+    "status_contato": "pendente"
+  },
+  {
+    "nome": "Renata Russo Diogo | Advogada",
+    "telefone": "+5561999365433",
+    "endereco": "\nSHMA QC 05 bloco k1 - Jardim Botânico, Brasília - DF, 71687-360",
+    "site": "https://renatarussodiogo.wixsite.com/website",
+    "categoria": "Não encontrado",
+    "status_contato": "pendente"
+  },
+  {
+    "nome": "Elyud Freitas Advocacia - Advogado Civil em Brasília",
+    "telefone": "+5561981085433",
+    "endereco": "\nSAUS Quadra 5 Edifício OK Office Tower Sala 7 - Asa Sul, Brasília - DF, 70070-937",
+    "site": "http://www.elyud.adv.br/",
+    "categoria": "Não encontrado",
+    "status_contato": "pendente"
+  },
+  {
+    "nome": "RD Advogados - Advogado do Passageiro Aéreo e do Consumidor",
+    "telefone": "+5561991162704",
+    "endereco": "\nEdifício Íon, SGAN Quadra 601 SS1) - Parte 90, Conjunto H Sala 55 - Asa Norte, Brasília - DF, 70830-018",
+    "site": "https://advogadosrd.com.br/",
+    "categoria": "Não encontrado",
+    "status_contato": "pendente"
+  },
+  {
+    "nome": "Melhor Advogado de Brasília - Helio Martins Advogados",
+    "telefone": "+5561982810285",
+    "endereco": "\nSHS Block 06 - Asa Sul, Brasília - DF, 70316-102, Brasília - DF, 70730-555",
+    "site": "https://heliomartinsadvogados.com.br/escritorio",
+    "categoria": "Não encontrado",
+    "status_contato": "pendente"
+  },
+  {
+    "nome": "Nascimento & Peixoto Advogados Associados (Advogado Cível, Criminal, Família, Trabalhista e Previdenciário)",
+    "telefone": "+5561994267511",
+    "endereco": "\nSHS quadra 6 Bloco C, salas 226/227 - Brasil 21 - Asa Sul, Brasília - DF, 70316-109",
+    "site": "https://nascimentopeixotoadvogados.com.br/",
+    "categoria": "Não encontrado",
+    "status_contato": "pendente"
+  },
+  {
+    "nome": "Xavier Krüger Advocacia",
+    "telefone": "+5561993170698",
+    "endereco": "\nCondomínio San Francisco II - Jardim Botanico - Tororo, Brasília - DF, 71684-400",
+    "site": "http://www.xkadvocacia.com.br/",
+    "categoria": "Não encontrado",
+    "status_contato": "pendente"
+  },
+  {
+    "nome": "Eduardo Ferrão Advogados Associados",
+    "telefone": "+5561921027898",
+    "endereco": "\nSt. de Habitações Individuais Sul QL 14 - Brasília, DF, 71640-055",
+    "site": "https://www.eduardoferrao.adv.br/",
+    "categoria": "Não encontrado",
+    "status_contato": "pendente"
+  },
+  {
+    "nome": "Marcelo Leal Advogados Associados",
+    "telefone": "+5561933644245",
+    "endereco": "\nSt. de Mansões Dom Bosco - Conjunto 06, Casa 06 - Lago Sul, Brasília - DF, 71680-060",
+    "site": "http://marceloleal.adv.br/",
+    "categoria": "Não encontrado",
+    "status_contato": "pendente"
+  },
+  {
+    "nome": "Delgado Azevedo Advogados - Especialistas contra plano de saúde",
+    "telefone": "+5561999558009",
+    "endereco": "\nSHS, Quadra 06, Complexo Brasil 21, SHIGS 713 Bl. A, 501 - Asa Sul, Brasília - DF, 70316-000",
+    "site": "http://delgadoazevedo.com.br/",
+    "categoria": "Não encontrado",
+    "status_contato": "pendente"
+  },
+  {
+    "telefone": "+5561998898193",
+    "nome": "Jefferson",
+    "status_contato": "em_conversacao"
+  },
+  {
+    "telefone": "+5561992866461",
+    "nome": "Jefferson",
+    "status_contato": "em_conversacao"
+  },
+  {
+    "nome": "On Track Agência de Marketing - Anúncios Online e Estratégias de Vendas",
+    "telefone": "+5561991849429",
+    "endereco": "\nQd 201 conj. 01 lote 11 sala 204 Residência Oeste - São Sebastião, Brasília - DF, 71692-401",
+    "site": "http://ontrackagenciadigital.com.br/",
+    "categoria": "Não encontrado",
+    "status_contato": "em_conversacao"
+  },
+  {
+    "nome": "Agência Joshua Comunicação Digital",
+    "telefone": "+5561998136987",
+    "endereco": "\nQ. 12 - São Sebastião, Brasília - DF, 71693-018",
+    "site": "http://www.agenciajoshua.com.br/",
+    "categoria": "Não encontrado",
+    "status_contato": "contatado"
+  },
+  {
+    "nome": "Ploc Digital DF - Agência Marketing Digital Brasília DF",
+    "telefone": "+5561999752379",
+    "endereco": "\nSH Estrada do Sol Condominio Jardim da Serra - Jardim Botânico, Brasília - DF, 71680-403",
+    "site": "https://plocdigital.com.br/",
+    "categoria": "Não encontrado",
+    "status_contato": "em_conversacao"
+  },
+  {
+    "nome": "Mix7 Agência de Marketing Digital Brasília DF",
+    "telefone": "+5561981580617",
+    "endereco": "\nSRTVN Edifício Radio Center Primeiro Subsolo, Salas 18 a 28 - Asa Norte, Brasília - DF, 70719-900",
+    "site": "http://mix7.com.br/",
+    "categoria": "Não encontrado",
+    "status_contato": "contatado"
+  },
+  {
+    "nome": "VRC Agência de Marketing",
+    "telefone": "+5561996676011",
+    "endereco": "\nSt. de Habitações Individuais Sul QL 24 Conjunto 6 Casa 16 - Lago Sul, Brasília - DF, 71665-065",
+    "site": "https://vrcmarketing.com.br/",
+    "categoria": "Não encontrado",
+    "status_contato": "contatado"
+  },
+  {
+    "nome": "Agência Aurora Marketing e Consultoria",
+    "telefone": "+5561998150456",
+    "endereco": "\nSIG LOTE 385 Sala 124 - Brasília, DF, 70610-480",
+    "site": "http://www.vendacomaurora.com.br/",
+    "categoria": "Não encontrado",
+    "status_contato": "contatado"
+  },
+  {
+    "nome": "Efeito Digital - Agência de Marketing Digital em Brasília",
+    "telefone": "+5561982315176",
+    "endereco": "\nEdifício Varig - 702 -7º andar, SCN Quadra 04 Bloco B Sala 702, 7º andar - Asa Norte, Brasília - DF, 70714-020",
+    "site": "https://efeito.digital/",
+    "categoria": "Não encontrado",
+    "status_contato": "contatado"
+  },
+  {
+    "nome": "Resultá Vendas e Marketing",
+    "telefone": "+5531992899800",
+    "endereco": "\nQUADRA 8, D, 16 - JARDIM BOTÂNICO III, Brasília - DF, 71681-420",
+    "site": "http://www.vemresulta.com.br/",
+    "categoria": "Não encontrado",
+    "status_contato": "em_conversacao"
+  },
+  {
+    "nome": "BP Marketing Medico | Agência de Publicidade em Brasília",
+    "telefone": "+5561991494242",
+    "endereco": "\nQ 205 Edificio Quartier Center sala 1201 - Águas Claras, Brasília - DF, 71925-000",
+    "site": "http://www.bpmarketing.com.br/",
+    "categoria": "Não encontrado",
+    "status_contato": "contatado"
+  },
+  {
+    "nome": "Webcer | Agência de Marketing Digital e Tráfego Pago em Brasília",
+    "telefone": "+5562930881130",
+    "endereco": "\nEd. Assis Chateaubriand Quadra 701, SHCS Sala 533 - SRTVS, Brasília - DF, 70340-906",
+    "site": "https://webcer.digital/",
+    "categoria": "Não encontrado",
+    "status_contato": "contatado"
+  },
+  {
+    "nome": "Agência ZEE",
+    "telefone": "+5561991873965",
+    "endereco": "\nSetor Comercial Sul Q. 5 Edificio Bandeirantes sala 208 - Asa Sul, Brasília - DF, 70655-775",
+    "site": "http://www.agenciazee.com/",
+    "categoria": "Não encontrado",
+    "status_contato": "contatado"
+  },
+  {
+    "nome": "Foco Digital - Agência de Marketing Digital em Brasília",
+    "telefone": "+5561935505477",
+    "endereco": "\nSHCS SCRS 502 Bl C Loja 37 - Asa Sul, Brasília - DF, 70330-530",
+    "site": "https://foconomarketing.com.br/",
+    "categoria": "Não encontrado",
+    "status_contato": "contatado"
+  },
+  {
+    "nome": "Sow Soluções Digitais- Agência de Marketing Digital em Brasília",
+    "telefone": "+5541992705412",
+    "endereco": "\nSHS, Quadra 06, Conjunto A, Bl A, Sala 501, COMPLEXO BRASIL 21 - Asa Sul, Brasília - DF, 70316-102",
+    "site": "https://www.sowsolucoesdigitais.com/",
+    "categoria": "Não encontrado",
+    "status_contato": "contatado"
+  },
+  {
+    "nome": "Hoogli Marketing Digital",
+    "telefone": "+5508000001909",
+    "endereco": "\nSRTVS Bloco E, Ed. Palácio do Rádio III Sala 208, SHCS, Brasília - DF, 70340-901",
+    "site": "https://www.hoogli.com.br/",
+    "categoria": "Não encontrado",
+    "status_contato": "contatado"
+  },
+  {
+    "nome": "Comunica Consultoria e Planejamento",
+    "telefone": "+5561982778081",
+    "endereco": "\nSAUS Quadra 04 Bloco A Ed. Victoria Office Tower Sala 104 - Asa Sul, Brasília - DF, 70070-938",
+    "site": "https://www.comunicaconsultoria.com/",
+    "categoria": "Não encontrado",
+    "status_contato": "contatado"
+  },
+  {
+    "nome": "INTELART",
+    "telefone": "+5561926262734",
+    "endereco": "\nSCN Quadra 01 BL F SL 512 Edifício America Office Tower - Asa Norte, Brasília - DF, 70711-905",
+    "site": "http://intelart.com.br/",
+    "categoria": "Não encontrado",
+    "status_contato": "contatado"
+  },
+  {
+    "nome": "Agência Wise",
+    "telefone": "+5561930810770",
+    "endereco": "\nSCN - Quadra 05, Bloco A, Sala 714 - Asa Norte, Brasília - DF, 70715-900",
+    "site": "http://www.agenciawise.com.br/",
+    "categoria": "Não encontrado",
+    "status_contato": "contatado"
+  },
+  {
+    "nome": "FEEL MARKETING | AGÊNCIA DE MARKETING BRASÍLIA",
+    "telefone": "+5561982092892",
+    "endereco": "instagram.com",
+    "site": "https://www.instagram.com/feelmarketingdigital/#",
+    "categoria": "Não encontrado",
+    "status_contato": "contatado"
+  },
+  {
+    "nome": "Boa Imagem",
+    "telefone": "+5561939631444",
+    "endereco": "\nSCN Q 2 Bloco A, Ed. Corporate Financial Center 5º andar, cj. 503/504 - Asa Norte, Brasília - DF, 70712-900",
+    "site": "https://boaimagem.org/",
+    "categoria": "Não encontrado",
+    "status_contato": "contatado"
+  },
+  {
+    "nome": "Agência Like U",
+    "telefone": "+5561982822683",
+    "endereco": "\nSHN Q1 Ed. Le Quartier. Sala 424 - Asa Norte, Brasília - DF, 70297-400",
+    "site": "https://agencialikeu.com.br/",
+    "categoria": "Não encontrado",
+    "status_contato": "contatado"
+  },
+  {
+    "nome": "Maestria Marketing e Audiovisual em Brasília",
+    "telefone": "+5561993954671",
+    "endereco": "\nSCN – SETOR COMERCIAL NORTE QUADRA 04 BLOCO “B” SALA 702, PARTE 883 Centro Empresarial Varig - Asa Norte, Brasília - DF, 70714-020",
+    "site": "https://agenciamaestria.com.br/",
+    "categoria": "Não encontrado",
+    "status_contato": "contatado"
+  },
+  {
+    "nome": "Agência Dbox",
+    "telefone": "+5561937118595",
+    "endereco": "\nSHN Q. 2 Quadra02 - Executive Office Towe Nº 1026 - Sala - Brasília, DF, 70702-906",
+    "site": "https://www.dbox.com.br/",
+    "categoria": "Não encontrado",
+    "status_contato": "contatado"
+  },
+  {
+    "nome": "ZION Publicidade | 🎯✨ Marketing Estratégico para Empresas 🚀 Transformamos dados em resultados!",
+    "telefone": "+5561999817247",
+    "endereco": "\nBl F - SH/N QD 1 CJ A, EN A SL 601 - Asa Norte, Brasília - DF, 70701-060",
+    "site": "http://www-zionpublicidade-com-1.rds.land/trafego-pago",
+    "categoria": "Não encontrado",
+    "status_contato": "contatado"
+  },
+  {
+    "nome": "Ramá Agência Digital",
+    "telefone": "+5561996087861",
+    "endereco": "\nSHN Q. 1 BLoco A Le Quartier, Sala 1206 - Asa Norte, Brasília - DF, 70297-400",
+    "site": "https://agenciarama.com.br/",
+    "categoria": "Não encontrado",
+    "status_contato": "em_conversacao"
+  },
+  {
+    "nome": "Agência Galore Marketing Digital e Publicidade",
+    "telefone": "+5561935336712",
+    "endereco": "\nSCN Qd. 4 Bl. B 1201 - Asa Norte, Brasília - DF, 70714-900",
+    "site": "https://galore.agency/",
+    "categoria": "Não encontrado",
+    "status_contato": "contatado"
+  },
+  {
+    "nome": "AV Comunicação",
+    "telefone": "+5561932019988",
+    "endereco": "\nSHS Quadra 6 Conjunto A Bloco C Sala 219 - COMPLEXO BRASIL 21 - Asa Sul, Brasília - DF, 70316-109",
+    "site": "http://avcomunica.com.br/",
+    "categoria": "Não encontrado",
+    "status_contato": "contatado"
+  },
+  {
+    "nome": "Agência Alma",
+    "telefone": "+5561934435450",
+    "endereco": "\nSIG Quadra 1 Lote 385 Ed. Platinum Office, Sala 225, SIG, Brasília - DF, 70610-410",
+    "site": "https://almaage.com.br/",
+    "categoria": "Não encontrado",
+    "status_contato": "contatado"
+  },
+  {
+    "nome": "Agência Terruá",
+    "telefone": "+5561930337154",
+    "endereco": "\nSHN Q. 2 Ed. Executive Office Tower Slj 58d - Asa Norte, Brasília - DF, 70702-060",
+    "site": "http://www.agenciaterrua.com.br/",
+    "categoria": "Não encontrado",
+    "status_contato": "contatado"
+  },
+  {
+    "nome": "Artplan Comunicação",
+    "telefone": "+5561921911900",
+    "endereco": "\nSetor Comercial Norte, Q1 Bloco D – Cobertura 3 e 4 Ed. Vega Luxury Mall - Asa Norte, Brasília - DF, 70711-040",
+    "site": "http://www.artplan.com.br/",
+    "categoria": "Não encontrado",
+    "status_contato": "contatado"
+  },
+  {
+    "nome": "Soul Web | Consultoria de Marketing Digital em Brasília",
+    "telefone": "+5561986327117",
+    "endereco": "\nQ, SCN Q. 4 BL B SALA 702 PARTE 1638 - Asa Norte, Brasília - DF, 70714-020",
+    "site": "http://agenciasoulweb.com.br/",
+    "categoria": "Não encontrado",
+    "status_contato": "em_conversacao"
+  },
+  {
+    "nome": "Rede LNF",
+    "telefone": "+5561996993131",
+    "endereco": "\nAsa Sul CLS 306 Bloco A 30-34 - Asa Sul, Brasília - DF, 70353-510",
+    "site": "http://www.looknfeel.com.br/",
+    "categoria": "Não encontrado",
+    "status_contato": "contatado"
+  },
+  {
+    "nome": "SysCoin | Brasília - Agências de Negócios Digitais",
+    "telefone": "+5561981797716",
+    "endereco": "\nSetor Comercial Sul Q. 4 Condomínio do Edifício Mineiro 7o Andar - Asa Sul, Brasília - DF, 70304-911",
+    "site": "https://syscoin.com.br/",
+    "categoria": "Não encontrado",
+    "status_contato": "contatado"
+  },
+  {
+    "nome": "Guia-se Agência de Marketing Digital Brasília - Setor Hospitalar",
+    "telefone": "+5511974020987",
+    "endereco": "\nAsa Norte CLN 307 BL D - Asa Norte, Brasília - DF, 70746-540",
+    "site": "https://setorhospitalar.guiasebrasilia.com.br/",
+    "categoria": "Não encontrado",
+    "status_contato": "contatado"
+  },
+  {
+    "nome": "Mais Network Agência de Publicidade propaganda Marketing",
+    "telefone": "+5561935790004",
+    "endereco": "\nCAVP R 04, St. Hab. Vicente Pires A EXP LT 03/04, Brasília - DF, 72111-072",
+    "site": "https://www.agenciamaisnetwork.com.br/",
+    "categoria": "Não encontrado",
+    "status_contato": "contatado"
+  },
+  {
+    "nome": "Agência de Marketing Digital Brasilia DF - Agência Rockn!",
+    "telefone": "+5561991449716",
+    "endereco": "\nAsa Sul Superquadra Sul 409 BL B - Asa Sul, Brasília - DF, 70360-525",
+    "site": "https://agenciarockn.com.br/",
+    "categoria": "Não encontrado",
+    "status_contato": "em_conversacao"
+  },
+  {
+    "nome": "Klimt Publicidade",
+    "telefone": "+5561999511993",
+    "endereco": "\nSCS Q. 6 Edificio Bandeirantes - 401, Brasília - DF, 70655-775",
+    "site": "http://www.klimtpublicidade.com/",
+    "categoria": "Não encontrado",
+    "status_contato": "contatado"
+  },
+  {
+    "nome": "Eixo Digital: Agência de Marketing Digital em Brasília, SEO, Tráfego Pago e Inbound",
+    "telefone": null,
+    "endereco": "\n512 Sul, Bloco C, Entrada 37, SHCS, Brasília - DF, 70361-535",
+    "site": "https://eixo.digital/",
+    "categoria": "Não encontrado",
+    "status_contato": "pendente"
+  },
+  {
+    "telefone": "+5561991653819",
+    "nome": "Everton Pires 😃 Eleve",
+    "status_contato": "em_conversacao"
+  },
+  {
+    "telefone": "+5561999756151",
+    "nome": "Adelson",
+    "status_contato": "em_conversacao"
+  },
+  {
+    "telefone": "+5561998809830",
+    "nome": "Adelson (Funcional Eleve)",
+    "status_contato": "em_conversacao"
+  },
+  {
+    "telefone": "+5561984548227",
+    "nome": "Ana Luiza Nauta",
+    "status_contato": "contatado"
+  },
+  {
+    "telefone": "+5561999098559",
+    "nome": "Ana Luiza Vale (pessoal)",
+    "status_contato": "contatado"
+  },
+  {
+    "telefone": "+5561996324471",
+    "nome": "Vanessa Comerc.",
+    "status_contato": "contatado"
+  },
+  {
+    "telefone": "+5561998904163",
+    "nome": "Felipe - NAUTA Atendimento",
+    "status_contato": "em_conversacao"
+  },
+  {
+    "nome": "Clínica Espaço Viver",
+    "telefone": "+5561994521001",
+    "endereco": "\nQ.Bk44 L, Av. Perimetral, 83, Novo Gama - GO, 72860-200",
+    "site": "https://www.instagram.com/clinicaespacoviver2023?igshid=YTQwZjQ0NmI0OA==",
+    "categoria": "Não encontrado",
+    "status_contato": "contatado"
+  },
+  {
+    "nome": "CLINIC FISIO- TRATAMENTO DA COLUNA NOVO GAMA -GO",
+    "telefone": "+5561982624947",
+    "endereco": "\nSOLAR EDIFICIO VIVENDA RUA 6 QD DK4 LT 01 Provida 1 andar - Pq estrela dalva VI, Novo Gama - GO, 72860-006",
+    "site": "https://www.clinicfisio.net/?utm_source=google&utm_medium=wix_google_business_profile&utm_campaign=17574912446274585429",
+    "categoria": "Não encontrado",
+    "status_contato": "em_conversacao"
+  },
+  {
+    "nome": "Active Fisioterapia",
+    "telefone": "+5561992570137",
+    "endereco": "\nAC, 200 - Conjunto B LT 06 Loja 02 - Santa Maria, Brasília - DF, 72500-102",
+    "site": "https://www.instagram.com/active_fisio2024?igsh=MWszZmNpZzFqb3dsMQ==",
+    "categoria": "Não encontrado",
+    "status_contato": "contatado"
+  },
+  {
+    "nome": "My Phisio Fisioterapia e Pilates",
+    "telefone": "+5561991764140",
+    "endereco": "\nQUADRA 303 CONJUNTO A LOTE 4 - Santa Maria, Brasília - DF, 72503-601",
+    "site": "https://www.instagram.com/myphisio",
+    "categoria": "Não encontrado",
+    "status_contato": "em_conversacao"
+  },
+  {
+    "nome": "UNIFISIO Fisioterapia e Massagem",
+    "telefone": "+5561993988564",
+    "endereco": "\nAnhanguera Center Anhanguera Center - R. Tupinambás, Quadra 41 - loja 03 Térreo - Chácaras Anhanguera, Valparaíso de Goiás - GO, 72871-000",
+    "site": "https://www.instagram.com/unifisio.reab?igsh=ODc1cms2cXV5MThn",
+    "categoria": "Não encontrado",
+    "status_contato": "em_conversacao"
+  },
+  {
+    "nome": "Clínica Fisio Gama",
+    "telefone": "+5561999495709",
+    "endereco": "\nSt. Sul Quadra 04 conjunto A lote 16 - Gama, Brasília - DF, 72415-201",
+    "site": "https://www.instagram.com/clinicafisiogama/",
+    "categoria": "Não encontrado",
+    "status_contato": "contatado"
+  },
+  {
+    "nome": "Clínica Alfa Fisioterapia - Samambaia",
+    "telefone": "+5561983387427",
+    "endereco": "\nQS 110 ONE Centro Clínico, Conjunto 6 Lotes 4/5 Sala 407/408 - Samambaia, Brasília - DF, 72302-536",
+    "site": "http://alfafisio.com/",
+    "categoria": "Não encontrado",
+    "status_contato": "em_conversacao"
+  },
+  {
+    "nome": "Fisioterapia Ortopédica Valparaiso de Goias - Kinesia",
+    "telefone": "+5561996865140",
+    "endereco": "\nRua Marajo, R. Bahia, 14a - Loja 05 - Ipiranga, Valparaíso de Goiás - GO, 72879-274",
+    "site": "http://kinesia.com/",
+    "categoria": "Não encontrado",
+    "status_contato": "contatado"
+  },
+  {
+    "nome": "Clínica BEM-VIE",
+    "telefone": "+5561935427826",
+    "endereco": "\ne-business - Ed, Av. Pau Brasil, Salas 709/710 - Águas Claras, Brasília - DF, 71916-500",
+    "site": "https://www.clinicabemvie.com.br/",
+    "categoria": "Não encontrado",
+    "status_contato": "contatado"
+  },
+  {
+    "nome": "Fisioterapia Gama - Equilibry Fisioterapia",
+    "telefone": "+5561934473276",
+    "endereco": "\nSetor Norte Q 1 loja 01 - Gama, Brasília - DF, 72430-108",
+    "site": "https://www.instagram.com/fisioterapiaequilibrygamadf/",
+    "categoria": "Não encontrado",
+    "status_contato": "contatado"
+  },
+  {
+    "nome": "Fisioterapia No Recanto das Emas | Centro Clinico Reability | Acupuntura | Pilates | RPG",
+    "telefone": "+5561934345278",
+    "endereco": "\nQ 102 - Recanto das Emas, Brasília - DF, 72600-200",
+    "site": "https://linktr.ee/centroclinico_reability",
+    "categoria": "Não encontrado",
+    "status_contato": "contatado"
+  },
+  {
+    "nome": "Clínica Tactus",
+    "telefone": "+5561996651214",
+    "endereco": "\nSt. Central EQ 47/49 - Gama, Brasília - DF, 72405-610",
+    "site": "http://www.clinicatactus.com.br/",
+    "categoria": "Não encontrado",
+    "status_contato": "em_conversacao"
+  },
+  {
+    "nome": "Clínica Fisio Global",
+    "telefone": "+5561981337740",
+    "endereco": "\nQMSW 05, bloco E, lote 07, Loja 12 Q, Brasília - DF, 70680-500",
+    "site": "https://www.instagram.com/clinicafisioglobal/",
+    "categoria": "Não encontrado",
+    "status_contato": "contatado"
+  },
+  {
+    "nome": "Super Idade Fisioterapia e Pilates",
+    "telefone": "+5561985738719",
+    "endereco": "\nSEPS Q 714/914 Centro Executivo Sabin salas 406 e 407 - Asa Sul, Brasília - DF, 70390-145",
+    "site": "http://www.superidadefisioterapia.com.br/",
+    "categoria": "Não encontrado",
+    "status_contato": "em_conversacao"
+  },
+  {
+    "nome": "Fisio Esport",
+    "telefone": "+5561939679179",
+    "endereco": "\nQd. 18 lote 17 loja 2, St. Leste, Brasília - DF, 72460-180",
+    "site": "https://www.instagram.com/_fisioesport/",
+    "categoria": "Não encontrado",
+    "status_contato": "contatado"
+  },
+  {
+    "nome": "Guilherme Nunes Silva - Fisioterapia Personalizada",
+    "telefone": "+5561981769407",
+    "endereco": "\nED CORREIA - EQ 52/54 PJ 12 COM SL 105, CEP:, 72 - 404-120 - Gama, Brasília - DF, 72404-120",
+    "site": "https://sites.google.com/view/gnsfisioterapia/fisioterapeuta",
+    "categoria": "Não encontrado",
+    "status_contato": "em_conversacao"
+  },
+  {
+    "nome": "CETFISIO - Ortopedia , Fisioterapia, Acupuntura e Bem-Estar - Gama",
+    "telefone": "+5561935507881",
+    "endereco": "\nQuadra 10 Lote 16/17 Lojas 1 e 2, St. Oeste - Gama, Brasília - DF, 72425-132",
+    "site": "https://cetfisio.com.br/",
+    "categoria": "Não encontrado",
+    "status_contato": "contatado"
+  },
+  {
+    "nome": "Phisio Life Pilates e Fisioterapia",
+    "telefone": "+5561993120142",
+    "endereco": "\nAV. 15 de Junho Quadra 06 Lote 08, Sala 103, CEP:, 72 - 870-106 - Valparaízo II, Valparaíso de Goiás - GO",
+    "site": "http://www.phisiolife.com.br/",
+    "categoria": "Não encontrado",
+    "status_contato": "em_conversacao"
+  },
+  {
+    "nome": "AG3 fisioterapia",
+    "telefone": "+5561996250804",
+    "endereco": "\nQuadra 01 conjunto A lote 11 loja 202 - Gama, Brasília - DF, 72410-101",
+    "site": "http://ag3fisioterapia.com.br/",
+    "categoria": "Não encontrado",
+    "status_contato": "em_conversacao"
+  },
+  {
+    "nome": "Bem viver clínica multi",
+    "telefone": "+5561992979220",
+    "endereco": "\nBrasil Center Shopping, P11, Setor verde, 2° andar - Parque Esplanada III, Valparaíso de Goiás - GO, 72876-359",
+    "site": "https://sites.google.com/view/studiopilatesfitness",
+    "categoria": "Não encontrado",
+    "status_contato": "em_conversacao"
+  },
+  {
+    "nome": "Centro Clínico Meireles Fisioterapia | Pilates | Massagem | Psicologia",
+    "telefone": "+5561995473812",
+    "endereco": "\nQuadra - Qr 218 Conjunto P, 17 - Santa Maria Norte, Brasília - DF, 72548-516",
+    "site": "https://www.centroclinicomeireles.com.br/",
+    "categoria": "Não encontrado",
+    "status_contato": "em_conversacao",
+    "consent_marketing": true
+  },
+  {
+    "nome": "Fisioterapia Juliana",
+    "telefone": "+5561935565290",
+    "endereco": "\nSNO Quadra 2, Conjunto A, Casa 411 - Setor Norte, DF, 72465-420",
+    "site": "http://gamafisioterapiaju.wixsite.com/meusite",
+    "categoria": "Não encontrado",
+    "status_contato": "contatado"
+  },
+  {
+    "nome": "Fisio Diniz_ Fisioterapia, Pilates, Acupuntura e RPG",
+    "telefone": "+5561939701578",
+    "endereco": "\nQR 218 548-515 - Santa Maria Norte, Brasília - DF, 72548-500",
+    "site": "https://meuairgo.com.br/fisiodiniz",
+    "categoria": "Não encontrado",
+    "status_contato": "contatado"
+  },
+  {
+    "nome": "Kavita Fisioterapia",
+    "telefone": "+5561994352787",
+    "endereco": "\nSetor Norte Q 1 quadra 01 conjunto H lote 219 Sala 104 - Gama, Brasília - DF, 72430-108",
+    "site": "https://www.kavitafisioterapia.com.br/",
+    "categoria": "Não encontrado",
+    "status_contato": "em_conversacao"
+  },
+  {
+    "nome": "Fisioterapia e Pilates - VIVA MELHOR!",
+    "telefone": "+5561993690155",
+    "endereco": "\nQUADRA 11, LOTE 43; LOJA 01 - Cidade Ocidental, GO, 72880-440",
+    "site": "https://fisiopilatesvivamelhor.com.br/",
+    "categoria": "Não encontrado",
+    "status_contato": "em_conversacao"
+  },
+  {
+    "nome": "Tríade Fisioterapia e Pilates",
+    "telefone": "+5561998909217",
+    "endereco": "\nSNO QD 2 CONJ A LT 405 - Setor Norte, Brasília - DF, 72430-201",
+    "site": "http://www.triadefisioepilates.com.br/",
+    "categoria": "Não encontrado",
+    "status_contato": "contatado"
+  },
+  {
+    "nome": "Ibrafisio Gama",
+    "telefone": "+5561939991818",
+    "endereco": "\nSt. Sul Quadra 1 Conjunto G Lote 2, Loja 1, 2, 3, e 4 - SETOR SUL, Brasília - DF, 72405-165",
+    "site": "http://www.ibrafisio.com.br/",
+    "categoria": "Não encontrado",
+    "status_contato": "contatado"
+  },
+  {
+    "nome": "Clínica Mov&ment",
+    "telefone": "+5561981236553",
+    "endereco": "\nQC 5 Qc5 lote 21Residencial - Santa Maria, Brasília - DF, 72590-000",
+    "site": "https://clinica-movment.negocio.site/?utm_source=gmb&utm_medium=referral",
+    "categoria": "Não encontrado",
+    "status_contato": "em_conversacao"
+  },
+  {
+    "nome": "Equipe Fisio - Clínica de Reabilitação | Fisioterapia em Taguatinga",
+    "telefone": "+5561992358588",
+    "endereco": "\nTaguatinga Norte QNB 13 SALA 101/102 - Taguatinga, Brasília - DF, 71115-130",
+    "site": "https://solo.to/equipefisio",
+    "categoria": "Não encontrado",
+    "status_contato": "em_conversacao"
+  },
+  {
+    "nome": "Clínica Plenitude - Saúde Integrativa",
+    "telefone": "+5561932056246",
+    "endereco": "\nEdifício Brito Center - R. Portugal, Quadra 49, Lote 12, Loja 01, Térreo - Parque Esplanada III, Valparaíso de Goiás - GO, 72876-349",
+    "site": "https://linktr.ee/plenitude.clin",
+    "categoria": "Não encontrado",
+    "status_contato": "contatado"
+  },
+  {
+    "nome": "Orthophysio Samambaia",
+    "telefone": "+5561930438680",
+    "endereco": "\nQS 116 - Samambaia, Brasília - DF, 72302-565",
+    "site": "http://www.orthophysio.com.br/",
+    "categoria": "Não encontrado",
+    "status_contato": "contatado"
+  },
+  {
+    "nome": "Procorpore Fisioterapia & Pilates - Recanto das Emas",
+    "telefone": "+5561940428345",
+    "endereco": "\nAVENIDA BURITIS, Q. 404, 01 - 2º Andar - Recanto das Emas, Brasília - DF, 72630-421",
+    "site": "http://www.procorporefisio.com.br/",
+    "categoria": "Não encontrado",
+    "status_contato": "contatado"
+  },
+  {
+    "nome": "Fisilates Clínica",
+    "telefone": "+5561937988885",
+    "endereco": "\nR. 2, 20 - Quadra 03, Lote 20 Loja 04 - Valparaizo II, Valparaíso de Goiás - GO, 72870-046",
+    "site": "http://fisilates.com.br/",
+    "categoria": "Não encontrado",
+    "status_contato": "contatado"
+  },
+  {
+    "nome": "Fisio Saber Viver",
+    "telefone": "+5561985182019",
+    "endereco": "\nSt. B Norte QNB 15 CASA 15 - Taguatinga, Brasília - DF, 72115-150",
+    "site": "https://www.fisiosaberviver.com.br/",
+    "categoria": "Não encontrado",
+    "status_contato": "contatado"
+  },
+  {
+    "nome": "Clínica Levitar",
+    "telefone": "+5561937740210",
+    "endereco": "\nGuará II QE 34 - Guará, Brasília - DF, 71065-182",
+    "site": "https://levitarguara.com.br/",
+    "categoria": "Não encontrado",
+    "status_contato": "contatado"
+  },
+  {
+    "nome": "Chega De Dor",
+    "telefone": "+5561998924797",
+    "endereco": "\nSt. Central Quadra 30 CL 30 lote 46 - Gama, Brasília - DF, 72405-300",
+    "site": "https://www.instagram.com/chegadedor_?igsh=MWQxMXJjM3BmM2Z6ag==&utm_source=qr",
+    "categoria": "Não encontrado",
+    "status_contato": "contatado"
+  },
+  {
+    "nome": "H2Fisio Taguatinga",
+    "telefone": "+5561935482317",
+    "endereco": "\nSt. A Norte QNA 40 - Taguatinga, Brasília - DF, 72110-400",
+    "site": "http://www.clinicah2fisio.com.br/",
+    "categoria": "Não encontrado",
+    "status_contato": "contatado"
+  },
+  {
+    "nome": "Kinesia - Clínica de Fisioterapia Pélvica Valparaiso de Goiás",
+    "telefone": "+5561996865140",
+    "endereco": "\nRua Marajo Gleba 14A, Loja 005 - Ipiranga, Valparaíso de Goiás - GO, 72879-274",
+    "site": "https://kinesia.com.br/",
+    "categoria": "Não encontrado",
+    "status_contato": "pendente"
+  },
+  {
+    "nome": "FisioTop - Fisioterapia e Pilates - Dra. Kássia Cordeiro",
+    "telefone": "+5561930520601",
+    "endereco": "\nSt. Oeste Q 9 CL 9 - Gama, Brasília - DF, 70297-400",
+    "site": "https://m.facebook.com/Fisiotop-491612744243415/",
+    "categoria": "Não encontrado",
+    "status_contato": "contatado"
+  },
+  {
+    "nome": "Espaço Vida",
+    "telefone": "+5561986666251",
+    "endereco": "\nCondomínio Solar De Brasília,Qd 02,Bl A,Sl 205, Brasília - DF, 70297-400",
+    "site": "https://clinica-de-fisioterapia-1.ueniweb.com/?utm_campaign=gmb",
+    "categoria": "Não encontrado",
+    "status_contato": "contatado"
+  },
+  {
+    "nome": "Uniclin Fisioterapia & Estética",
+    "telefone": "+5561995898452",
+    "endereco": "\nSt. M QNM 19 Loja 1 - Ceilândia, Brasília - DF, 72215-203",
+    "site": "https://www.uniclinfisio.com.br/",
+    "categoria": "Não encontrado",
+    "status_contato": "em_conversacao"
+  },
+  {
+    "nome": "FISIOPRIME - Clínica de Reabilitação",
+    "telefone": "+5561930491505",
+    "endereco": "\nAv. Comercial Sul - QSA 11, lote 14 - Taguatinga Sul, Brasília - DF, 72015-110",
+    "site": "http://www.clinicafisioprime.com.br/",
+    "categoria": "Não encontrado",
+    "status_contato": "contatado"
+  },
+  {
+    "nome": "Gill's Centro Clinico - Fisioterapia e Fitness",
+    "telefone": "+5561935472621",
+    "endereco": "\nSt. D Sul QSD 09 Lote 12 - Taguatinga, Brasília - DF, 72020-090",
+    "site": "https://www.gillscentroclinico.com.br/",
+    "categoria": "Não encontrado",
+    "status_contato": "contatado"
+  },
+  {
+    "nome": "Clínica MK fisioterapia Águas Claras",
+    "telefone": "+5561937734573",
+    "endereco": "\nPlaza Mall - Rua das carnaúbas quadra 301 04, sala 209 - Águas Claras Norte, Brasília - DF, 71904-540",
+    "site": "https://mkfisioterapia.com.br/",
+    "categoria": "Não encontrado",
+    "status_contato": "contatado"
+  },
+  {
+    "nome": "Fisio in Pelve/Clínica Especializada em Fisioterapia pélvica - Dra. Luana Queiroz",
+    "telefone": "+5561981995691",
+    "endereco": "\nSRIA Qi7 conjunto “U” lote 24 sala 202, Guará I, Brasília - DF, 71020-216",
+    "site": "http://www.fisioinpelve.com.br/",
+    "categoria": "Não encontrado",
+    "status_contato": "em_conversacao"
+  },
+  {
+    "nome": "Fisioterapia em Taguatinga Sul | Clínica Klimfisio |Acupuntura | Pilates | RPG | Fisioterapia Pélvica | Fisioterapia infantil",
+    "telefone": "+5561935636795",
+    "endereco": "\nSt. D Sul CSD 1 Loja 01 - Taguatinga, Brasília - DF, 72020-015",
+    "site": "https://linktr.ee/clinicaklimfisio",
+    "categoria": "Não encontrado",
+    "status_contato": "contatado"
+  },
+  {
+    "nome": "Hope Centro Clínico",
+    "telefone": "+5561939703333",
+    "endereco": "\nAv. das Araucárias, lote 1835/2005, Salas 560, 561 e 562 - Águas Claras Shopping - Águas Claras, Brasília - DF, 71936-250",
+    "site": "https://wa.link/4mqvfc",
+    "categoria": "Não encontrado",
+    "status_contato": "contatado"
+  },
+  {
+    "nome": "Fisio Meraki Fisioterapia Especializada",
+    "telefone": "+5561985030181",
+    "endereco": "\nSQ 12 Q, 02 - CS 45 - Valparaizo I, Valparaíso de Goiás - GO, 72880-494",
+    "site": "https://www.instagram.com/fiisiomeraki?igsh=MWsyNXJqdzEwbTloeQ==",
+    "categoria": "Não encontrado",
+    "status_contato": "em_conversacao"
+  },
+  {
+    "nome": "Fisioclin Brasília - UNIDADE I Primo Crosara",
+    "telefone": "+5561932727338",
+    "endereco": "\nShln Condomínio do Edifício Primo Crosara - Asa Norte, Brasília - DF, 70770-560 Bloco F Sala 208 - Asa Norte, Brasília - DF, 70770-550",
+    "site": "http://www.fisioclinbrasilia.com.br/",
+    "categoria": "Não encontrado",
+    "status_contato": "contatado"
+  },
+  {
+    "nome": "Fisiotrauma - Unidade Asa Sul",
+    "telefone": "+5561933456685",
+    "endereco": "\nSEPS Q 705/905 Centro Empresarial, bloco B salas 201 203 205 - Asa Sul, Brasília - DF, 70390-055",
+    "site": "http://www.fisiotrauma.com.br/",
+    "categoria": "Não encontrado",
+    "status_contato": "contatado"
+  },
+  {
+    "nome": "ReabilitaçãoTotal",
+    "telefone": "+5561933497178",
+    "endereco": "\nSt. de Habitações Coletivas e Geminadas Norte 716 bloco B loja 07 - Asa Norte, Brasília - DF, 70770-532",
+    "site": "http://www.clinicareabilitacaototal.com.br/",
+    "categoria": "Não encontrado",
+    "status_contato": "contatado"
+  },
+  {
+    "nome": "Pró Physis",
+    "telefone": "+5561932726107",
+    "endereco": "\nShln Bloco J Ed. Multiclínicas Sala 113 - Asa Norte, Brasília - DF, 70770-550",
+    "site": "http://www.prophysis.com.br/",
+    "categoria": "Não encontrado",
+    "status_contato": "contatado"
+  },
+  {
+    "nome": "Força Fisioterapia - Asa Sul | Sua clínica de Fisioterapia (Acupuntura - Ortopedia - RPG Reeducação Postural Global)",
+    "telefone": "+5561935428239",
+    "endereco": "\nSGAS 910 Bloco E Salas 243, 245 e 247 - Asa Sul, Brasília - DF, 70390-100",
+    "site": "https://forcafisioterapia.com.br/",
+    "categoria": "Não encontrado",
+    "status_contato": "contatado"
+  },
+  {
+    "nome": "Resolute Clínica de Fisioterapia em Brasília",
+    "telefone": "+5561992424202",
+    "endereco": "\nSt. de Habitações Individuais Sul QI 5 - Lago Sul, Brasília - DF, 71615-560",
+    "site": "https://clinicaresolute.com.br/",
+    "categoria": "Não encontrado",
+    "status_contato": "em_conversacao"
+  },
+  {
+    "nome": "Dínamos Fisioterapia Brasília",
+    "telefone": "+5561996766620",
+    "endereco": "\nEQSW 301/302 Academia Bodytech Segunda Avenida, Brasília - DF, 70673-150",
+    "site": "http://www.dinamos.com.br/",
+    "categoria": "Não encontrado",
+    "status_contato": "em_conversacao",
+    "consent_marketing": false
+  },
+  {
+    "nome": "WS Fisioterapia Esportiva Ortopédica e Traumatológica",
+    "telefone": "+5561985285578",
+    "endereco": "\nacademia World Gym - SEPN Quadra 511 BL B Loja 103 A WS FISIOTERAPIA ESPORTIVA se localiza dentro da - Asa Norte, Brasília - DF, 70750-542",
+    "site": "https://www.wsfisioterapiaesportiva.com.br/",
+    "categoria": "Não encontrado",
+    "status_contato": "contatado"
+  },
+  {
+    "nome": "Aquafisio",
+    "telefone": "+5561932458206",
+    "endereco": "\nAsa Sul CLS 213 Bl C s/n lj 5 - Brasília, DF, 70292-530",
+    "site": "https://aquafisiodf.com.br/",
+    "categoria": "Não encontrado",
+    "status_contato": "contatado"
+  },
+  {
+    "nome": "SB Fisio",
+    "telefone": "+5561934430565",
+    "endereco": "\nSGAS II SGAS 608 Fisioterapia) ACM / YMCA, Conj. G Bloco C SALA 1 - Asa Sul, Brasília - DF, 70200-680",
+    "site": "https://sbfisio.com.br/",
+    "categoria": "Não encontrado",
+    "status_contato": "contatado"
+  },
+  {
+    "nome": "Instituto Fisio Essence",
+    "telefone": "+5561932487438",
+    "endereco": "\nSt. de Habitações Individuais Sul QI 9 Centro Clínico do Lago Bl. E-1, salas 208 e 214 - Lago Sul, Brasília - DF, 71625-009",
+    "site": "http://www.institutofisioessence.com.br/",
+    "categoria": "Não encontrado",
+    "status_contato": "contatado"
+  },
+  {
+    "nome": "FisioEleva - Unidade Asa Sul",
+    "telefone": "+5561932221488",
+    "endereco": "\nSEPS 707/907 Edifício San Marino Lojas 4 e 6 - Térreo - Asa Sul, Brasília - DF, 70390-078",
+    "site": "http://www.fisioeleva.com.br/",
+    "categoria": "Não encontrado",
+    "status_contato": "contatado"
+  },
+  {
+    "nome": "Clínica de Fisioterapia B-Active Brasília Asa Sul",
+    "telefone": "+5561933461274",
+    "endereco": "\nLoja 14, 15, 16 SE BL B, SHCS, Brasília - DF, 70200-760",
+    "site": "https://bactive.com.br/",
+    "categoria": "Não encontrado",
+    "status_contato": "contatado"
+  },
+  {
+    "nome": "Versarya Saúde Fisioterapia Pélvica Brasília",
+    "telefone": "+5561985543538",
+    "endereco": "\nSEPS 909/709 Centro Médico Júlio Adnet, Torre B, Sala 423 - Asa Sul, Brasília - DF, 70390-095",
+    "site": "https://linktr.ee/anapaulasimoesfisio",
+    "categoria": "Não encontrado",
+    "status_contato": "contatado"
+  },
+  {
+    "nome": "iMOV Instituto de Medicina do Movimento - Ortopedia Brasília",
+    "telefone": "+5561935438039",
+    "endereco": "\nSetor Médico Hospitalar Norte Edifício Cleo Octavio SALAS 1001, 1002, 1008, 1009 - Asa Norte, Brasília - DF, 70710-146",
+    "site": "https://imovbsb.com/",
+    "categoria": "Não encontrado",
+    "status_contato": "contatado"
+  },
+  {
+    "nome": "Multifisio",
+    "telefone": "+5561930420082",
+    "endereco": "\nSt. B Norte QNB 17 LOTE 9 - Taguatinga, Brasília - DF, 72115-170",
+    "site": "https://www.multifisiodf.com.br/",
+    "categoria": "Não encontrado",
+    "status_contato": "contatado"
+  },
+  {
+    "nome": "Clínica Salus Ortopedia",
+    "telefone": "+5561933491186",
+    "endereco": "\nSTM Conjunto M entrada B Centro Clinico Vital Brazil - Salas 342, 344 e 346 - Asa Norte, Brasília - DF, 70770-909",
+    "site": "https://salusortopedia.com.br/",
+    "categoria": "Não encontrado",
+    "status_contato": "contatado"
+  },
+  {
+    "nome": "FisioClinic Fisioterapia - Asa Sul",
+    "telefone": "+5561932575252",
+    "endereco": "\nSGAS I SGAS 915 EDIFÍCIO OFFICE CENTER SALAS 05/06 Bloco C Térreo - Asa Sul, Brasília - DF, 70390-150",
+    "site": "http://www.fisioclinicdf.com.br/",
+    "categoria": "Não encontrado",
+    "status_contato": "contatado"
+  },
+  {
+    "nome": "REABILITAR - Centro Especializado em Reabilitação do Membro Superior e Terapia da Mão",
+    "telefone": "+5561933462024",
+    "endereco": "\nSEPS 714/914 Edifício Santa Maria sala 401 - Asa Sul, Brasília - DF, 70390-145",
+    "site": "http://instagram.com.br/reabilitardf",
+    "categoria": "Não encontrado",
+    "status_contato": "contatado"
+  },
+  {
+    "nome": "Fisioterapia e Pilates Plenus Art Fisio",
+    "telefone": "+5561991171140",
+    "endereco": "\nRiacho Fundo QS 6 Conj 01 - Lote 07 - Lojas 01 e 02 Quadra - Riacho Fundo I, Brasília - DF, 71820-601",
+    "site": "http://www.plenusartfisio.com.br/",
+    "categoria": "Não encontrado",
+    "status_contato": "em_conversacao"
+  },
+  {
+    "nome": "Plenitá Fisioterapia - Prevenção e Reabilitação",
+    "telefone": "+5561995634382",
+    "endereco": "\nEdifício América Office Tower, SCN Qd 01 Bl “F 15°andar Sala 1505 - Asa Norte, Brasília - DF, 70710-000",
+    "site": "http://plenitafisioterapia.com.br/",
+    "categoria": "Não encontrado",
+    "status_contato": "em_conversacao"
+  },
+  {
+    "nome": "UNICLIN TORRES REABILITAÇÃO",
+    "telefone": "+5561937970692",
+    "endereco": "\nSetor C Norte, Taguatinga Norte Loja 22 Ed. Prime Excelência Médica, Brasília - DF, 72115-700",
+    "site": "https://uniclintorresreabilitacao.com.br/",
+    "categoria": "Não encontrado",
+    "status_contato": "contatado"
+  },
+  {
+    "nome": "Orthophysio & Physiodor - Asa Sul",
+    "telefone": "+5561930438680",
+    "endereco": "\nSEPS 709/909 Centro Médico Julio Adnet Sala T11 - Asa Sul, Brasília - DF, 70390-095",
+    "site": "http://orthophysio.com.br/asa-sul/",
+    "categoria": "Não encontrado",
+    "status_contato": "pendente"
+  },
+  {
+    "nome": "Fisioterapia Santa Rita I Asa Norte I Ortopédica, Cardiológica e Hospitalar",
+    "telefone": "+5561932733366",
+    "endereco": "\nBl O - Ed. Life Center - Sala 14, STN - Asa Norte, Brasília - DF, 70770-100",
+    "site": "https://www.fisioterapiasantarita.com.br/",
+    "categoria": "Não encontrado",
+    "status_contato": "contatado"
+  },
+  {
+    "nome": "Clinica Prevenire - Fisioterapia Integrativa| Brasília N° RE001556",
+    "telefone": "+5561996966708",
+    "endereco": "\nMultiempresarial - SRTVS 701 Bloco O Sala 172 Edifício - Asa Sul, Brasília - DF, 70340-000",
+    "site": "https://linktr.ee/fisiothiagolopes",
+    "categoria": "Não encontrado",
+    "status_contato": "em_conversacao"
+  },
+  {
+    "nome": "FISIOCLIN Prime - UNIDADE III Sudoeste",
+    "telefone": "+5561938797337",
+    "endereco": "\nCLSW 105 Bloco B sala 108 Ed. Platinum Mall, St. Sudoeste, Brasília - DF, 70670-433",
+    "site": "https://www.fisioclinbrasilia.com.br/",
+    "categoria": "Não encontrado",
+    "status_contato": "contatado"
+  },
+  {
+    "nome": "Clínica Estruturar",
+    "telefone": "+5561932440360",
+    "endereco": "\nSHCN CLN 112 BL B sala 18 - Brasília, DF, 70762-500",
+    "site": "http://www.clinicaestruturardf.com.br/",
+    "categoria": "Não encontrado",
+    "status_contato": "contatado"
+  },
+  {
+    "nome": "Clínica de Fisioterapia Instituto Trata Asa Sul",
+    "telefone": "+5561991982765",
+    "endereco": "\nSGAS 915 Bloco A Sala 359 - Centro Clínico, SGAS I St. de Grandes Áreas Sul 915 Advance I - Asa Sul, Brasília - DF, 70390-150",
+    "site": "https://www.institutotrata.com.br/clinicas/distrito-federal/brasilia",
+    "categoria": "Não encontrado",
+    "status_contato": "em_conversacao"
+  },
+  {
+    "nome": "CETFISIO- Ortopedia , Fisioterapia, Acupuntura e Bem-Estar - Sudoeste",
+    "telefone": "+5561935507881",
+    "endereco": "\nSHCSW CHSW Blocos 3/4/5, S/N Clínica 205, St. Sudoeste, Brasília - DF, 70673-416",
+    "site": "http://www.cetfisio.com.br/",
+    "categoria": "Não encontrado",
+    "status_contato": "pendente"
+  },
+  {
+    "nome": "Instituto Melhora",
+    "telefone": "+5561998763030",
+    "endereco": "\nSGAN 601, Módulo H, Edifício Íon - Salas 2070 e 2071 - Asa Norte, Brasília - DF, 70830-018",
+    "site": "http://www.institutomelhora.com.br/",
+    "categoria": "Não encontrado",
+    "status_contato": "em_conversacao",
+    "consent_marketing": false
+  },
+  {
+    "nome": "Clínica do Ombro",
+    "telefone": "+5561996702301",
+    "endereco": "\nSt. Sudoeste Superquadra Sudoeste 301 Ed. Espaço VIP Sala 116-601 - Cruzeiro / Sudoeste / Octogonal, Brasília - DF, 70673-601",
+    "site": "http://www.clinicadoombrodf.com.br/",
+    "categoria": "Não encontrado",
+    "status_contato": "em_conversacao"
+  },
+  {
+    "nome": "FisioeMov Asa Sul",
+    "telefone": "+5561932464700",
+    "endereco": "\nBL A - Asa Sul, Ed. Advance 1 SGAS 915, Lote 70A, Ed. Advance I, Sala 230 - Asa Sul, Brasília - DF, 70390-150",
+    "site": "https://fisioemov.com.br/",
+    "categoria": "Não encontrado",
+    "status_contato": "pendente"
+  },
+  {
+    "nome": "Fisioterapia em Brasília - Foco Fisioterapia, Asa Sul",
+    "telefone": "+5561999035431",
+    "endereco": "\nSEPS Q 714/914 Ed. Porto Alegre 914 - segundo andar, Sala 232 - Asa Sul, Brasília - DF, 70790-145",
+    "site": "https://www.focofisioterapia.com.br/",
+    "categoria": "Não encontrado",
+    "status_contato": "contatado"
+  },
+  {
+    "nome": "Instituto In Corpore",
+    "telefone": "+5561930377757",
+    "endereco": "\nSCS Quadra 02 Bloco C, Entrada 164, Ed. Wady Cecílio II, 3º Andar - Asa Sul, Brasília - DF, 70302-000",
+    "site": "http://linktr.ee/instituto_incorpore",
+    "categoria": "Não encontrado",
+    "status_contato": "contatado"
+  },
+  {
+    "nome": "Kinê Fisioterapia Esportiva",
+    "telefone": "+5561982300815",
+    "endereco": "\nSGAS I SGAS 906 - Asa Sul, Brasília - DF, 70297-400",
+    "site": "https://www.kinefisioterapia.com.br/",
+    "categoria": "Não encontrado",
+    "status_contato": "contatado"
+  },
+  {
+    "nome": "Dr. André De Paula, Fisioterapeuta",
+    "telefone": "+5561984273737",
+    "endereco": "\nSGAS I St. de Grandes Áreas Sul 915 Centro Clínico Advance. Consultório DF Fisio Company 69 70 Sala 222 - Asa Sul, Brasília - DF, 70390-150",
+    "site": "https://www.doctoralia.com.br/andre-de-paula/fisioterapeuta/brasilia?utm_source=google&utm_medium=gmb&utm_campaign=761836&utm_content=website",
+    "categoria": "Não encontrado",
+    "status_contato": "em_conversacao"
+  },
+  {
+    "nome": "Corpus - Fisioterapia & Pilates (Asa Sul)",
+    "telefone": "+5561930418778",
+    "endereco": "\nSRTVS ED MULTIEMPRESARIAL BLOCO O, SALAS 616/617 - Asa Sul, Brasília - DF, 70340-000",
+    "site": "http://www.corpusfp.com/",
+    "categoria": "Não encontrado",
+    "status_contato": "contatado"
+  },
+  {
+    "nome": "Clínica Domiciliar Santa Camila (Fisioquer) - Sudoeste",
+    "telefone": "+5561932017489",
+    "endereco": "\nCLSW 301 Ed. Dakota Loja 49, St. Sudoeste Bloco C, Brasília - DF, 70673-605",
+    "site": "https://www.fisioquer.com.br/",
+    "categoria": "Não encontrado",
+    "status_contato": "contatado"
+  },
+  {
+    "nome": "VITALITÀ FISIOTERAPIA E HIDROTERAPIA",
+    "telefone": "+5561981110567",
+    "endereco": "\nSHS Quadra 06 Conjunto A Bloco D - 100 Brasil 21 - Asa Sul, Brasília - DF, 70316-901",
+    "site": "http://www.vitalitafisio.com.br/",
+    "categoria": "Não encontrado",
+    "status_contato": "contatado"
+  },
+  {
+    "nome": "Karla Bezerra Fisioterapia e Acupuntura Obstétricas",
+    "telefone": "+5561981110122",
+    "endereco": "\nSGAN 915 CONJ G D - GOLDEN OFFICE CORPORATE, SALA 109 - Asa Norte, Brasília - DF, 70790-157",
+    "site": "https://www.karlabezerra.com/?utm_source=google&utm_medium=wix_google_business_profile&utm_campaign=12866313650385769536",
+    "categoria": "Não encontrado",
+    "status_contato": "contatado"
+  },
+  {
+    "nome": "Clinica Saúde Imediata",
+    "telefone": "+5561995677676",
+    "endereco": "\nSCN Quadra 1 Bloco E Edifício Central Park, Sala 612 - Asa Norte, Brasília - DF, 70711-903",
+    "site": "https://www.saudeimediata.com/",
+    "categoria": "Não encontrado",
+    "status_contato": "contatado"
+  },
+  {
+    "nome": "Clínica Levitar",
+    "telefone": "+5561937978407",
+    "endereco": "\nRua 10 chácara 129 lote 4E, St. Hab. Vicente Pires, Brasília - DF, 72007-185",
+    "site": "http://www.clinicalevitar.com.br/",
+    "categoria": "Não encontrado",
+    "status_contato": "contatado"
+  },
+  {
+    "nome": "Inovar Fisioterapia e Saúde",
+    "telefone": "+5561932025658",
+    "endereco": "\nSRTVS 701 Bloco O Sala 256 - Asa Sul, Brasília - DF, 70655-711",
+    "site": "http://www.inovarfisioterapia.com.br/",
+    "categoria": "Não encontrado",
+    "status_contato": "contatado"
+  },
+  {
+    "nome": "Clínica Reagis - Fisioterapia, Osteopatia e RPG Brasília",
+    "telefone": "+5561984680339",
+    "endereco": "\nSEPS 710/910 - Asa Sul, Brasília - DF, 70390-108",
+    "site": "http://centroreagis.com/",
+    "categoria": "Não encontrado",
+    "status_contato": "em_conversacao"
+  },
+  {
+    "nome": "Espaço Viva Melhor",
+    "telefone": "+30337577",
+    "endereco": "\nSetor Médico Hospitalar Norte Edifício de Clínicas - Asa Norte, Brasília - DF, 70710-904",
+    "site": "https://espacovivamelhor.com.br/",
+    "categoria": "Não encontrado",
+    "status_contato": "contatado"
+  },
+  {
+    "nome": "São Rafael Quiropraxia e Fisioterapia",
+    "telefone": "+5561981808008",
+    "endereco": "\nSHN Q. 1 Sala 1507/1508 - Asa Norte, Brasília - DF, 70701-000",
+    "site": "http://www.saorafaelfisioterapia.com/",
+    "categoria": "Não encontrado",
+    "status_contato": "contatado"
+  },
+  {
+    "nome": "Videre Fisioterapia- Unidade Asa Sul",
+    "telefone": "+5561932423880",
+    "endereco": "\nB. E - SGAS 910 Conjunto B Bloco D, Sala 31 - Asa Sul, Brasília - DF, 70390-100",
+    "site": "https://www.instagram.com/viderefisioterapia",
+    "categoria": "Não encontrado",
+    "status_contato": "contatado"
+  },
+  {
+    "nome": "Clínica OnePhysio - Fisioterapia Ortopédica e Pélvica I Pilates I Acupuntura I RPG | Massoterapia",
+    "telefone": "+5561935479697",
+    "endereco": "\nGuará I Qi 07 Conjunto R Casa 35 - Guará, Brasília - DF, 71020-186",
+    "site": "https://onephysio.com.br/?utm_source=google-meu-negocio&utm_medium=trafego-organico&utm_campaign=rede-de-pesquisa&utm_id=gmn-organico",
+    "categoria": "Não encontrado",
+    "status_contato": "contatado"
+  },
+  {
+    "nome": "Clínica Primeiros Passos Fisio & Terapias",
+    "telefone": "+5561984631076",
+    "endereco": "\nI - SGAS 915 - Conjunto N, Salas 138, 1º andar, Centro Clínico Advance - Asa Sul, Brasília - DF, 70390-150",
+    "site": "https://www.instagram.com/primeirospassos.fisioeterapias/",
+    "categoria": "Não encontrado",
+    "status_contato": "em_conversacao"
+  },
+  {
+    "nome": "Espaço Physio - Pilates e Fisioterapia Asa Sul",
+    "telefone": "+5561939655552",
+    "endereco": "\nAsa Sul Comércio Local Sul 201 BL C loja 19 - Asa Sul, Brasília - DF, 70232-530",
+    "site": "https://www.espacophysio.com/?utm_source=google-meu-negocio&utm_medium=trafego-organico",
+    "categoria": "Não encontrado",
+    "status_contato": "contatado"
+  },
+  {
+    "nome": "FISIOTERAPIA DOMICILIAR DF",
+    "telefone": "+5561992143301",
+    "endereco": "\nSt. de Habitações Individuais Geminadas Sul 705 - Brasília, DF, 70350-718",
+    "site": "http://andreafisio-com-br.webnode.com/",
+    "categoria": "Não encontrado",
+    "status_contato": "em_conversacao"
+  },
+  {
+    "nome": "Modula Dor",
+    "telefone": "+5561936863384",
+    "endereco": "\nSetor Médico Hospitalar Norte Edifício de Clínicas sala 1001,sala 1002 - Asa Norte, Brasília - DF, 70710-904",
+    "site": "https://www.clinicamodulador.com.br/",
+    "categoria": "Não encontrado",
+    "status_contato": "contatado"
+  },
+  {
+    "nome": "Landers Advocacia",
+    "telefone": "\n(61) 99309-4104",
+    "endereco": "\nSão Sebastião, Brasília - DF, 71691-088",
+    "site": "http://landersadvocacia.com.br/",
+    "categoria": "Não encontrado",
+    "status_contato": "pendente"
+  },
+  {
+    "nome": "Dr. Daniel Oliveira Carvalho",
+    "telefone": "\n(61) 99183-0713",
+    "endereco": "\nEQ 09/10 Bloco E Sala 220 - Brasília, DF, 71681-525",
+    "site": "https://docadv.com.br/",
+    "categoria": "Não encontrado",
+    "status_contato": "pendente"
+  },
+  {
+    "nome": "Tatiana Gomes Advocacia",
+    "telefone": "\n(61) 99115-0793",
+    "endereco": "\n26, Jardins Mangueiral, Brasília - DF",
+    "site": "https://linktr.ee/tatianagomesadvocacia",
+    "categoria": "Não encontrado",
+    "status_contato": "pendente"
+  },
+  {
+    "nome": "Jonathan Dias Advocacia",
+    "telefone": "\n(61) 99931-5977",
+    "endereco": "\nSCS Q. 2 Edifício Palácio do Comércio Bloco B, 10º andar, sala 1009 - Asa Sul, Brasília - DF, 70318-900",
+    "site": "http://jonathandias.adv.br/",
+    "categoria": "Não encontrado",
+    "status_contato": "pendente"
+  },
+  {
+    "nome": "Waldow & Dutra Advogados",
+    "telefone": "\n(61) 3964-5235",
+    "endereco": "\nSIG Quadra 1, Lt. 385, Sala 30/36 Ed. Platinum Office, Setor Ind. Gráficas, Brasília - DF, 70610-410",
+    "site": "http://www.waldowedutra.com.br/",
+    "categoria": "Não encontrado",
+    "status_contato": "pendente"
+  },
+  {
+    "nome": "Sandovaldo Belem Advogados",
+    "telefone": "\n(61) 99426-7375",
+    "endereco": "\nSMDB CONJUNTO 12 Nº, St. de Mansões Dom Bosco LAGO SUL - Lago Sul, Brasília - DF, 71680-120",
+    "site": "http://sandovaldoadvogados.com.br/",
+    "categoria": "Não encontrado",
+    "status_contato": "pendente"
+  },
+  {
+    "nome": "Ferreira & Dalleprane Advogados Associados",
+    "telefone": "\n(61) 99437-2222",
+    "endereco": "\nSt. de Mansões Dom Bosco casa E Condomínio Vivendas do Lago lote 1 - Lago Sul, Brasília - DF, 71680-210",
+    "site": "https://ferreiraedalleprane.com.br/",
+    "categoria": "Não encontrado",
+    "status_contato": "pendente"
+  },
+  {
+    "nome": "Aguinaldo Coelho Advocacia",
+    "telefone": "\n(61) 98174-2168",
+    "endereco": "\nQ. Eq3/5, Avenida das Paineiras, Edifício Imperial, Bloco B, Sala 118, Jardim Botânico III - Jardim Botânico III, Brasília - DF, 71681-125",
+    "site": "https://coelhoadv.com/",
+    "categoria": "Não encontrado",
+    "status_contato": "pendente"
+  },
+  {
+    "nome": "DL ADVOGADOS Brasília - Escritório de Advocacia - Empresarial - Desportivo - Tributário",
+    "telefone": "\n(61) 99945-0480",
+    "endereco": "\nSt. de Habitações Individuais Sul QL 18 conjunto 06 casa 19 - Lago Sul, Brasília - DF, 71650-065",
+    "site": "http://www.donnylivingstoneadv.com.br/",
+    "categoria": "Não encontrado",
+    "status_contato": "pendente"
+  },
+  {
+    "nome": "Figueiredo & Velloso Advogados Associados",
+    "telefone": "\n(61) 3323-7933",
+    "endereco": "\nSHIS QL 24 Conjunto 07 Casa 2 - Lago Sul, Brasília - DF, 71665-075",
+    "site": "http://figueiredoevelloso.com.br/",
+    "categoria": "Não encontrado",
+    "status_contato": "pendente"
+  },
+  {
+    "nome": "MIRANDA SILVA ADVOGADOS ASSOCIADOS",
+    "telefone": "\n(61) 3367-4742",
+    "endereco": "\nSHIS CL QI 26, BLOCO B/E SALAS 212-215 - Lago Sul, Brasília - DF, 71670-510",
+    "site": "http://www.mirandasilva.adv.br/",
+    "categoria": "Não encontrado",
+    "status_contato": "pendente"
+  },
+  {
+    "nome": "Dantas Oliveira Advocacia",
+    "telefone": "\n(61) 99612-4498",
+    "endereco": "\nSHCNW SQNW BL H LOJA 08 - Noroeste, Brasília - DF, 70686-640",
+    "site": "https://dantasoliveira.adv.br/",
+    "categoria": "Não encontrado",
+    "status_contato": "pendente"
+  },
+  {
+    "nome": "JC Conrado Advocacia",
+    "telefone": "\n(61) 98357-6570",
+    "endereco": "\nAv. Comercial, 1901 - sala 201 - Centro, Brasília - DF, 71691-083",
+    "site": "https://jcconrado.adv.br/",
+    "categoria": "Não encontrado",
+    "status_contato": "pendente"
+  },
+  {
+    "nome": "Braga Lincoln Advogados",
+    "telefone": "Telefone não encontrado",
+    "endereco": "\nSt. de Habitações Individuais Sul QL 24 Conjunto 09 Casa 20 - Lago Sul, Brasília - DF, 71665-095",
+    "site": "https://bragalincoln.com.br/",
+    "categoria": "Não encontrado",
+    "status_contato": "pendente"
+  },
+  {
+    "nome": "MACEDO ADVOCACIA EMPRESARIAL",
+    "telefone": "\n(61) 3543-0879",
+    "endereco": "\nSH Jardim Botânico Condomínio Solar de Brasília Q 3 QD 3, BL A, Lote 8, sl 219 - Jardim Botânico, Brasília - DF, 71680-349",
+    "site": "http://www.macedoadvocaciaempresarial.com.br/",
+    "categoria": "Não encontrado",
+    "status_contato": "pendente"
+  },
+  {
+    "nome": "Aila Petch Advocacia e Consultoria Jurídica",
+    "telefone": "\n(61) 98237-6530",
+    "endereco": "\nSHM quadra QC 03 rua G Nº 44 jardim botânico, Jardins Mangueiral, Brasília - DF, 71687-276",
+    "site": "https://www.sociedadepetch.com.br/",
+    "categoria": "Não encontrado",
+    "status_contato": "pendente"
+  },
+  {
+    "nome": "Tramontini Advocacia",
+    "telefone": "\n(61) 3223-8602",
+    "endereco": "\nSHIS QI 26 Chácara 09 - Lago Sul, Brasília - DF, 71670-720",
+    "site": "http://www.tramontiniadvocacia.com.br/",
+    "categoria": "Não encontrado",
+    "status_contato": "pendente"
+  },
+  {
+    "nome": "Cunha & Fonseca Advogados",
+    "telefone": "Telefone não encontrado",
+    "endereco": "\nCondomínio Boa vista - Smdb Conjunto 26, 8 - Casa G - Lago Sul, Brasília - DF, 71680-260",
+    "site": "https://cunhafonseca.adv.br/",
+    "categoria": "Não encontrado",
+    "status_contato": "pendente"
+  },
+  {
+    "nome": "Meira Morais Advogados",
+    "telefone": "\n(61) 3248-3696",
+    "endereco": "\nSt. de Habitações Individuais Sul QI 25 Casa 07 - Lago Sul, Brasília - DF, 71660-270",
+    "site": "http://meiramorais.adv.br/",
+    "categoria": "Não encontrado",
+    "status_contato": "pendente"
+  },
+  {
+    "nome": "Oliveira Advogados e Associados",
+    "telefone": "\n(61) 98482-4941",
+    "endereco": "\nsetor tradicional Q 34 Av. independência sala 03 - São Sebastião, Brasília - DF, 73330-002",
+    "site": "https://oliveirapreviadvogados.com.br/",
+    "categoria": "Não encontrado",
+    "status_contato": "pendente"
+  },
+  {
+    "nome": "ADVOCACIA ACOSORIO",
+    "telefone": "\n(61) 99981-5519",
+    "endereco": "\nSt. de Mansões Dom Bosco Conj. 26 Casa 01 - Lago Sul, Brasília - DF, 71680-260",
+    "site": "http://www.acosorio.adv.br/",
+    "categoria": "Não encontrado",
+    "status_contato": "pendente"
+  },
+  {
+    "nome": "Fiuza e Advogados",
+    "telefone": "\n(61) 98452-1545",
+    "endereco": "\nshis Qi 21 conjunto 11 c 01, Brasília - DF, 71655-310",
+    "site": "http://fiuzaadvogados.com/",
+    "categoria": "Não encontrado",
+    "status_contato": "pendente"
+  },
+  {
+    "nome": "Angelo Martins Narcizo Advocacia Imobiliária",
+    "telefone": "\n(61) 99661-7995",
+    "endereco": "\nSHJB - Av. Jardim Botânico - Jardim Botânico, Brasília - DF, 71683-180",
+    "site": "http://www.amnadv.com.br/",
+    "categoria": "Não encontrado",
+    "status_contato": "pendente"
+  },
+  {
+    "nome": "Carlos, Mota e Alves Advocacia - Escritório Lago Sul",
+    "telefone": "\n(61) 3551-9155",
+    "endereco": "\nSt. de Habitações Individuais Sul QI 19 Casa 19 - Lago Sul, Brasília - DF, 71655-040",
+    "site": "https://atendimentoimediato.wixsite.com/advocacia-principal",
+    "categoria": "Não encontrado",
+    "status_contato": "pendente"
+  },
+  {
+    "nome": "Francisco Camargo Advogados e Associados",
+    "telefone": "\n(61) 3328-4332",
+    "endereco": "\nSRTVN Quadra 701 Centro Empresarial Norte Bloco B, sala 523-525 SRTVN - Asa Norte, Brasília - DF, 70719-903",
+    "site": "http://www.franciscocamargo.adv.br/",
+    "categoria": "Não encontrado",
+    "status_contato": "pendente"
+  },
+  {
+    "nome": "Costa Couto Advogados Associados",
+    "telefone": "\n(61) 3242-9620",
+    "endereco": "\nSt. de Habitações Individuais Sul QI 21 Set 11, House 1 - Lago Sul, Brasília - DF, 71655-310",
+    "site": "http://www.costacouto.com.br/",
+    "categoria": "Não encontrado",
+    "status_contato": "pendente"
+  },
+  {
+    "nome": "Dr. Vinicius Almeida - Advogado",
+    "telefone": "\n(61) 99638-9190",
+    "endereco": "\nEtapa 1, Condomínio San Diego, 209 - Rua 1 - Jardim Botânico, Brasília - DF, 71680-362",
+    "site": "https://www.instagram.com/dr.viniciusalmeidaadvogado/",
+    "categoria": "Não encontrado",
+    "status_contato": "pendente"
+  },
+  {
+    "nome": "Severo Advocacia",
+    "telefone": "\n(61) 3257-6685",
+    "endereco": "\nSt. de Habitações Individuais Sul QI 25 - Lago Sul, Brasília - DF, 71660-290",
+    "site": "https://www.gustavoseveroadvocacia.com.br/",
+    "categoria": "Não encontrado",
+    "status_contato": "pendente"
+  },
+  {
+    "nome": "Advocacia Fontes",
+    "telefone": "\n(61) 3323-1646",
+    "endereco": "\nSt. de Habitações Individuais Sul QI 21 casa 10 - Lago Sul, Brasília - DF, 70340-906",
+    "site": "https://www.advocaciafontes.com.br/",
+    "categoria": "Não encontrado",
+    "status_contato": "pendente"
+  },
+  {
+    "nome": "Martins Cardozo Advogados Associados",
+    "telefone": "\n(61) 3554-6323",
+    "endereco": "\nSt. de Habitações Individuais Sul QL 22 Conjunto 5 Casa 1 - Lago Sul, Brasília - DF, 71650-255",
+    "site": "http://www.martinscardozo.com.br/",
+    "categoria": "Não encontrado",
+    "status_contato": "pendente"
+  },
+  {
+    "nome": "Advogado Brasília | Paiva Lôbo Advogados",
+    "telefone": "\n(61) 3963-6900",
+    "endereco": "\nSt. de Habitações Individuais Sul QI 25 - Lago Sul, Brasília - DF, 71660-735",
+    "site": "https://paivalobo.com.br/",
+    "categoria": "Não encontrado",
+    "status_contato": "pendente"
+  },
+  {
+    "nome": "Advocacia para Endividados | Dr. Caio Graco",
+    "telefone": "\n(53) 99120-5781",
+    "endereco": "\nSH Estrada do Sol Q G Lote 26 - Jardim Botânico, Brasília - DF, 71680-350",
+    "site": "https://www.advocaciaparaendividados.com.br/?utm_source=google&utm_medium=wix_google_business_profile&utm_campaign=16498187200569622533",
+    "categoria": "Não encontrado",
+    "status_contato": "pendente"
+  },
+  {
+    "nome": "Dutra e Associados Advocacia",
+    "telefone": "\n(61) 3366-6003",
+    "endereco": "\nSt. de Habitações Individuais Sul QI 20 - Lago Sul, Brasília - DF, 71650-115",
+    "site": "https://www.dutraeassociados.adv.br/",
+    "categoria": "Não encontrado",
+    "status_contato": "pendente"
+  },
+  {
+    "nome": "Podval advogados",
+    "telefone": "\n(61) 3222-7577",
+    "endereco": "\nSt. de Habitações Individuais Sul QL 24 Casa 1 - Lago Sul, Brasília - DF, 71665-015",
+    "site": "https://podval.adv.br/",
+    "categoria": "Não encontrado",
+    "status_contato": "pendente"
+  }
+]

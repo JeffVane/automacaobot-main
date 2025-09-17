@@ -1,0 +1,17 @@
+[
+  {
+    "sender": "sent",
+    "text": "Template 'inicio_conversa_bloco244' enviado para Bem viver clínica multi.",
+    "timestamp": 1756990752
+  },
+  {
+    "sender": "received",
+    "text": "‎clínica bem viver multi agradece seu contato. Como podemos ajudar?",
+    "timestamp": 1756990764
+  },
+  {
+    "sender": "received",
+    "text": "Resposta do botão: Não (ID: nao_atendente)",
+    "timestamp": 1756993230
+  }
+]

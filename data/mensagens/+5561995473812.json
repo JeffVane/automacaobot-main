@@ -1,0 +1,22 @@
+[
+  {
+    "sender": "sent",
+    "text": "Template 'inicio_conversa_bloco244' enviado para Centro Clínico Meireles Fisioterapia | Pilates | Massagem | Psicologia.",
+    "timestamp": 1756990753
+  },
+  {
+    "sender": "received",
+    "text": "Resposta do botão: Não tenho interesse (ID: Não tenho interesse)",
+    "timestamp": 1756991275
+  },
+  {
+    "sender": "received",
+    "text": "Resposta do botão: 📬 Enviar (ID: opt_in_newsletter)",
+    "timestamp": 1756991286
+  },
+  {
+    "sender": "sent",
+    "text": "Perfeito! ✅ Vou te enviar conteúdos curtos e úteis de vez em quando. Se quiser parar a qualquer momento, é só me avisar. 😉",
+    "timestamp": 1756991287
+  }
+]

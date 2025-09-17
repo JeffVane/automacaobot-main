@@ -1,0 +1,852 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leads Pendentes de Contato</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #007bff;
+            --accent-color: #007bff;
+            --bg-color: #f8f9fa;
+            --card-bg-color: #ffffff;
+            --text-color: #212529;
+            --text-color-secondary: #6c757d;
+            --border-color: #dee2e6;
+            --input-bg-color: #ffffff;
+            --icon-color: #6c757d;
+            --success-color: #28a745;
+            --warning-color: #ffc107;
+            --danger-color: #dc3545;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.4;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        h1 {
+            color: var(--text-color);
+            font-size: 2rem;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        h1 i {
+            color: var(--primary-color);
+        }
+
+        .subtitle {
+            color: var(--text-color-secondary);
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+        }
+
+        .leads-list-container {
+            margin-top: 10px;
+            display: grid;
+            gap: 6px;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            max-height: 75vh;
+            overflow-y: auto;
+            overflow-x: hidden;
+            padding: 4px;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            background-color: var(--bg-color);
+            align-items: stretch;
+            grid-auto-rows: 1fr;
+            box-sizing: border-box;
+        }
+
+        .leads-list-container::after {
+            content: "";
+            display: block;
+            height: 8px;
+            grid-column: 1 / -1;
+        }
+
+        .leads-list-container::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .leads-list-container::-webkit-scrollbar-track {
+            background: var(--bg-color);
+            border-radius: 4px;
+        }
+
+        .leads-list-container::-webkit-scrollbar-thumb {
+            background: var(--primary-color);
+            border-radius: 4px;
+            opacity: 0.7;
+        }
+
+        .leads-list-container::-webkit-scrollbar-thumb:hover {
+            background: #0056b3;
+        }
+
+        .lead-card {
+            background-color: var(--card-bg-color);
+            border-radius: 3px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+            padding: 8px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+            border-left: 2px solid var(--primary-color);
+            height: 140px;
+            word-wrap: break-word;
+            overflow: hidden;
+            box-sizing: border-box;
+            position: relative;
+            z-index: 1;
+        }
+
+        .lead-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.12);
+        }
+
+        .lead-card-content {
+            flex-grow: 1;
+            overflow-y: auto;
+            overflow-x: hidden;
+            margin-bottom: 8px;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+        }
+
+        .lead-card-content::-webkit-scrollbar {
+            display: none;
+        }
+
+        .lead-card h3 {
+            margin-top: 0;
+            margin-bottom: 4px;
+            color: var(--text-color);
+            font-size: 0.75em;
+            display: flex;
+            align-items: flex-start;
+            line-height: 1.1;
+            word-wrap: break-word;
+            word-break: break-word;
+            overflow-wrap: break-word;
+            hyphens: auto;
+            font-weight: 600;
+        }
+
+        .lead-card h3 i {
+            margin-right: 3px;
+            color: var(--primary-color);
+            flex-shrink: 0;
+            margin-top: 1px;
+            font-size: 0.9em;
+        }
+
+        .lead-card p {
+            margin-bottom: 3px;
+            color: var(--text-color-secondary);
+            font-size: 0.6em;
+            display: flex;
+            align-items: flex-start;
+            line-height: 1.2;
+            word-wrap: break-word;
+            word-break: break-word;
+            overflow-wrap: break-word;
+        }
+
+        .lead-card p i {
+            margin-right: 3px;
+            color: var(--icon-color);
+            flex-shrink: 0;
+            width: 10px;
+            text-align: center;
+            font-size: 0.85em;
+        }
+
+        .lead-card .actions {
+            margin-top: 6px;
+            display: flex;
+            gap: 3px;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .lead-card .action-btn {
+            background-color: var(--accent-color);
+            color: #fff;
+            border: none;
+            padding: 4px 6px;
+            border-radius: 2px;
+            cursor: pointer;
+            font-size: 0.58em;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background-color 0.2s ease-in-out;
+            font-weight: 500;
+            white-space: nowrap;
+        }
+
+        .lead-card .action-btn:hover {
+            background-color: #0056b3;
+        }
+
+        .lead-card .action-btn i {
+            margin-right: 2px;
+            font-size: 0.9em;
+        }
+
+        .lead-card .action-btn.whatsapp {
+            background-color: #25D366;
+        }
+
+        .lead-card .action-btn.whatsapp:hover {
+            background-color: #1DA851;
+        }
+
+        .lead-card .action-btn.view-all {
+            background-color: #6c757d;
+        }
+
+        .lead-card .action-btn.view-all:hover {
+            background-color: #5a6268;
+        }
+
+        .no-leads-message {
+            text-align: center;
+            color: var(--text-color-secondary);
+            font-style: italic;
+            margin-top: 20px;
+            font-size: 0.9em;
+            grid-column: 1 / -1;
+            padding: 40px 20px;
+        }
+
+        .filter-controls {
+            margin-bottom: 10px;
+            display: flex;
+            gap: 6px;
+            align-items: center;
+        }
+
+        .filter-controls input[type="text"] {
+            flex-grow: 1;
+            padding: 5px 8px;
+            border: 1px solid var(--border-color);
+            border-radius: 3px;
+            background-color: var(--input-bg-color);
+            color: var(--text-color);
+            font-size: 0.85em;
+        }
+
+        .filter-controls .refresh-btn {
+            background-color: var(--primary-color);
+            color: #fff;
+            border: none;
+            padding: 5px 8px;
+            border-radius: 3px;
+            cursor: pointer;
+            font-size: 0.85em;
+            display: flex;
+            align-items: center;
+            gap: 3px;
+            transition: background-color 0.2s ease-in-out;
+        }
+
+        .filter-controls .refresh-btn:hover {
+            background-color: #0056b3;
+        }
+
+        .badge {
+            background-color: #ff4500;
+            color: white;
+            padding: 1px 5px;
+            border-radius: 50%;
+            font-size: 0.65em;
+            margin-left: 5px;
+            vertical-align: middle;
+            display: inline-block;
+        }
+
+        .bulk-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            align-items: center;
+            margin-bottom: 10px;
+            padding: 8px;
+            background-color: #f9f9f9;
+            border-radius: 4px;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+            border: 1px solid #eee;
+        }
+
+        .bulk-actions label {
+            display: flex;
+            align-items: center;
+            font-weight: bold;
+            color: #333;
+            white-space: nowrap;
+            font-size: 0.8em;
+        }
+
+        .bulk-actions input[type="checkbox"] {
+            margin-right: 4px;
+            width: 14px;
+            height: 14px;
+            accent-color: #007bff;
+            cursor: pointer;
+        }
+
+        .bulk-actions .template-select {
+            flex-grow: 1;
+            padding: 5px 8px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            background-color: #fff;
+            font-size: 0.8em;
+            color: #555;
+            appearance: none;
+            background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23007bff%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13%205.1L146.2%20209.7%2018.7%2074.5a17.6%2017.6%200%200%200-24.6c-6.7-6.7-17.7-6.7-24.5%200L.7%2087.6a17.6%2017.6%200%200%200%200%2024.5l133.7%20133.7a17.6%2017.6%200%200%200%2024.5%200l133.7-133.7a17.6%2017.6%200%200%200%200-24.5c-6.8-6.7-17.7-6.7-24.5%200z%22%2F%3E%3C%2Fsvg%3E');
+            background-repeat: no-repeat;
+            background-position: right 8px center;
+            background-size: 7px;
+            cursor: pointer;
+            max-width: 230px;
+        }
+
+        .action-btn {
+            padding: 5px 10px;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+            font-size: 0.75em;
+            font-weight: bold;
+            transition: background-color 0.2s ease, transform 0.1s ease;
+            display: flex;
+            align-items: center;
+            gap: 3px;
+            white-space: nowrap;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+        }
+
+        .action-btn i {
+            font-size: 0.85em;
+        }
+
+        .send-bulk-template-btn {
+            background-color: var(--success-color);
+            color: white;
+        }
+
+        .send-bulk-template-btn:hover {
+            background-color: #218838;
+            transform: translateY(-1px);
+        }
+
+        .send-bulk-template-btn:active {
+            transform: translateY(0);
+            box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .mark-bulk-contacted-btn {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .mark-bulk-contacted-btn:hover {
+            background-color: #0056b3;
+            transform: translateY(-1px);
+        }
+
+        .mark-bulk-contacted-btn:active {
+            transform: translateY(0);
+            box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .action-btn:disabled {
+            background-color: #cccccc;
+            cursor: not-allowed;
+            opacity: 0.7;
+            box-shadow: none;
+            transform: none;
+        }
+
+        .bulk-checkbox-container {
+            display: flex;
+            align-items: center;
+            margin-bottom: 6px;
+        }
+
+        .bulk-checkbox-container label {
+            font-size: 0.75em;
+            color: #666;
+            margin-left: 3px;
+        }
+
+        .bulk-checkbox-container input[type="checkbox"] {
+            width: 12px;
+            height: 12px;
+            accent-color: #007bff;
+        }
+
+        .stats-bar {
+            background: linear-gradient(135deg, var(--primary-color), #0056b3);
+            color: white;
+            padding: 10px 15px;
+            border-radius: 6px;
+            margin-bottom: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.85em;
+        }
+
+        .stats-bar .stat-item {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .stats-bar .stat-item i {
+            font-size: 1.1em;
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+
+            .leads-list-container {
+                grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+                max-height: 65vh;
+                padding: 3px;
+                gap: 4px;
+                grid-auto-rows: 1fr;
+            }
+
+            .leads-list-container::after {
+                height: 6px;
+            }
+
+            .lead-card {
+                padding: 6px;
+                height: 130px;
+            }
+
+            .lead-card h3 {
+                font-size: 0.7em;
+                margin-bottom: 3px;
+            }
+
+            .lead-card p {
+                font-size: 0.56em;
+                margin-bottom: 2px;
+            }
+
+            .lead-card .actions {
+                margin-top: 4px;
+                gap: 2px;
+            }
+
+            .lead-card .action-btn {
+                padding: 3px 5px;
+                font-size: 0.54em;
+            }
+
+            .bulk-actions {
+                flex-direction: column;
+                align-items: stretch;
+                padding: 6px;
+                gap: 4px;
+            }
+
+            .bulk-actions .template-select,
+            .action-btn {
+                width: 100%;
+                max-width: none;
+                padding: 6px 8px;
+                font-size: 0.75em;
+            }
+
+            .filter-controls input[type="text"],
+            .filter-controls .refresh-btn {
+                padding: 4px 6px;
+                font-size: 0.8em;
+            }
+
+            .stats-bar {
+                flex-direction: column;
+                gap: 8px;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .leads-list-container {
+                grid-template-columns: 1fr;
+                max-height: 60vh;
+                padding: 2px;
+                gap: 3px;
+                grid-auto-rows: 1fr;
+            }
+
+            .leads-list-container::after {
+                height: 4px;
+            }
+
+            .lead-card {
+                height: 120px;
+                padding: 5px;
+            }
+
+            .lead-card h3 {
+                font-size: 0.68em;
+                margin-bottom: 2px;
+            }
+
+            .lead-card p {
+                font-size: 0.52em;
+                margin-bottom: 1px;
+            }
+
+            .lead-card p i {
+                width: 8px;
+            }
+
+            .lead-card .actions {
+                margin-top: 3px;
+                gap: 1px;
+            }
+
+            .lead-card .action-btn {
+                padding: 2px 4px;
+                font-size: 0.5em;
+                border-radius: 2px;
+            }
+
+            .lead-card .action-btn i {
+                margin-right: 1px;
+                font-size: 0.9em;
+            }
+
+            .bulk-actions {
+                padding: 4px;
+                gap: 3px;
+            }
+
+            .filter-controls {
+                margin-bottom: 6px;
+                gap: 4px;
+            }
+
+            .filter-controls input[type="text"],
+            .filter-controls .refresh-btn {
+                padding: 3px 5px;
+                font-size: 0.75em;
+            }
+
+            h1 {
+                font-size: 1.5rem;
+            }
+        }
+
+        /* Animações */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .lead-card {
+            animation: fadeIn 0.3s ease-out;
+        }
+
+        /* Toast notifications */
+        .toast {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: var(--success-color);
+            color: white;
+            padding: 12px 20px;
+            border-radius: 5px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            z-index: 1000;
+            transform: translateX(400px);
+            transition: transform 0.3s ease;
+        }
+
+        .toast.show {
+            transform: translateX(0);
+        }
+
+        .toast.error {
+            background: var(--danger-color);
+        }
+
+        .toast.warning {
+            background: var(--warning-color);
+            color: var(--text-color);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>
+            <i class="fas fa-hourglass-half"></i>
+            Leads Pendentes de Contato
+            <span class="badge" id="pending-leads-count">0</span>
+        </h1>
+
+        <p class="subtitle">Leads encontrados com número de telefone, aguardando seu primeiro contato via WhatsApp.</p>
+
+        <div class="stats-bar">
+            <div class="stat-item">
+                <i class="fas fa-users"></i>
+                <span>Total: <strong id="total-leads">0</strong></span>
+            </div>
+            <div class="stat-item">
+                <i class="fas fa-check-circle"></i>
+                <span>Selecionados: <strong id="selected-count">0</strong></span>
+            </div>
+            <div class="stat-item">
+                <i class="fas fa-clock"></i>
+                <span>Última atualização: <strong id="last-update">Nunca</strong></span>
+            </div>
+        </div>
+
+        <div class="filter-controls">
+            <input type="text" id="filter-pending-leads" placeholder="Filtrar por nome, endereço, telefone..." onkeyup="filterLeads(this.value)">
+            <button class="refresh-btn" onclick="loadPendingLeads()">
+                <i class="fas fa-sync-alt"></i> Atualizar
+            </button>
+        </div>
+
+        <div class="bulk-actions">
+            <label for="master-checkbox">
+                <input type="checkbox" id="master-checkbox" onchange="toggleSelectAll(this)">
+                Selecionar Todos
+            </label>
+
+            <select id="bulk-template-select" class="template-select" onchange="updateBulkTemplateSelection(this.value)">
+                <option value="">Selecione um Template para Envio em Massa</option>
+                <option value="template1">📋 Template Apresentação</option>
+                <option value="template2">💼 Template Comercial</option>
+                <option value="template3">📞 Template Agendamento</option>
+            </select>
+
+            <button class="action-btn send-bulk-template-btn" onclick="sendBulkWhatsAppTemplates()">
+                <i class="fas fa-paper-plane"></i> Enviar Templates
+            </button>
+
+            <button class="action-btn mark-bulk-contacted-btn" onclick="markSelectedAsContacted()">
+                <i class="fas fa-check-circle"></i> Marcar como Contatados
+            </button>
+        </div>
+
+        <div id="pending-leads-list" class="leads-list-container">
+            <p class="no-leads-message" id="no-pending-leads-message">
+                <i class="fas fa-search"></i><br>
+                Nenhum lead pendente no momento.<br>
+                <small>Clique em "Atualizar" para buscar novos leads.</small>
+            </p>
+        </div>
+    </div>
+
+    <!-- Toast container -->
+    <div id="toast-container"></div>
+
+    <script>
+        // Dados de exemplo dos leads
+        const sampleLeads = [
+            {
+                id: 1,
+                name: 'João Silva Advocacia',
+                phone: '(11) 99999-1234',
+                email: 'joao@silvadvocacia.com.br',
+                address: 'Rua das Flores, 123 - Centro - São Paulo/SP',
+                specialty: 'Direito Civil',
+                website: 'www.silvadvocacia.com.br',
+                selected: false
+            },
+            {
+                id: 2,
+                name: 'Maria Santos & Associados',
+                phone: '(21) 98888-5678',
+                email: 'contato@mariasantos.adv.br',
+                address: 'Av. Copacabana, 456 - Copacabana - Rio de Janeiro/RJ',
+                specialty: 'Direito Trabalhista',
+                website: 'www.mariasantos.adv.br',
+                selected: false
+            },
+            {
+                id: 3,
+                name: 'Escritório Pereira & Lima',
+                phone: '(31) 97777-9012',
+                email: 'escritorio@pereiralima.com',
+                address: 'Rua da Liberdade, 789 - Savassi - Belo Horizonte/MG',
+                specialty: 'Direito Criminal',
+                website: 'www.pereiralima.com',
+                selected: false
+            },
+            {
+                id: 4,
+                name: 'Advocacia Oliveira',
+                phone: '(41) 96666-3456',
+                email: 'oliveira@advocacia.com.br',
+                address: 'Praça Central, 101 - Centro - Curitiba/PR',
+                specialty: 'Direito Empresarial',
+                website: 'www.oliveira-adv.com.br',
+                selected: false
+            },
+            {
+                id: 5,
+                name: 'Costa & Rodrigues Advogados',
+                phone: '(51) 95555-7890',
+                email: 'contato@costarodrigues.adv',
+                address: 'Rua dos Advogados, 202 - Moinhos de Vento - Porto Alegre/RS',
+                specialty: 'Direito Tributário',
+                website: 'www.costarodrigues.adv.br',
+                selected: false
+            },
+            {
+                id: 6,
+                name: 'Fernandes Advocacia Especializada',
+                phone: '(85) 94444-2468',
+                email: 'fernandes@advocacia.ce.gov.br',
+                address: 'Av. Beira Mar, 303 - Meireles - Fortaleza/CE',
+                specialty: 'Direito Previdenciário',
+                website: 'www.fernandesadv.com.br',
+                selected: false
+            },
+            {
+                id: 7,
+                name: 'Escritório Jurídico Almeida',
+                phone: '(71) 93333-1357',
+                email: 'almeida@juridico.com.br',
+                address: 'Rua do Pelourinho, 404 - Pelourinho - Salvador/BA',
+                specialty: 'Direito de Família',
+                website: 'www.almeidajuridico.com.br',
+                selected: false
+            },
+            {
+                id: 8,
+                name: 'Advocacia Digital Moderna',
+                phone: '(61) 92222-0987',
+                email: 'contato@digitalmoderna.adv.br',
+                address: 'SQN 405, Bloco A - Asa Norte - Brasília/DF',
+                specialty: 'Direito Digital',
+                website: 'www.digitalmoderna.adv.br',
+                selected: false
+            }
+        ];
+
+        let currentLeads = [...sampleLeads];
+        let filteredLeads = [...sampleLeads];
+
+        // Função para mostrar toast
+        function showToast(message, type = 'success') {
+            const toast = document.createElement('div');
+            toast.className = `toast ${type}`;
+            toast.innerHTML = `<i class="fas fa-${type === 'success' ? 'check' : type === 'error' ? 'times' : 'exclamation'}-circle"></i> ${message}`;
+
+            document.getElementById('toast-container').appendChild(toast);
+
+            setTimeout(() => toast.classList.add('show'), 100);
+            setTimeout(() => {
+                toast.classList.remove('show');
+                setTimeout(() => toast.remove(), 300);
+            }, 3000);
+        }
+
+        // Função para carregar leads pendentes
+        function loadPendingLeads() {
+            showToast('Atualizando leads...', 'warning');
+
+            // Simula carregamento
+            setTimeout(() => {
+                currentLeads = [...sampleLeads];
+                filteredLeads = [...sampleLeads];
+                renderLeads();
+                updateStats();
+                document.getElementById('last-update').textContent = new Date().toLocaleTimeString();
+                showToast(`${currentLeads.length} leads carregados com sucesso!`);
+            }, 1000);
+        }
+
+        // Função para renderizar leads
+        function renderLeads() {
+            const container = document.getElementById('pending-leads-list');
+            const noLeadsMessage = document.getElementById('no-pending-leads-message');
+
+            if (filteredLeads.length === 0) {
+                container.innerHTML = '';
+                container.appendChild(noLeadsMessage);
+                return;
+            }
+
+            container.innerHTML = '';
+
+            filteredLeads.forEach((lead, index) => {
+                const card = document.createElement('div');
+                card.className = 'lead-card';
+                card.style.animationDelay = `${index * 0.05}s`;
+
+                card.innerHTML = `
+                    <div class="lead-card-content">
+                        <h3><i class="fas fa-building"></i> ${lead.name}</h3>
+                        <p><i class="fas fa-phone"></i> ${lead.phone}</p>
+                        <p><i class="fas fa-envelope"></i> ${lead.email}</p>
+                        <p><i class="fas fa-map-marker-alt"></i> ${lead.address}</p>
+                        <p><i class="fas fa-gavel"></i> ${lead.specialty}</p>
+                        <p><i class="fas fa-globe"></i> ${lead.website}</p>
+                    </div>
+
+                    <div class="bulk-checkbox-container">
+                        <input type="checkbox" id="lead-${lead.id}" ${lead.selected ? 'checked' : ''} onchange="toggleLeadSelection(${lead.id}, this.checked)">
+                        <label for="lead-${lead.id}">Selecionar para ação em massa</label>
+                    </div>
+
+                    <div class="actions">
+                        <button class="action-btn whatsapp" onclick="sendWhatsApp('${lead.phone}', '${lead.name}')">
+                            <i class="fab fa-whatsapp"></i> WhatsApp
+                        </button>
+                        <button class="action-btn" onclick="markAsContacted(${lead.id})">
+                            <i class="fas fa-check"></i> Contatado
+                        </button>
+                        <select onchange="sendTemplate(${lead.id}, this.value)" style="font-size: 0.55em; padding: 2px;">
+                            <option value="">Template</option>
+                            <option value="template1">Apresentação</option>
+                            <option value="template2">Comercial</option>
+                            <option value="template3">Agendamento</option>
+                        </select>
+                    </div>
+                `;
+
+                container.appendChild(card);
+            });
+        }
+
+        // Função para filtrar leads
+        function filterLeads(searchTerm) {
+            const term = searchTerm.toLowerCase

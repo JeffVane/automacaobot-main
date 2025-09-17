@@ -1,0 +1,876 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>WhatsApp Web Clone</title>
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            whatsapp: {
+              'dark-green': '#075e54',
+              'light-green': '#128c7e',
+              'teal-green': '#25d366',
+              'bubble-sent': '#dcf8c6',
+              'bubble-received': '#ffffff',
+              'input-bg': '#f0f2f5',
+              'sidebar-bg': '#eae6df',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Fonte + ícones -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+
+  <style>
+    html, body { height: 100%; }
+    body { font-family: 'Inter', sans-serif; margin: 0; padding: 0; overflow: hidden; }
+
+    /* Altura real de viewport controlada por JS (corrige teclado/rotação) */
+    .app-vh { height: var(--vh, 100dvh); }
+
+    /* Permite que filhos flex tenham scroll interno */
+    .min-h-0 { min-height: 0 !important; }
+
+    /* Respeita safe area (iOS) na parte de baixo */
+    .safe-bottom { padding-bottom: max(env(safe-area-inset-bottom), 0px); }
+
+    /* ===== BOLHAS ===== */
+    .message-bubble.sent { align-self: flex-end; background-color: #dcf8c6; color: #000; }
+    .message-bubble.received { align-self: flex-start; background-color: #ffffff; color: #000; }
+    .message-bubble { max-width: 80%; padding: 0.5rem 0.75rem; border-radius: 0.5rem; margin-bottom: 0.5rem; box-shadow: 0 1px 0.5px rgba(0,0,0,0.13); }
+    .timestamp { font-size: 0.65rem; color: #929292; margin-left: 0.5rem; align-self: flex-end; }
+
+    /* Fundo do chat */
+    #chat-messages-display {
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+      padding: 1rem 1rem 0 1rem;
+      overflow-y: auto;
+      background-image: url('https://placehold.co/1920x1080/E5DDD5/E5DDD5?text=+');
+      background-size: cover;
+      -webkit-overflow-scrolling: touch;
+      overscroll-behavior: contain;
+      padding-bottom: var(--input-height, 80px);
+    }
+
+    /* Input fixo */
+    .chat-input-area {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 50;
+      background: #f0f2f5;
+      border-top: 1px solid #e5e7eb;
+      padding: 0.75rem 1rem;
+      padding-bottom: max(0.75rem, env(safe-area-inset-bottom));
+    }
+
+    /* Lista de chats - CORRIGIDA */
+    .client-list {
+      display: flex;
+      flex-direction: column;
+      overflow-y: auto;
+      flex-grow: 1;
+      min-height: 0;
+      padding-bottom: 1rem;
+    }
+
+    .client-list li {
+      display: flex;
+      align-items: center;
+      padding: 0.75rem;
+      cursor: pointer;
+      border-bottom: 1px solid #e5e7eb;
+      transition: background 150ms ease-in-out;
+      flex-shrink: 0;
+    }
+
+    .client-list li:hover { background: #f3f4f6; }
+    .client-list li.active-chat { background: #e5e7eb; }
+
+    /* Sidebar */
+    .chat-sidebar {
+      overflow-y: auto;
+      position: relative;
+      flex: 1;
+      min-height: 0;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Modal */
+    .modal { display:none; position:fixed; z-index:100; left:0; top:0; width:100%; height:100%; overflow:auto; background:rgba(0,0,0,.4); justify-content:center; align-items:center; }
+    .modal-content { background:#fff; margin:auto; padding:20px; border-radius:8px; box-shadow:0 4px 6px rgba(0,0,0,.1); width:80%; max-width:400px; text-align:center; }
+
+    /* Esconde input quando não há chat selecionado no mobile */
+    .chat-input-hidden { display: none !important; }
+
+    /* Desktop adjustments */
+    @media (min-width: 1024px) {
+      .chat-input-area {
+        position: relative;
+        bottom: auto;
+        left: auto;
+        right: auto;
+        border-radius: 0 0 0.5rem 0;
+        z-index: auto;
+        margin-left: 0;
+      }
+
+      #chat-messages-display {
+        padding-bottom: 1rem;
+      }
+
+      #sidebar {
+        height: 100vh;
+        max-height: 100vh;
+      }
+
+      .chat-sidebar {
+        height: calc(100vh - 140px);
+      }
+    }
+
+    /* Mobile scroll fix - adicione dentro da tag <style> */
+@media (max-width: 1023px) {
+  .chat-sidebar {
+    height: calc(100vh - 200px); /* Ajuste baseado no header + search */
+    overflow-y: auto;
+  }
+
+  .client-list {
+    max-height: none; /* Remove limitação de altura no mobile */
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch; /* iOS smooth scroll */
+  }
+
+  #sidebar {
+    height: 100vh;
+    max-height: 100vh;
+    overflow: hidden; /* Impede scroll duplo */
+  }
+}
+</style>
+
+  <!-- Corrige --vh com a altura real quando teclado/rotação mudam -->
+  <script>
+    (function fixViewportHeight() {
+      function setVH() {
+        const h = window.visualViewport ? window.visualViewport.height : window.innerHeight;
+        document.documentElement.style.setProperty('--vh', h + 'px');
+      }
+      setVH();
+      if (window.visualViewport) {
+        window.visualViewport.addEventListener('resize', setVH);
+        window.visualViewport.addEventListener('scroll', setVH);
+      }
+      window.addEventListener('resize', setVH);
+    })();
+  </script>
+</head>
+
+<body class="bg-gray-200 antialiased font-sans">
+
+  <!-- Container principal -->
+  <div class="app-vh flex flex-col lg:flex-row min-h-0 antialiased text-gray-800">
+
+    <!-- Sidebar -->
+    <div id="sidebar"
+         class="flex flex-col w-full lg:w-96 flex-shrink-0 bg-whatsapp-sidebar-bg border-r border-gray-200
+                rounded-bl-lg rounded-tl-lg shadow-lg lg:block min-h-0">
+      <div class="flex items-center justify-between p-4 bg-whatsapp-dark-green text-white rounded-tl-lg">
+        <div class="flex items-center space-x-2">
+          <img src="https://placehold.co/40x40/075e54/ffffff?text=ME" alt="Minha foto de perfil" class="rounded-full">
+          <h2 class="text-xl font-semibold">Conversas</h2>
+        </div>
+      </div>
+
+      <div class="p-4 border-b border-gray-200">
+        <input type="text" placeholder="Procurar ou começar nova conversa"
+               class="w-full p-2 text-sm rounded-lg border border-gray-300 focus:outline-none focus:ring-1 focus:ring-whatsapp-light-green">
+      </div>
+
+      <div class="chat-sidebar flex flex-col flex-1 min-h-0">
+        <div class="p-4 font-semibold text-sm text-gray-500 uppercase">Conversas</div>
+        <ul id="chat-list-whatsapp" class="client-list"></ul>
+        <div class="p-4 font-semibold text-sm text-gray-500 uppercase">Contatos</div>
+        <ul id="contact-list-whatsapp" class="client-list"></ul>
+      </div>
+    </div>
+
+    <!-- Chat -->
+    <div id="chat" class="hidden lg:flex flex-col relative w-full bg-gray-100 rounded-br-lg rounded-tr-lg min-h-0">
+      <!-- Header -->
+      <div id="chat-main-header"
+           class="flex items-center justify-between p-4 bg-white border-b border-gray-200 rounded-tr-lg shadow-sm flex-shrink-0">
+        <button id="back-button" class="lg:hidden mr-3 text-xl text-gray-600">
+          <i class="fas fa-arrow-left"></i>
+        </button>
+        <!-- Conteúdo do header é re-renderizado -->
+      </div>
+
+      <!-- Mensagens (único que rola no painel de chat) -->
+      <div id="chat-messages-display" class="flex-1 min-h-0 overflow-y-auto space-y-4"></div>
+
+      <!-- Input - no desktop fica aqui, no mobile fica fixed -->
+      <div id="chat-input-area"
+           class="chat-input-area flex items-center gap-3">
+        <input type="text" id="message-input"
+               class="flex-grow p-3 rounded-lg border-0 focus:outline-none focus:ring-2 focus:ring-whatsapp-light-green bg-white"
+               placeholder="Escreva uma mensagem...">
+        <button id="send-message-button"
+                class="p-3 rounded-full bg-whatsapp-light-green text-white hover:bg-whatsapp-dark-green transition duration-200 ease-in-out flex-shrink-0">
+          <i class="fas fa-paper-plane"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <div id="custom-modal" class="modal">
+    <div class="modal-content">
+      <p id="modal-message">Mensagem do modal.</p>
+      <div class="mt-4 space-x-2">
+        <button id="modal-ok-btn" class="bg-whatsapp-light-green text-white p-2 px-4 rounded-md">OK</button>
+        <button id="modal-cancel-btn" class="bg-gray-300 text-gray-800 p-2 px-4 rounded-md hidden">Cancelar</button>
+      </div>
+    </div>
+  </div>
+
+<script>
+    // ----------------- STATE -----------------
+    let whatsappChatData = {};
+    let currentWhatsappClient = null;
+
+    let lastScrollPosition = 0;
+    let isUserScrolling = false;
+    let scrollTimeout;
+    let updateInterval = 5000;
+    let missedUpdatesCount = 0;
+    let updateIntervalId = null;
+
+    // ----------------- HELPERS -----------------
+    function normalizePhoneNumberFrontend(phoneNumber) {
+      if (!phoneNumber) return null;
+      let digitsOnly = phoneNumber.replace(/\D/g, '');
+      if (!digitsOnly.startsWith('55')) {
+        if (digitsOnly.length === 10 || digitsOnly.length === 11) {
+          digitsOnly = '55' + digitsOnly;
+        } else {
+          return digitsOnly ? `+${digitsOnly}` : null;
+        }
+      }
+      if (digitsOnly.length === 12 && digitsOnly.startsWith('55') && digitsOnly[4] !== '9') {
+        digitsOnly = digitsOnly.substring(0, 4) + '9' + digitsOnly.substring(4);
+      }
+      return `+${digitsOnly}`;
+    }
+
+    function salvarPosicaoScroll() {
+      const chatContainer = document.getElementById('chat-messages-display');
+      if (chatContainer) lastScrollPosition = chatContainer.scrollTop;
+    }
+    function restaurarPosicaoScroll() {
+      const chatContainer = document.getElementById('chat-messages-display');
+      if (chatContainer && !isUserScrolling) chatContainer.scrollTop = lastScrollPosition;
+    }
+    function detectarScrollUsuario() {
+      const chatContainer = document.getElementById('chat-messages-display');
+      if (!chatContainer) return;
+      chatContainer.addEventListener('scroll', () => {
+        isUserScrolling = true;
+        clearTimeout(scrollTimeout);
+        scrollTimeout = setTimeout(() => { isUserScrolling = false; }, 1000);
+      });
+    }
+    function usuarioNoFinalDoChat() {
+      const chatContainer = document.getElementById('chat-messages-display');
+      if (!chatContainer) return false;
+      const { scrollTop, scrollHeight, clientHeight } = chatContainer;
+      return (scrollTop + clientHeight >= scrollHeight - 100);
+    }
+    function scrollParaFinal() {
+      const chatContainer = document.getElementById('chat-messages-display');
+      if (chatContainer) {
+        setTimeout(() => {
+          chatContainer.scrollTop = chatContainer.scrollHeight;
+        }, 50);
+      }
+    }
+
+    // NOVA FUNÇÃO: Ajusta o espaço do chat baseado na altura do input
+    function updateChatSpacing() {
+      const inputArea = document.getElementById('chat-input-area');
+      const chatContainer = document.getElementById('chat-messages-display');
+
+      if (!inputArea || !chatContainer) return;
+
+      // No mobile, calcula altura do input fixo
+      if (window.innerWidth < 1024) {
+        const inputHeight = inputArea.getBoundingClientRect().height;
+        const safeAreaBottom = parseInt(getComputedStyle(document.documentElement).getPropertyValue('env(safe-area-inset-bottom)')) || 0;
+        const totalHeight = inputHeight + safeAreaBottom + 16; // 16px de respiro
+
+        document.documentElement.style.setProperty('--input-height', totalHeight + 'px');
+
+        // Garante que o chat tenha altura correta
+        const headerHeight = document.getElementById('chat-main-header')?.getBoundingClientRect().height || 0;
+        const availableHeight = window.innerHeight - headerHeight - totalHeight;
+        chatContainer.style.maxHeight = availableHeight + 'px';
+      } else {
+        // No desktop, remove as customizações mobile
+        document.documentElement.style.removeProperty('--input-height');
+        chatContainer.style.removeProperty('max-height');
+      }
+    }
+
+    // Global (mobile)
+    function mostrarChat() {
+      if (window.innerWidth < 1024) {
+        document.getElementById("sidebar")?.classList.add("hidden");
+        document.getElementById("chat")?.classList.remove("hidden");
+        document.getElementById("chat-input-area")?.classList.remove("chat-input-hidden");
+
+        // Atualiza espaçamento após mostrar chat
+        setTimeout(updateChatSpacing, 50);
+        setTimeout(scrollParaFinal, 100);
+      }
+    }
+
+    function mostrarSidebar() {
+      if (window.innerWidth < 1024) {
+        document.getElementById("chat")?.classList.add("hidden");
+        document.getElementById("sidebar")?.classList.remove("hidden");
+        document.getElementById("chat-input-area")?.classList.add("chat-input-hidden");
+      }
+    }
+
+    // ----------------- RENDER SIDEBAR -----------------
+    function renderWhatsappSidebar() {
+      const chatListEl = document.getElementById('chat-list-whatsapp');
+      const contactListEl = document.getElementById('contact-list-whatsapp');
+      chatListEl.innerHTML = '';
+      contactListEl.innerHTML = '';
+
+      const chatsComMensagens = Object.entries(whatsappChatData)
+        .filter(([_, data]) => data.messages && data.messages.length > 0)
+        .sort((a, b) => {
+          const ultimaA = a[1].messages[a[1].messages.length - 1]?.timestamp || 0;
+          const ultimaB = b[1].messages[b[1].messages.length - 1]?.timestamp || 0;
+          return Number(ultimaB) - Number(ultimaA);
+        });
+
+      for (const [id, chat] of chatsComMensagens) {
+    const li = document.createElement('li');
+    li.dataset.clientId = id;
+    if (id === currentWhatsappClient) li.classList.add('active-chat');
+    li.onclick = () => selecionarWhatsappCliente(id);
+    li.innerHTML = `
+      <div class="client-avatar-chat">
+        <img src="${chat.avatar}" alt="Avatar ${chat.name}" class="rounded-full h-10 w-10">
+      </div>
+      <div class="chat-info flex-grow ml-3 w-0">
+        <h4 class="chat-name text-sm font-semibold">${chat.name}</h4>
+        <p class="last-message-snippet text-xs text-gray-500 overflow-hidden text-ellipsis whitespace-nowrap">${chat.lastMessageSnippet || ''}</p>
+      </div>
+      ${chat.unread > 0 ? `<span class="unread-badge ml-auto bg-whatsapp-teal-green text-white text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center">${chat.unread}</span>` : ''}
+      <span class="message-time text-xs text-gray-400 ml-2">${chat.lastMessageTime || ''}</span>
+    `;
+    chatListEl.appendChild(li);
+  }
+
+      for (const id in whatsappChatData) {
+        const contact = whatsappChatData[id];
+        if (!contact.messages || contact.messages.length === 0) {
+          const li = document.createElement('li');
+          li.dataset.clientId = id;
+          li.onclick = () => mostrarModal(`Clicou no contato: ${contact.name}`);
+          li.innerHTML = `
+            <div class="client-avatar-chat">
+              <img src="${contact.avatar}" alt="Avatar ${contact.name}" class="rounded-full h-10 w-10">
+            </div>
+            <div class="chat-info flex-grow ml-3">
+              <h4 class="chat-name text-sm font-semibold">${contact.name}</h4>
+              <p class="last-message-snippet text-xs text-gray-500 overflow-hidden text-ellipsis whitespace-nowrap">${contact.status || ''}</p>
+            </div>
+            <button class="delete-btn ml-auto text-gray-400 hover:text-red-500" onclick="event.stopPropagation(); excluirContato('${id}')">
+              <i class="fas fa-trash-alt"></i>
+            </button>
+          `;
+          contactListEl.appendChild(li);
+        }
+      }
+    }
+
+    // ----------------- LOAD MESSAGES -----------------
+    async function carregarMensagens(numero_original, shouldUpdateSidebar = true) {
+      const numero = normalizePhoneNumberFrontend(numero_original);
+      if (!numero) {
+        console.error(`[carregarMensagens] Número inválido: ${numero_original}`);
+        return false;
+      }
+      try {
+        const res = await fetch(`/api/mensagens?numero=${encodeURIComponent(numero)}`);
+        const mensagens = await res.json();
+
+        whatsappChatData[numero] = whatsappChatData[numero] || {
+          name: numero,
+          avatar: 'https://placehold.co/40x40/075e54/ffffff?text=WA',
+          lastMessageSnippet: '',
+          lastMessageTime: '',
+          status: 'online',
+          messages: [],
+          unread: 0
+        };
+
+        const mensagensAntigas = whatsappChatData[numero].messages || [];
+        const novaQtd = mensagens.length;
+        const antigaQtd = mensagensAntigas.length;
+
+        whatsappChatData[numero].messages = mensagens;
+
+        if (mensagens.length > 0) {
+          const ultima = mensagens[mensagens.length - 1];
+          whatsappChatData[numero].lastMessageSnippet = ultima.text;
+          whatsappChatData[numero].lastMessageTime = new Date(Number(ultima.timestamp) * 1000).toLocaleTimeString('pt-BR', {hour:'2-digit',minute:'2-digit'});
+
+          // função carregarMensagens
+          if (novaQtd > antigaQtd && numero !== currentWhatsappClient) {
+              const novasMensagens = mensagens.slice(antigaQtd);
+              const novasRecebidas = novasMensagens.filter(m => m.sender === 'received' && m.nova === true).length;
+              if (novasRecebidas > 0) {
+                  whatsappChatData[numero].unread = (whatsappChatData[numero].unread || 0) + novasRecebidas;
+              }
+          }
+        }
+
+        // CORREÇÃO: Só atualiza sidebar se explicitamente solicitado ou se houve mudanças
+        if (shouldUpdateSidebar && (novaQtd > antigaQtd || novaQtd !== antigaQtd)) {
+          renderWhatsappSidebar();
+        }
+
+        return novaQtd > antigaQtd;
+      } catch (e) {
+        console.error('Erro ao carregar mensagens:', e);
+        return false;
+      }
+    }
+
+    // ----------------- SELECT & RENDER CHAT -----------------
+    async function selecionarWhatsappCliente(clientId_original) {
+      const clientId = normalizePhoneNumberFrontend(clientId_original);
+      if (!clientId) {
+        console.error(`[selecionarWhatsappCliente] Número inválido: ${clientId_original}`);
+        return;
+      }
+
+      // Mobile: mostrar painel de chat
+      mostrarChat();
+
+      currentWhatsappClient = clientId;
+
+      // Marca ativo na lista
+      document.querySelectorAll('#chat-list-whatsapp li').forEach(li => li.classList.remove('active-chat'));
+      const selectedLi = document.querySelector(`#chat-list-whatsapp li[data-client-id="${clientId}"]`);
+      if (selectedLi) selectedLi.classList.add('active-chat');
+
+      // Garante mensagens - CORREÇÃO: não força update da sidebar aqui
+      if (!whatsappChatData[clientId] || !Array.isArray(whatsappChatData[clientId].messages) || whatsappChatData[clientId].messages.length === 0) {
+        await carregarMensagens(clientId, false);
+      }
+
+      const client = whatsappChatData[clientId] || {
+        name: clientId,
+        avatar: 'https://placehold.co/40x40/075e54/ffffff?text=WA',
+        status: 'online',
+        messages: []
+      };
+
+      // Header + botão voltar
+      const chatHeader = document.getElementById('chat-main-header');
+      chatHeader.innerHTML = `
+        <div class="flex items-center gap-3">
+          <button id="back-button" class="lg:hidden mr-1 text-xl text-gray-600">
+            <i class="fas fa-arrow-left"></i>
+          </button>
+          <div class="client-avatar-chat">
+            <img src="${client.avatar}" alt="Avatar ${client.name}" class="rounded-full h-10 w-10">
+          </div>
+          <div class="partner-details">
+            <h3 id="chat-partner-name" class="text-lg font-semibold">${client.name}</h3>
+            <p id="chat-partner-status" class="status-text text-sm text-gray-500">${client.status || 'online'}</p>
+          </div>
+        </div>
+        <div class="header-action-icons flex space-x-4 text-xl text-gray-500">
+          <i class="fas fa-trash cursor-pointer hover:text-red-500" title="Excluir contato" onclick="excluirContato('${clientId}')"></i>
+          <i class="fas fa-search cursor-pointer hover:text-gray-700"></i>
+          <i class="fas fa-ellipsis-v cursor-pointer hover:text-gray-700"></i>
+        </div>
+      `;
+      const backBtn = document.getElementById('back-button');
+      if (backBtn) backBtn.addEventListener('click', mostrarSidebar);
+
+      // Mensagens
+      renderWhatsappMessages(clientId, { forceScrollBottom: true });
+
+      // Zera não lidas e atualiza apenas se necessário
+      if (whatsappChatData[clientId].unread > 0) {
+        whatsappChatData[clientId].unread = 0;
+        renderWhatsappSidebar();
+      }
+
+      // Marcar como lido (opcional)
+      try {
+        await fetch('/api/marcar-como-lido', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ numero: clientId })
+        });
+      } catch (e) {
+        console.error('Erro ao marcar como lido:', e);
+      }
+
+      updateInterval = 3000;
+      missedUpdatesCount = 0;
+      isUserScrolling = false;
+
+      // Atualiza espaçamento e rola para o fim
+      updateChatSpacing();
+      scrollParaFinal();
+    }
+
+    function renderWhatsappMessages(clientId, options = {}) {
+      const chatMessagesDisplay = document.getElementById('chat-messages-display');
+
+      const wasAtBottom = usuarioNoFinalDoChat();
+      if (!wasAtBottom && !isUserScrolling && !options.forceScrollBottom) salvarPosicaoScroll();
+
+      chatMessagesDisplay.innerHTML = '';
+
+      const messages = whatsappChatData[clientId]?.messages || [];
+
+      messages.forEach(msg => {
+        const messageDiv = document.createElement('div');
+        messageDiv.classList.add('message-bubble', msg.sender); // 'sent' | 'received'
+        messageDiv.innerHTML = `
+          <p>${msg.text}</p>
+          <span class="timestamp">${formatarTimestamp(msg.timestamp)}</span>
+        `;
+        chatMessagesDisplay.appendChild(messageDiv);
+      });
+
+      // Atualiza espaçamento
+      updateChatSpacing();
+
+      if (options.forceScrollBottom || wasAtBottom) {
+        scrollParaFinal();
+      } else if (!isUserScrolling) {
+        restaurarPosicaoScroll();
+      }
+    }
+
+    function formatarTimestamp(timestamp) {
+      try {
+        const date = new Date(Number(timestamp) * 1000);
+        return date.toLocaleString('pt-BR', { day:'2-digit', month:'2-digit', year:'2-digit', hour:'2-digit', minute:'2-digit' });
+      } catch {
+        return timestamp;
+      }
+    }
+
+    // ----------------- SEND MESSAGE -----------------
+    async function enviarWhatsappMensagem() {
+      if (!currentWhatsappClient) {
+        mostrarModal('Selecione uma conversa para enviar a mensagem.');
+        return;
+      }
+
+      const messageInput = document.getElementById('message-input');
+      const messageText = messageInput.value.trim();
+      const numero = normalizePhoneNumberFrontend(currentWhatsappClient);
+
+      if (!numero) { mostrarModal('Número do cliente inválido para envio.'); return; }
+      if (!messageText) return;
+
+      try {
+        const res = await fetch('/api/enviar-mensagem-personalizada', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ numero, mensagem: messageText })
+        });
+        const resultado = await res.json();
+        if (!res.ok) {
+          console.error('Erro ao enviar:', resultado);
+          mostrarModal(`Erro ao enviar mensagem: ${resultado.erro || 'Erro desconhecido.'}`);
+          return;
+        }
+
+        // Otimista no front
+        whatsappChatData[numero] = whatsappChatData[numero] || { messages: [] };
+        whatsappChatData[numero].messages.push({
+          sender: 'sent',
+          text: messageText,
+          timestamp: Math.floor(Date.now() / 1000)
+        });
+
+        renderWhatsappMessages(numero, { forceScrollBottom: true });
+        renderWhatsappSidebar();
+        messageInput.value = '';
+
+        updateInterval = 2000;
+        missedUpdatesCount = 0;
+
+        // Depois de enviar, garante que está visível
+        scrollParaFinal();
+      } catch (err) {
+        console.error('Erro na requisição de envio:', err);
+        mostrarModal('Erro ao se comunicar com o servidor.');
+      }
+    }
+
+    // ----------------- POLLING -----------------
+    async function atualizarConversasPeriodicamente() {
+      if (document.hidden) return;
+      try {
+        const res = await fetch('/api/numeros');
+        const numeros_brutos = await res.json();
+
+        let hasNewMessages = false;
+        let shouldUpdateSidebar = false;
+
+        for (const numero_bruto of numeros_brutos) {
+          const numero = normalizePhoneNumberFrontend(numero_bruto);
+          if (!numero) continue;
+
+          const hadNewMessages = await carregarMensagens(numero, false); // CORREÇÃO: não força update da sidebar
+          if (hadNewMessages) {
+            hasNewMessages = true;
+            shouldUpdateSidebar = true;
+          }
+
+          if (numero === currentWhatsappClient) {
+            renderWhatsappMessages(numero);
+          }
+        }
+
+        if (hasNewMessages) {
+          updateInterval = Math.max(2000, updateInterval - 1000);
+          missedUpdatesCount = 0;
+        } else {
+          missedUpdatesCount++;
+          if (missedUpdatesCount >= 3) updateInterval = Math.min(10000, updateInterval + 1000);
+        }
+
+        // CORREÇÃO: Só atualiza sidebar se realmente houver mudanças
+        if (shouldUpdateSidebar) {
+          renderWhatsappSidebar();
+        }
+      } catch (e) {
+        console.error('Erro ao atualizar conversas periodicamente:', e);
+      }
+    }
+
+    function gerenciarAtualizacoesPorVisibilidade() {
+      function iniciarAtualizacoes() {
+        if (updateIntervalId) return;
+        updateIntervalId = setInterval(() => {
+          const now = Date.now();
+          if (!window.lastUpdateCheck || now - window.lastUpdateCheck >= updateInterval) {
+            window.lastUpdateCheck = now;
+            atualizarConversasPeriodicamente();
+          }
+        }, 1000);
+      }
+      function pararAtualizacoes() {
+        if (updateIntervalId) { clearInterval(updateIntervalId); updateIntervalId = null; }
+      }
+      document.addEventListener('visibilitychange', () => {
+        if (document.hidden) {
+          pararAtualizacoes();
+        } else {
+          iniciarAtualizacoes();
+          // CORREÇÃO: Removida a chamada imediata que causava o reload desnecessário
+          // setTimeout(atualizarConversasPeriodicamente, 500); ← REMOVIDO
+        }
+      });
+      iniciarAtualizacoes();
+    }
+
+    // ----------------- MODAL -----------------
+    function mostrarModal(message, isConfirm = false) {
+      const modal = document.getElementById('custom-modal');
+      const modalMessage = document.getElementById('modal-message');
+      const modalOkBtn = document.getElementById('modal-ok-btn');
+      const modalCancelBtn = document.getElementById('modal-cancel-btn');
+
+      modalMessage.textContent = message;
+      modalCancelBtn.style.display = isConfirm ? 'inline-block' : 'none';
+
+      modal.style.display = 'flex';
+
+      return new Promise((resolve) => {
+        modalOkBtn.onclick = () => { modal.style.display = 'none'; resolve(true); };
+        modalCancelBtn.onclick = () => { modal.style.display = 'none'; resolve(false); };
+      });
+    }
+
+    // ----------------- DELETE CONTACT -----------------
+    async function excluirContato(numero) {
+      const isConfirmed = await mostrarModal(`Deseja realmente excluir o contato ${numero}?`, true);
+      if (!isConfirmed) return;
+
+      const numeroNormalizado = normalizePhoneNumberFrontend(numero);
+      if (!numeroNormalizado) { mostrarModal('Erro: não foi possível normalizar o número.'); return; }
+
+      fetch('/api/excluir-contato', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ numero: numeroNormalizado })
+      })
+      .then(res => res.json())
+      .then(() => {
+        delete whatsappChatData[numeroNormalizado];
+
+        // Se era o chat atual, volta para sidebar no mobile
+        if (currentWhatsappClient === numeroNormalizado) {
+          currentWhatsappClient = null;
+          document.getElementById('chat-main-header').innerHTML = '';
+          document.getElementById('chat-messages-display').innerHTML = '';
+
+          if (window.innerWidth < 1024) {
+            mostrarSidebar();
+          }
+        }
+
+        renderWhatsappSidebar();
+      })
+      .catch(err => {
+        console.error('Erro ao excluir contato:', err);
+        mostrarModal('Erro ao excluir o contato.');
+      });
+    }
+
+    // Torna a função excluirContato global para ser chamada do HTML
+    window.excluirContato = excluirContato;
+
+    // ----------------- EVENTS -----------------
+    document.addEventListener('DOMContentLoaded', () => {
+      renderWhatsappSidebar();
+
+      const backBtn = document.getElementById('back-button');
+      if (backBtn) backBtn.addEventListener('click', mostrarSidebar);
+
+      detectarScrollUsuario();
+
+      const sendButton = document.getElementById('send-message-button');
+      if (sendButton) sendButton.addEventListener('click', enviarWhatsappMensagem);
+
+      const messageInput = document.getElementById('message-input');
+      if (messageInput) {
+        messageInput.addEventListener('keypress', (e) => {
+          if (e.key === 'Enter') {
+            e.preventDefault();
+            enviarWhatsappMensagem();
+          }
+        });
+
+        // Quando o input ganhar foco, atualiza espaçamento e rola para o fim
+        messageInput.addEventListener('focus', () => {
+          updateChatSpacing();
+          setTimeout(scrollParaFinal, 100);
+        });
+
+        // Quando perder foco, também atualiza
+        messageInput.addEventListener('blur', () => {
+          setTimeout(updateChatSpacing, 100);
+        });
+      }
+
+      // Observa mudanças de tamanho do input-area (por teclado/safe area/rotação)
+      const inputArea = document.getElementById('chat-input-area');
+      if (window.ResizeObserver && inputArea) {
+        const ro = new ResizeObserver(() => {
+          updateChatSpacing();
+        });
+        ro.observe(inputArea);
+      }
+
+      // Reage a mudanças do visualViewport (iOS/Android)
+      if (window.visualViewport) {
+        window.visualViewport.addEventListener('resize', () => {
+          updateChatSpacing();
+          setTimeout(scrollParaFinal, 150);
+        });
+      }
+
+      // Reage a mudanças de orientação
+      window.addEventListener('orientationchange', () => {
+        setTimeout(() => {
+          updateChatSpacing();
+          scrollParaFinal();
+        }, 300);
+      });
+
+      // Reage a redimensionamento da janela
+      window.addEventListener('resize', () => {
+        updateChatSpacing();
+
+        // Se mudou de mobile para desktop ou vice-versa
+        if (window.innerWidth >= 1024) {
+          // Desktop: mostra tanto sidebar quanto chat
+          document.getElementById("sidebar")?.classList.remove("hidden");
+          document.getElementById("chat")?.classList.remove("hidden");
+          document.getElementById("chat-input-area")?.classList.remove("chat-input-hidden");
+        } else if (!currentWhatsappClient) {
+          // Mobile sem chat selecionado: mostra sidebar
+          mostrarSidebar();
+        }
+      });
+
+      // Inicialização do espaçamento
+      updateChatSpacing();
+      gerenciarAtualizacoesPorVisibilidade();
+
+      // No mobile, inicialmente esconde o input
+      if (window.innerWidth < 1024) {
+        document.getElementById("chat-input-area")?.classList.add("chat-input-hidden");
+      }
+    });
+
+    // ----------------- INITIAL LOAD -----------------
+    fetch('/api/clientes-mensagens')
+      .then(res => res.json())
+      .then(async clientes_brutos => {
+        const clientes_normalizados = [];
+        for (const numero_bruto of clientes_brutos) {
+          const numero_normalizado = normalizePhoneNumberFrontend(numero_bruto);
+          if (numero_normalizado) {
+            clientes_normalizados.push(numero_normalizado);
+            await carregarMensagens(numero_normalizado, false); // CORREÇÃO: não força update durante inicialização
+          } else {
+            console.warn(`[init] Não foi possível normalizar: ${numero_bruto}`);
+          }
+        }
+        // CORREÇÃO: Só renderiza uma vez após carregar tudo
+        renderWhatsappSidebar();
+        if (clientes_normalizados.length > 0) {
+          selecionarWhatsappCliente(clientes_normalizados[0]);
+        }
+      })
+      .catch(err => console.error("Erro ao buscar clientes na inicialização:", err));
+
+  </script>
+</body>
+</html>

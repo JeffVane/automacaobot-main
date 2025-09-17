@@ -1,0 +1,18 @@
+[
+  {
+    "template_msg_id": "wamid.HBgMNTU2MTkyODY2NDYxFQIAERgSQTIzN0NDQUYzNjI3NjU5RjM5AA==",
+    "numero": "+5561992866461",
+    "texto": "Se fizer sentido, posso te explicar rapidinho sobre os nossos serviços. Pode ser por aqui mesmo?",
+    "botoes": [
+      {
+        "id": "sim_explicar",
+        "title": "Sim, explique"
+      },
+      {
+        "id": "nao_explicar",
+        "title": "Não, obrigado"
+      }
+    ],
+    "ts": 1755559848
+  }
+]

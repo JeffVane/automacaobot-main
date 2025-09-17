@@ -1,0 +1,87 @@
+[
+  {
+    "sender": "sent",
+    "text": "Template 'inicio_conversa_bloco244' enviado para Jefferson De Sousa Amorim.",
+    "timestamp": 1756740763
+  },
+  {
+    "sender": "received",
+    "text": "Opa Bom dia!",
+    "timestamp": 1756740787
+  },
+  {
+    "sender": "received",
+    "text": "Resposta do botão: Quero saber mais (ID: Quero saber mais)",
+    "timestamp": 1756740793
+  },
+  {
+    "sender": "sent",
+    "text": "Que ótimo! 😃\nPara entender melhor como podemos ajudar, me fala um pouco sobre o seu negócio: qual é o segmento e quais os principais desafios que você enfrenta hoje com contabilidade ou finanças?\n\nAssim eu consigo te mostrar uma solução personalizada. 🚀",
+    "timestamp": 1756740795
+  },
+  {
+    "sender": "sent",
+    "text": "?",
+    "timestamp": 1756848602
+  },
+  {
+    "sender": "sent",
+    "text": "?",
+    "timestamp": 1756936667
+  },
+  {
+    "sender": "received",
+    "text": "Sim",
+    "timestamp": 1756933530
+  },
+  {
+    "sender": "received",
+    "text": "Resposta do botão: Passei por dificuldades (ID: Passei por dificuldades)",
+    "timestamp": 1757020270
+  },
+  {
+    "sender": "sent",
+    "text": "Entendi! É muito comum aparecerem esses desafios mesmo.\n\nSe puder me contar um pouco mais sobre qual foi a maior dificuldade que você teve (ou tem hoje), consigo te mostrar como a Bloco 244 pode simplificar isso pra você. 😉",
+    "timestamp": 1757020270
+  },
+  {
+    "sender": "sent",
+    "text": "Posso te ajudar com isso?",
+    "timestamp": 1757029370
+  },
+  {
+    "sender": "received",
+    "text": "Pode, claro",
+    "timestamp": 1757029378
+  },
+  {
+    "sender": "received",
+    "text": "Por favor",
+    "timestamp": 1757029393
+  },
+  {
+    "sender": "sent",
+    "text": "?",
+    "timestamp": 1757070828
+  },
+  {
+    "sender": "received",
+    "text": "?",
+    "timestamp": 1757072330
+  },
+  {
+    "sender": "received",
+    "text": "?",
+    "timestamp": 1757072349
+  },
+  {
+    "sender": "received",
+    "text": "?",
+    "timestamp": 1757072079
+  },
+  {
+    "sender": "received",
+    "text": "Sim",
+    "timestamp": 1757072044
+  }
+]

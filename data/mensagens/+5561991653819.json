@@ -1,0 +1,42 @@
+[
+  {
+    "sender": "sent",
+    "text": "Template 'inicio_conversa_bloco244' enviado para Everton Pires 😃 Eleve.",
+    "timestamp": 1756172916
+  },
+  {
+    "sender": "sent",
+    "text": "Template 'inicio_conversa_bloco244' enviado para Everton Pires 😃 Eleve.",
+    "timestamp": 1756832167
+  },
+  {
+    "sender": "sent",
+    "text": "Template 'inicio_conversa_bloco244' enviado para Everton Pires 😃 Eleve.",
+    "timestamp": 1756929294
+  },
+  {
+    "sender": "received",
+    "text": "Estou a procura de empresas que possam me dar todo suporte contábil e financeiro, vocês conseguem me ajudar com isso?",
+    "timestamp": 1756929914
+  },
+  {
+    "sender": "received",
+    "text": "Resposta do botão: Sim (ID: sim_atendente)",
+    "timestamp": 1756939878
+  },
+  {
+    "sender": "received",
+    "text": "Resposta do botão: Quero saber mais (ID: Quero saber mais)",
+    "timestamp": 1756929719
+  },
+  {
+    "sender": "sent",
+    "text": "Que ótimo! 😃\nPara entender melhor como podemos ajudar, me fala um pouco sobre o seu negócio: qual é o segmento e quais os principais desafios que você enfrenta hoje com contabilidade ou finanças?\n\nAssim eu consigo te mostrar uma solução personalizada. 🚀",
+    "timestamp": 1756940641
+  },
+  {
+    "sender": "received",
+    "text": "O segmento do meu negócio é na área de consultoria administrativa para pequenos negócios e tenho encontrado dificuldade em encontrar mão de obra qualificada para realizar a gestão financeira do meu negócio, além disso, tenho encontrado dificuldades de entrega junto a contabilidade na qual eu contratei para cuidar da parte burocrática. Gostaria de um áuxilio nessas duas áreas, vocês prestam este serviço?",
+    "timestamp": 1756941870
+  }
+]

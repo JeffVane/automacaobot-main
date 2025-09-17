@@ -1,0 +1,327 @@
+[
+  {
+    "sender": "sent",
+    "text": "Template 'primeiro_contato_bloco_244' enviado para Vanessa Sousa.",
+    "timestamp": 1755564392
+  },
+  {
+    "sender": "sent",
+    "text": "[BOTÕES] Se fizer sentido, posso te explicar rapidinho sobre os nossos serviços. Pode ser por aqui mesmo? - Opções: Sim, explique, Não, obrigado",
+    "timestamp": 1755564400
+  },
+  {
+    "sender": "sent",
+    "text": "Opa",
+    "timestamp": 1755651664
+  },
+  {
+    "sender": "sent",
+    "text": "?",
+    "timestamp": 1755651744
+  },
+  {
+    "sender": "sent",
+    "text": "?",
+    "timestamp": 1755735622
+  },
+  {
+    "sender": "sent",
+    "text": "?",
+    "timestamp": 1755736464
+  },
+  {
+    "sender": "received",
+    "text": "?",
+    "timestamp": 1755736502
+  },
+  {
+    "sender": "sent",
+    "text": "?",
+    "timestamp": 1755736512
+  },
+  {
+    "sender": "sent",
+    "text": "Oi",
+    "timestamp": 1755819035
+  },
+  {
+    "sender": "received",
+    "text": "Oi",
+    "timestamp": 1755820671
+  },
+  {
+    "sender": "sent",
+    "text": "🤣",
+    "timestamp": 1755822623
+  },
+  {
+    "sender": "sent",
+    "text": "Template 'inicio_conversa_bloco244' enviado para Jose Antonio advocacia.",
+    "timestamp": 1756166367
+  },
+  {
+    "sender": "sent",
+    "text": "[BOTÕES] ​ - Opções: Sim, Não, obrigado",
+    "timestamp": 1756166377
+  },
+  {
+    "sender": "received",
+    "text": "Botão clicado: Quero saber mais",
+    "timestamp": 1756166382
+  },
+  {
+    "sender": "received",
+    "text": "Botão clicado: Passei por dificuldades",
+    "timestamp": 1756166466
+  },
+  {
+    "sender": "received",
+    "text": "Botão clicado: Não tenho interesse",
+    "timestamp": 1756166477
+  },
+  {
+    "sender": "sent",
+    "text": "Template 'inicio_conversa_bloco244' enviado para Jose Antonio advocacia.",
+    "timestamp": 1756168045
+  },
+  {
+    "sender": "received",
+    "text": "Resposta do botão: Quero saber mais (ID: Quero saber mais)",
+    "timestamp": 1756168076
+  },
+  {
+    "sender": "sent",
+    "text": "Que ótimo! 😃\nPara entender melhor como podemos ajudar, me fala um pouco sobre o seu negócio: qual é o segmento e quais os principais desafios que você enfrenta hoje com contabilidade ou finanças?\n\nAssim eu consigo te mostrar uma solução personalizada. 🚀",
+    "timestamp": 1756168077
+  },
+  {
+    "sender": "received",
+    "text": "Resposta do botão: Passei por dificuldades (ID: Passei por dificuldades)",
+    "timestamp": 1756168080
+  },
+  {
+    "sender": "sent",
+    "text": "Entendi! É muito comum aparecerem esses desafios mesmo.\n\nSe puder me contar um pouco mais sobre qual foi a maior dificuldade que você teve (ou tem hoje), consigo te mostrar como a Bloco 244 pode simplificar isso pra você. 😉",
+    "timestamp": 1756168083
+  },
+  {
+    "sender": "received",
+    "text": "Resposta do botão: Não tenho interesse (ID: Não tenho interesse)",
+    "timestamp": 1756168085
+  },
+  {
+    "sender": "sent",
+    "text": "Sem problema, eu entendo 👍\nSe em algum momento precisar de apoio com contabilidade ou organização financeira, a Bloco 244 estará à disposição.\n\nPosso manter seu contato para compartilhar, de vez em quando, dicas rápidas que podem ajudar na gestão do seu negócio? 📩",
+    "timestamp": 1756168087
+  },
+  {
+    "sender": "sent",
+    "text": "Template 'inicio_conversa_bloco244' enviado para Jose Antonio advocacia.",
+    "timestamp": 1756168464
+  },
+  {
+    "sender": "received",
+    "text": "Resposta do botão: Não tenho interesse (ID: Não tenho interesse)",
+    "timestamp": 1756168540
+  },
+  {
+    "sender": "sent",
+    "text": "Template 'inicio_conversa_bloco244' enviado para Jose Antonio advocacia.",
+    "timestamp": 1756168643
+  },
+  {
+    "sender": "sent",
+    "text": "Template 'inicio_conversa_bloco244' enviado para Jose Antonio advocacia.",
+    "timestamp": 1756168904
+  },
+  {
+    "sender": "sent",
+    "text": "Template 'inicio_conversa_bloco244' enviado para Vanessa.",
+    "timestamp": 1756222845
+  },
+  {
+    "sender": "received",
+    "text": "Resposta do botão: Quero saber mais (ID: Quero saber mais)",
+    "timestamp": 1756222861
+  },
+  {
+    "sender": "sent",
+    "text": "Que ótimo! 😃\nPara entender melhor como podemos ajudar, me fala um pouco sobre o seu negócio: qual é o segmento e quais os principais desafios que você enfrenta hoje com contabilidade ou finanças?\n\nAssim eu consigo te mostrar uma solução personalizada. 🚀",
+    "timestamp": 1756222863
+  },
+  {
+    "sender": "sent",
+    "text": "Template 'inicio_conversa_bloco244' enviado para Jefferson.",
+    "timestamp": 1756223197
+  },
+  {
+    "sender": "received",
+    "text": "Resposta do botão: Quero saber mais (ID: Quero saber mais)",
+    "timestamp": 1756223220
+  },
+  {
+    "sender": "sent",
+    "text": "Que ótimo! 😃\nPara entender melhor como podemos ajudar, me fala um pouco sobre o seu negócio: qual é o segmento e quais os principais desafios que você enfrenta hoje com contabilidade ou finanças?\n\nAssim eu consigo te mostrar uma solução personalizada. 🚀",
+    "timestamp": 1756223221
+  },
+  {
+    "sender": "received",
+    "text": "Resposta do botão: Quero saber mais (ID: Quero saber mais)",
+    "timestamp": 1756223349
+  },
+  {
+    "sender": "sent",
+    "text": "Que ótimo! 😃\nPara entender melhor como podemos ajudar, me fala um pouco sobre o seu negócio: qual é o segmento e quais os principais desafios que você enfrenta hoje com contabilidade ou finanças?\n\nAssim eu consigo te mostrar uma solução personalizada. 🚀",
+    "timestamp": 1756223352
+  },
+  {
+    "sender": "sent",
+    "text": "Template 'inicio_conversa_bloco244' enviado para Jefferson.",
+    "timestamp": 1756224067
+  },
+  {
+    "sender": "received",
+    "text": "Resposta do botão: Quero saber mais (ID: Quero saber mais)",
+    "timestamp": 1756224078
+  },
+  {
+    "sender": "sent",
+    "text": "Que ótimo! 😃\nPara entender melhor como podemos ajudar, me fala um pouco sobre o seu negócio: qual é o segmento e quais os principais desafios que você enfrenta hoje com contabilidade ou finanças?\n\nAssim eu consigo te mostrar uma solução personalizada. 🚀",
+    "timestamp": 1756224080
+  },
+  {
+    "sender": "sent",
+    "text": "Template 'inicio_conversa_bloco244' enviado para Jefferson.",
+    "timestamp": 1756242316
+  },
+  {
+    "sender": "received",
+    "text": "Resposta do botão: Quero saber mais (ID: Quero saber mais)",
+    "timestamp": 1756242333
+  },
+  {
+    "sender": "sent",
+    "text": "Que ótimo! 😃\nPara entender melhor como podemos ajudar, me fala um pouco sobre o seu negócio: qual é o segmento e quais os principais desafios que você enfrenta hoje com contabilidade ou finanças?\n\nAssim eu consigo te mostrar uma solução personalizada. 🚀",
+    "timestamp": 1756242335
+  },
+  {
+    "sender": "received",
+    "text": "Resposta do botão: Passei por dificuldades (ID: Passei por dificuldades)",
+    "timestamp": 1756242368
+  },
+  {
+    "sender": "sent",
+    "text": "Entendi! É muito comum aparecerem esses desafios mesmo.\n\nSe puder me contar um pouco mais sobre qual foi a maior dificuldade que você teve (ou tem hoje), consigo te mostrar como a Bloco 244 pode simplificar isso pra você. 😉",
+    "timestamp": 1756242370
+  },
+  {
+    "sender": "received",
+    "text": "Resposta do botão: Passei por dificuldades (ID: Passei por dificuldades)",
+    "timestamp": 1756242473
+  },
+  {
+    "sender": "sent",
+    "text": "Entendi! É muito comum aparecerem esses desafios mesmo.\n\nSe puder me contar um pouco mais sobre qual foi a maior dificuldade que você teve (ou tem hoje), consigo te mostrar como a Bloco 244 pode simplificar isso pra você. 😉",
+    "timestamp": 1756242474
+  },
+  {
+    "sender": "sent",
+    "text": "Template 'inicio_conversa_bloco244' enviado para Jefferson.",
+    "timestamp": 1756244078
+  },
+  {
+    "sender": "received",
+    "text": "Resposta do botão: Quero saber mais (ID: Quero saber mais)",
+    "timestamp": 1756244098
+  },
+  {
+    "sender": "sent",
+    "text": "Que ótimo! 😃\nPara entender melhor como podemos ajudar, me fala um pouco sobre o seu negócio: qual é o segmento e quais os principais desafios que você enfrenta hoje com contabilidade ou finanças?\n\nAssim eu consigo te mostrar uma solução personalizada. 🚀",
+    "timestamp": 1756244099
+  },
+  {
+    "sender": "sent",
+    "text": "Template 'inicio_conversa_bloco244' enviado para Jefferson.",
+    "timestamp": 1756244421
+  },
+  {
+    "sender": "received",
+    "text": "Resposta do botão: Quero saber mais (ID: Quero saber mais)",
+    "timestamp": 1756244436
+  },
+  {
+    "sender": "sent",
+    "text": "Que ótimo! 😃\nPara entender melhor como podemos ajudar, me fala um pouco sobre o seu negócio: qual é o segmento e quais os principais desafios que você enfrenta hoje com contabilidade ou finanças?\n\nAssim eu consigo te mostrar uma solução personalizada. 🚀",
+    "timestamp": 1756244437
+  },
+  {
+    "sender": "sent",
+    "text": "Template 'inicio_conversa_bloco244' enviado para Jefferson.",
+    "timestamp": 1756244911
+  },
+  {
+    "sender": "received",
+    "text": "Resposta do botão: Quero saber mais (ID: Quero saber mais)",
+    "timestamp": 1756244923
+  },
+  {
+    "sender": "sent",
+    "text": "Que ótimo! 😃\nPara entender melhor como podemos ajudar, me fala um pouco sobre o seu negócio: qual é o segmento e quais os principais desafios que você enfrenta hoje com contabilidade ou finanças?\n\nAssim eu consigo te mostrar uma solução personalizada. 🚀",
+    "timestamp": 1756244925
+  },
+  {
+    "sender": "received",
+    "text": "Resposta do botão: Passei por dificuldades (ID: Passei por dificuldades)",
+    "timestamp": 1756245022
+  },
+  {
+    "sender": "sent",
+    "text": "Entendi! É muito comum aparecerem esses desafios mesmo.\n\nSe puder me contar um pouco mais sobre qual foi a maior dificuldade que você teve (ou tem hoje), consigo te mostrar como a Bloco 244 pode simplificar isso pra você. 😉",
+    "timestamp": 1756245024
+  },
+  {
+    "sender": "sent",
+    "text": "Entendo",
+    "timestamp": 1756249459
+  },
+  {
+    "sender": "sent",
+    "text": "Template 'inicio_conversa_bloco244' enviado para Vanessa.",
+    "timestamp": 1756334023
+  },
+  {
+    "sender": "received",
+    "text": "Resposta do botão: Quero saber mais (ID: Quero saber mais)",
+    "timestamp": 1756334100
+  },
+  {
+    "sender": "sent",
+    "text": "Que ótimo! 😃\nPara entender melhor como podemos ajudar, me fala um pouco sobre o seu negócio: qual é o segmento e quais os principais desafios que você enfrenta hoje com contabilidade ou finanças?\n\nAssim eu consigo te mostrar uma solução personalizada. 🚀",
+    "timestamp": 1756334100
+  },
+  {
+    "sender": "sent",
+    "text": "Ei",
+    "timestamp": 1757029938
+  },
+  {
+    "sender": "sent",
+    "text": "?",
+    "timestamp": 1757029959
+  },
+  {
+    "sender": "sent",
+    "text": "?",
+    "timestamp": 1757030003
+  },
+  {
+    "sender": "received",
+    "text": "Tá",
+    "timestamp": 1757030195
+  },
+  {
+    "sender": "sent",
+    "text": "Beleza",
+    "timestamp": 1757030212
+  }
+]

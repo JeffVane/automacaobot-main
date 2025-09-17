@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Buscador de Leads</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a class="navbar-brand" href="#">
+                <i class="fas fa-rocket"></i>
+                Dashboard
+            </a>
+            <div class="navbar-user">
+                <div class="user-info">
+                    <i class="fas fa-user-circle"></i>
+                    <span>Bem-vindo, {{ username }}</span>
+                </div>
+                <a href="{{ url_for('logout') }}" class="logout-btn">
+                    <i class="fas fa-sign-out-alt"></i>
+                    Logout
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="tabs">
+    <button class="tab-btn active" onclick="abrirAba('buscador')">
+        <i class="fas fa-search"></i> Buscador de Leads
+    </button>
+    <button class="tab-btn" onclick="abrirAba('leads-pendentes')">
+        <i class="fas fa-hourglass-half"></i> Leads Pendentes
+        <span class="badge" id="tab-pending-leads-count">0</span> {# ADICIONADO ID AQUI! Use 'tab-pending-leads-count' #}
+    </button>
+    <button class="tab-btn" onclick="abrirAba('historico')">
+        <i class="fas fa-history"></i> Histórico
+    </button>
+    <button class="tab-btn" onclick="abrirAba('conversas')">
+        <i class="fas fa-comments"></i> Conversas
+    </button>
+        <button class="tab-btn" onclick="abrirAba('metrics')">
+  <i class="fas fa-chart-line"></i> Métricas
+</button>
+
+    <button class="tab-btn" onclick="abrirAba('config')">
+        <i class="fas fa-cog"></i> Configurações
+    </button>
+</div>
+
+    <div class="main-container">
+        <div id="aba-buscador" class="aba-content show">
+            <div class="search-card fade-in">
+                <h2 class="card-title">
+                    <i class="fas fa-search"></i>
+                    Buscador de Leads
+                </h2>
+                <form class="search-form" onsubmit="iniciarBusca(); return false;">
+                    <div class="input-group">
+                        <i class="fas fa-search input-icon"></i>
+                        <input
+                            id="termo"
+                            class="form-input"
+                            placeholder="Digite o termo, ex: Clínica Odontológica"
+                            required
+                        >
+                    </div>
+                    <div class="input-group">
+                        <i class="fas fa-hashtag input-icon"></i>
+                        <input
+                            id="limite"
+                            type="number"
+                            class="form-input"
+                            value="50"
+                            min="1"
+                            max="100"
+                            placeholder="Qtd de leads (máx 100)"
+                            required
+                        >
+                    </div>
+                    <button type="submit" class="search-btn">
+                        <i class="fas fa-search"></i>
+                        Buscar
+                    </button>
+                </form>
+            </div>
+
+            <div class="status-busca" id="status-busca">
+                <p id="mensagem-status">Aguardando...</p>
+                <div class="barra-progresso">
+                    <div id="progresso-barra" class="progresso-barra"></div>
+                </div>
+                <div id="progresso-porcentagem">0%</div>
+
+                <div class="visao-atual">
+                    <h4>🕵️‍♂️ Vendo no Google Maps:</h4>
+                    <ul id="lista-visao-atual"></ul>
+                </div>
+            </div>
+
+            <div id="resultado" class="results-container"></div>
+        </div>
+
+        <div id="aba-leads-pendentes" class="aba-content">
+    <h2><i class="fas fa-hourglass-half"></i> Leads Pendentes de Contato <span class="badge" id="pending-leads-count">0</span></h2>
+    <p>Leads encontrados com número de telefone, aguardando seu primeiro contato via WhatsApp.</p>
+    <div class="filter-controls">
+        <input type="text" id="filter-pending-leads" placeholder="Filtrar por nome, endereço, etc." onkeyup="filterLeads('pending-leads-list', this.value)">
+        <button class="refresh-btn" onclick="loadPendingLeads()"><i class="fas fa-sync-alt"></i> Atualizar</button>
+    </div>
+
+    <div class="bulk-actions">
+        <label for="master-checkbox">
+            <input type="checkbox" id="master-checkbox" onchange="toggleSelectAll(this)"> Selecionar Todos
+        </label>
+        <select id="bulk-template-select" class="template-select" onchange="updateBulkTemplateSelection(this.value)">
+            <option value="">Selecione um Template para Envio em Massa</option>
+            </select>
+        <button class="action-btn send-bulk-template-btn" onclick="sendBulkWhatsAppTemplates()">
+            <i class="fas fa-paper-plane"></i> Enviar Templates Selecionados
+        </button>
+        <button class="action-btn mark-bulk-contacted-btn" onclick="markSelectedAsContacted()">
+            <i class="fas fa-check-circle"></i> Marcar Selecionados como Contatados
+        </button>
+    </div>
+    <div id="pending-leads-list" class="leads-list-container">
+        <p class="no-leads-message" id="no-pending-leads-message">Nenhum lead pendente no momento.</p>
+    </div>
+</div>
+
+        <div id="aba-historico" class="aba-content">
+            <h2><i class="fas fa-history"></i> Histórico de Leads Salvos</h2>
+            <p>Todos os leads que foram encontrados e salvos no sistema.</p>
+            <div class="filter-controls">
+                <input type="text" id="filter-all-leads" placeholder="Filtrar por nome, endereço, etc." onkeyup="filterLeads('all-leads-list', this.value)">
+                <button class="refresh-btn" onclick="loadAllLeads()"><i class="fas fa-sync-alt"></i> Atualizar</button>
+            </div>
+            <div id="all-leads-list" class="leads-list-container">
+                <p class="no-leads-message" id="no-all-leads-message">Nenhum lead salvo no sistema ainda.</p>
+            </div>
+        </div>
+
+        <div id="aba-config" class="aba-content">
+            <h2><i class="fas fa-cog"></i> Configurações</h2>
+            <p>Aqui você pode gerenciar usuários e outras preferências do sistema.</p>
+        </div>
+
+        <div id="aba-conversas" class="aba-content">
+    <!-- Conteúdo removido - será redirecionado -->
+</div>
+        <div id="aba-metricas" class="aba-content">
+  <!-- Redireciona ao clicar, nada aqui -->
+</div>
+
+
+<style>
+.redirect-card:hover {
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    transform: translateY(-2px);
+}
+</style>
+
+    <script>
+   // Controle das Abas
+   function abrirAba(nomeAba) {
+    // Redirecionamentos
+    if (nomeAba === 'conversas') {
+       window.location.href = '/conversas';
+       return;
+    }
+    if (nomeAba === 'metrics') {
+       window.location.href = '/metrics';
+       return;
+    }
+
+
+
+       const abas = document.querySelectorAll('.aba-content');
+       const botoes = document.querySelectorAll('.tab-btn');
+
+       abas.forEach(aba => aba.classList.remove('show'));
+       botoes.forEach(btn => btn.classList.remove('active'));
+
+       document.getElementById(`aba-${nomeAba}`).classList.add('show');
+       // Encontra o botão que corresponde à aba clicada para adicionar a classe 'active'
+       const clickedButton = document.querySelector(`.tab-btn[onclick*="${nomeAba}"]`);
+       if (clickedButton) {
+           clickedButton.classList.add('active');
+       }
+
+       // Ações específicas ao abrir cada aba
+       if (nomeAba === 'leads-pendentes') {
+           loadPendingLeads(); // Carrega os leads pendentes quando a aba é aberta
+       } else if (nomeAba === 'historico') {
+           loadAllLeads(); // Carrega todos os leads salvos quando a aba é aberta
+       }
+       // Removeu a condição 'conversas' daqui pois já foi tratada no início
+   }
+
+   window.addEventListener('load', function() {
+       document.querySelector('.search-card').style.animationDelay = '0.2s';
+       abrirAba('buscador'); // Define a aba "Buscador" como a padrão ao carregar
+   });
+</script>
+
+    <script src="{{ url_for('static', filename='buscador.js') }}"></script>
+    <script src="{{ url_for('static', filename='conversas.js') }}"></script>
+    <script src="{{ url_for('static', filename='leads_manager.js') }}"></script>
+
+</body>
+</html>

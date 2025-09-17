@@ -1,0 +1,22 @@
+[
+  {
+    "sender": "sent",
+    "text": "Template 'inicio_conversa_bloco244' enviado para Jose Antonio advocacia.",
+    "timestamp": 1756166157
+  },
+  {
+    "sender": "sent",
+    "text": "[BOTÕES] ​ - Opções: Sim, Não, obrigado",
+    "timestamp": 1756166169
+  },
+  {
+    "sender": "sent",
+    "text": "[BOTÕES] Deseja falar com um atendente? - Opções: Sim, Não",
+    "timestamp": 1756166329
+  },
+  {
+    "sender": "received",
+    "text": "Olá! Bem-vindo ao José Antônio Advocacia.\n\nSomos especializados em *Previdenciário, Família, Civil e Trabalhista* e estamos aqui para ajudar você com suas necessidades jurídicas.\n\nPor favor, informe seu nome e como podemos auxiliá-lo hoje. Nossa equipe entrará em contato o mais breve possível.\n\nAgradecemos seu contato!",
+    "timestamp": 1756166327
+  }
+]

@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buscador de Leads</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-satellite-dish"></i>
+                    <h1>LeadFinder Pro</h1>
+                </div>
+                <div class="header-stats">
+                    <div class="stat-item">
+                        <i class="fas fa-chart-line"></i>
+                        <span>Dashboard</span>
+                    </div>
+                    <div class="stat-item">
+                        <i class="fas fa-user-circle"></i>
+                        <span>Perfil</span>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="search-section">
+                <div class="search-card">
+                    <div class="search-header">
+                        <h2>Encontre Leads no Google Maps</h2>
+                        <p>Descubra empresas e oportunidades de negócio</p>
+                    </div>
+
+                    <div class="search-form">
+                        <div class="input-group">
+                            <div class="input-wrapper">
+                                <i class="fas fa-search input-icon"></i>
+                                <input
+                                    id="termo"
+                                    type="text"
+                                    placeholder="Ex: restaurantes, academias, dentistas..."
+                                    class="search-input"
+                                    autocomplete="off"
+                                >
+                                <div class="input-line"></div>
+                            </div>
+                            <button onclick="buscar()" class="search-btn" id="searchBtn">
+                                <span class="btn-text">Buscar Leads</span>
+                                <div class="btn-loading">
+                                    <i class="fas fa-spinner fa-spin"></i>
+                                </div>
+                                <div class="btn-success">
+                                    <i class="fas fa-check"></i>
+                                </div>
+                            </button>
+                        </div>
+
+                        <div class="search-suggestions">
+                            <span class="suggestion-label">Sugestões:</span>
+                            <div class="suggestions">
+                                <span class="suggestion-tag" onclick="preencherTermo('restaurantes')">Restaurantes</span>
+                                <span class="suggestion-tag" onclick="preencherTermo('academias')">Academias</span>
+                                <span class="suggestion-tag" onclick="preencherTermo('dentistas')">Dentistas</span>
+                                <span class="suggestion-tag" onclick="preencherTermo('salões de beleza')">Salões</span>
+                                <span class="suggestion-tag" onclick="preencherTermo('pet shops')">Pet Shops</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Results Section -->
+            <div class="results-section" id="resultsSection" style="display: none;">
+                <div class="results-header">
+                    <h3><i class="fas fa-bullseye"></i> Leads Encontrados</h3>
+                    <div class="results-actions">
+                        <button class="action-btn export-btn">
+                            <i class="fas fa-download"></i>
+                            Exportar
+                        </button>
+                        <button class="action-btn filter-btn">
+                            <i class="fas fa-filter"></i>
+                            Filtros
+                        </button>
+                    </div>
+                </div>
+                <div id="resultado" class="results-grid"></div>
+            </div>
+
+            <!-- Loading Animation -->
+            <div class="loading-overlay" id="loadingOverlay" style="display: none;">
+                <div class="loading-content">
+                    <div class="loading-spinner">
+                        <div class="spinner"></div>
+                    </div>
+                    <h3>Buscando leads...</h3>
+                    <p>Analisando o Google Maps para você</p>
+                    <div class="loading-progress">
+                        <div class="progress-bar"></div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        // Preenchimento de sugestões
+        function preencherTermo(termo) {
+            document.getElementById('termo').value = termo;
+            document.getElementById('termo').focus();
+        }
+
+        // Função de busca melhorada
+        async function buscar() {
+            const termo = document.getElementById('termo').value.trim();
+            const searchBtn = document.getElementById('searchBtn');
+            const loadingOverlay = document.getElementById('loadingOverlay');
+            const resultsSection = document.getElementById('resultsSection');
+
+            if (!termo) {
+                showNotification('Por favor, digite um termo de busca', 'warning');
+                return;
+            }
+
+            // Show loading state
+            searchBtn.classList.add('loading');
+            loadingOverlay.style.display = 'flex';
+            resultsSection.style.display = 'none';
+
+            try {
+                const res = await fetch('/api/buscar-dados-maps', {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify({termo: termo, limite: 10})
+                });
+
+                const dados = await res.json();
+
+                // Simulate loading delay for better UX
+                setTimeout(() => {
+                    displayResults(dados);
+                    searchBtn.classList.remove('loading');
+                    searchBtn.classList.add('success');
+                    loadingOverlay.style.display = 'none';
+                    resultsSection.style.display = 'block';
+
+                    setTimeout(() => {
+                        searchBtn.classList.remove('success');
+                    }, 2000);
+                }, 1500);
+
+            } catch (error) {
+                searchBtn.classList.remove('loading');
+                loadingOverlay.style.display = 'none';
+                showNotification('Erro ao buscar dados. Tente novamente.', 'error');
+            }
+        }
+
+        function displayResults(dados) {
+            const resultado = document.getElementById('resultado');
+
+            if (!dados || dados.length === 0) {
+                resultado.innerHTML = `
+                    <div class="no-results">
+                        <i class="fas fa-search"></i>
+                        <h3>Nenhum resultado encontrado</h3>
+                        <p>Tente um termo diferente ou mais específico</p>
+                    </div>
+                `;
+                return;
+            }
+
+            let html = '';
+            dados.forEach((item, index) => {
+                html += `
+                    <div class="result-card" style="animation-delay: ${index * 0.1}s">
+                        <div class="result-header">
+                            <div class="company-avatar">
+                                <i class="fas fa-building"></i>
+                            </div>
+                            <div class="company-info">
+                                <h4 class="company-name">${item.nome}</h4>
+                                <div class="company-rating">
+                                    <i class="fas fa-star"></i>
+                                    <span>4.${Math.floor(Math.random() * 5) + 3}</span>
+                                </div>
+                            </div>
+                            <div class="result-actions">
+                                <button class="action-btn-sm" title="Salvar lead">
+                                    <i class="fas fa-bookmark"></i>
+                                </button>
+                                <button class="action-btn-sm" title="Compartilhar">
+                                    <i class="fas fa-share"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="result-body">
+                            <div class="info-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>${item.endereco}</span>
+                            </div>
+
+                            ${item.telefone ? `
+                                <div class="info-item">
+                                    <i class="fas fa-phone"></i>
+                                    <span>${item.telefone}</span>
+                                    <button class="copy-btn" onclick="copyToClipboard('${item.telefone}')">
+                                        <i class="fas fa-copy"></i>
+                                    </button>
+                                </div>
+                            ` : ''}
+
+                            ${item.site ? `
+                                <div class="info-item">
+                                    <i class="fas fa-globe"></i>
+                                    <a href="${item.site}" target="_blank" class="website-link">${item.site}</a>
+                                    <button class="external-btn">
+                                        <i class="fas fa-external-link-alt"></i>
+                                    </button>
+                                </div>
+                            ` : ''}
+                        </div>
+
+                        <div class="result-footer">
+                            <button class="contact-btn">
+                                <i class="fas fa-envelope"></i>
+                                Entrar em Contato
+                            </button>
+                            <span class="lead-score">
+                                <i class="fas fa-trophy"></i>
+                                Score: ${Math.floor(Math.random() * 40) + 60}%
+                            </span>
+                        </div>
+                    </div>
+                `;
+            });
+
+            resultado.innerHTML = html;
+        }
+
+        // Utility functions
+        function copyToClipboard(text) {
+            navigator.clipboard.writeText(text).then(() => {
+                showNotification('Copiado para a área de transferência!', 'success');
+            });
+        }
+
+        function showNotification(message, type = 'info') {
+            const notification = document.createElement('div');
+            notification.className = `notification ${type}`;
+            notification.innerHTML = `
+                <i class="fas fa-${type === 'success' ? 'check-circle' : type === 'error' ? 'exclamation-circle' : 'info-circle'}"></i>
+                <span>${message}</span>
+            `;
+
+            document.body.appendChild(notification);
+
+            setTimeout(() => {
+                notification.classList.add('show');
+            }, 100);
+
+            setTimeout(() => {
+                notification.classList.remove('show');
+                setTimeout(() => {
+                    document.body.removeChild(notification);
+                }, 300);
+            }, 3000);
+        }
+
+        // Enter key support
+        document.getElementById('termo').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                buscar();
+            }
+        });
+
+        // Input animation
+        document.getElementById('termo').addEventListener('focus', function() {
+            this.parentElement.classList.add('focused');
+        });
+
+        document.getElementById('termo').addEventListener('blur', function() {
+            if (!this.value) {
+                this.parentElement.classList.remove('focused');
+            }
+        });
+    </script>
+</body>
+</html>

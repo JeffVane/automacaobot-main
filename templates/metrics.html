@@ -1,0 +1,491 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8" />
+  <title>Painel – Métricas</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body { background:#0b0f19; color:#eaeef5; }
+    .card { background:#141a2a; border:1px solid #1f2942; }
+    .form-control, .form-select { background:#0f1524; color:#eaeef5; border-color:#1f2942; }
+    .btn-primary { background:#3b82f6; border-color:#3b82f6; }
+    .btn-outline-light { border-color:#3b82f6; color:#eaeef5; }
+    .badge-yes { background:#16a34a; }
+    .badge-no { background:#f59e0b; color:#111827; }
+    .badge-won { background:#22c55e; }
+    .badge-lost { background:#ef4444; }
+    .table thead th { border-color:#1f2942; color:#9fb3c8; }
+    .table tbody td { border-color:#1f2942; }
+    .muted { color:#9fb3c8; }
+  </style>
+</head>
+<body>
+<div class="container py-4">
+  <div class="d-flex align-items-center justify-content-between mb-3">
+    <h3 class="m-0">Métricas</h3>
+    <a class="btn btn-outline-light btn-sm" href="/">← Voltar</a>
+  </div>
+
+  <!-- Filtros -->
+  <div class="card mb-3">
+    <div class="card-body">
+      <form id="filters" class="row g-3">
+        <div class="col-12 col-md-3">
+          <label class="form-label">Início</label>
+          <input type="date" id="start" class="form-control" required>
+        </div>
+        <div class="col-12 col-md-3">
+          <label class="form-label">Fim</label>
+          <input type="date" id="end" class="form-control" required>
+        </div>
+        <div class="col-12 col-md-3 d-flex align-items-end">
+          <button class="btn btn-primary w-100" type="submit">Atualizar</button>
+        </div>
+        <div class="col-12 col-md-3 d-flex align-items-end">
+          <button id="btnMesAtual" class="btn btn-outline-light w-100" type="button">Mês atual</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Cards -->
+  <div class="row g-3" id="cards">
+    <div class="col-12 col-md-4 col-lg-2">
+      <div class="card"><div class="card-body">
+        <div class="muted">Novos contatados</div>
+        <div id="c_novos" class="fs-3 fw-bold text-white">–</div>
+      </div></div>
+    </div>
+    <div class="col-12 col-md-4 col-lg-2">
+      <div class="card"><div class="card-body">
+        <div class="muted">Responderam</div>
+        <div id="c_resp"  class="fs-3 fw-bold text-white">–</div>
+      </div></div>
+    </div>
+    <div class="col-12 col-md-4 col-lg-2">
+      <div class="card"><div class="card-body">
+        <div class="muted">Não responderam</div>
+        <div id="c_nao"   class="fs-3 fw-bold text-white">–</div>
+      </div></div>
+    </div>
+    <div class="col-12 col-md-4 col-lg-2">
+      <div class="card"><div class="card-body">
+        <div class="muted">Fecharam</div>
+        <div id="c_won"   class="fs-3 fw-bold text-white">–</div>
+      </div></div>
+    </div>
+    <div class="col-12 col-md-4 col-lg-2">
+      <div class="card"><div class="card-body">
+        <div class="muted">Não fecharam</div>
+        <div id="c_lost"  class="fs-3 fw-bold text-white">–</div>
+      </div></div>
+    </div>
+  </div>
+
+  <!-- Visualizações -->
+  <div class="card mt-3">
+    <div class="card-body">
+      <div class="d-flex justify-content-between align-items-center mb-2">
+        <h5 class="m-0">Visualizações</h5>
+        <small class="muted" id="rangeLabel"></small>
+      </div>
+      <div class="row g-3">
+        <div class="col-12 col-lg-8">
+          <canvas id="chartResumo" height="120"></canvas>
+        </div>
+        <div class="col-12 col-lg-4">
+          <canvas id="chartResp" height="120"></canvas>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<!-- Barra de exportação -->
+<div class="card mt-3">
+  <div class="card-body">
+    <div class="d-flex flex-wrap gap-2 align-items-end">
+      <div>
+        <label class="form-label small">O que exportar</label>
+        <select id="exportKind" class="form-select" style="min-width:220px">
+          <option value="summary">Resumo (cards)</option>
+          <option value="leads">Leads do período(completo)</option>
+          <option value="events">Eventos (auditoria)</option>
+          <option value="full">Completo (com outcome)</option>
+        </select>
+      </div>
+      <div>
+        <label class="form-label small">Formato</label>
+        <select id="exportFormat" class="form-select" style="min-width:140px">
+          <option value="csv">CSV</option>
+          <option value="xlsx" selected>XLSX</option>
+        </select>
+      </div>
+      <div class="ms-auto">
+        <button class="btn btn-primary" type="button" onclick="exportarPlanilha()">
+          <i class="fas fa-file-export"></i> Exportar
+        </button>
+      </div>
+
+      <!-- Enviar ao atendente (WhatsApp) -->
+      <div class="vr d-none d-md-block mx-2"></div>
+      <div>
+        <label class="form-label small">Enviar ao atendente (WhatsApp)</label>
+        <div class="d-flex gap-2">
+          <input type="month" id="sendMonth" class="form-control" style="min-width:160px" />
+          <select id="sendFormat" class="form-select" style="min-width:120px">
+            <option value="xlsx" selected>XLSX</option>
+          </select>
+          <button id="btnEnviarAtendente" class="btn btn-outline-light" type="button" onclick="enviarParaAtendente()">
+            <i class="fas fa-paper-plane"></i> Enviar agora
+          </button>
+        </div>
+        <small class="muted">Se o mês ficar em branco, envia o <b>mês anterior</b>.</small>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  <!-- Tabela -->
+  <div class="card mt-3">
+    <div class="card-body">
+      <h5 class="m-0 mb-2">Leads do período</h5>
+      <div class="table-responsive">
+        <table class="table table-dark table-hover align-middle">
+          <thead>
+            <tr>
+              <th>Nome</th>
+              <th>Telefone</th>
+              <th>1º Contato</th>
+              <th>Respondeu</th>
+              <th>Status</th>
+              <th class="text-end">Ações</th>
+            </tr>
+          </thead>
+          <tbody id="tbodyLeads">
+            <tr><td colspan="6" class="text-center text-muted">Sem dados…</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Font Awesome -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js" defer></script>
+<!-- Chart.js -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+const $ = (s, el=document) => el.querySelector(s);
+
+function ymd(d){ return d.toISOString().slice(0,10); }
+function startOfMonth(d=new Date()){ return new Date(d.getFullYear(), d.getMonth(), 1); }
+function endOfMonth(d=new Date()){ return new Date(d.getFullYear(), d.getMonth()+1, 0); }
+function fmtTs(ts){
+  if(!ts) return "–";
+  const d = new Date(ts*1000);
+  return d.toLocaleString();
+}
+
+async function fetchJSON(url){
+  const r = await fetch(url);
+  if(!r.ok) throw new Error(await r.text());
+  return r.json();
+}
+async function postJSON(url, body){
+  const r = await fetch(url, {
+    method:"POST",
+    headers:{ "Content-Type":"application/json" },
+    body: JSON.stringify(body)
+  });
+  if(!r.ok) throw new Error(await r.text());
+  return r.json();
+}
+
+/* ---------- Charts ---------- */
+let chartResumo = null;
+let chartResp   = null;
+
+function destroyChart(c){
+  if (c) { c.destroy(); }
+}
+
+function updateCharts(d){
+  // d = { novos_contatos_mensagens, responderam_modelo_inicial, nao_responderam, fecharam_negocio, nao_fecharam }
+  const labelsResumo = ["Novos", "Responderam", "Não resp.", "Fecharam", "Não fecharam"];
+  const dataResumo   = [
+    d.novos_contatos_mensagens || 0,
+    d.responderam_modelo_inicial || 0,
+    d.nao_responderam || 0,
+    d.fecharam_negocio || 0,
+    d.nao_fecharam || 0
+  ];
+
+  // Bar chart (Resumo)
+  destroyChart(chartResumo);
+  const ctx1 = document.getElementById("chartResumo").getContext("2d");
+  chartResumo = new Chart(ctx1, {
+    type: "bar",
+    data: {
+      labels: labelsResumo,
+      datasets: [{
+        label: "Resumo do período",
+        data: dataResumo,
+        backgroundColor: [
+          "rgba(59,130,246,0.35)",   // Novos (azul)
+          "rgba(34,197,94,0.35)",    // Responderam (verde)
+          "rgba(245,158,11,0.35)",   // Não resp. (amarelo)
+          "rgba(34,197,94,0.35)",    // Fecharam (verde)
+          "rgba(239,68,68,0.35)"     // Não fecharam (vermelho)
+        ],
+        borderColor: [
+          "rgba(59,130,246,0.9)",
+          "rgba(34,197,94,0.9)",
+          "rgba(245,158,11,0.9)",
+          "rgba(34,197,94,0.9)",
+          "rgba(239,68,68,0.9)"
+        ],
+        borderWidth: 2,
+        borderRadius: 6
+      }]
+    },
+    options: {
+      responsive: true,
+      plugins: {
+        legend: { labels: { color: "#cbd5e1" } },
+        tooltip: { mode: "index", intersect: false }
+      },
+      scales: {
+        x: { ticks: { color: "#94a3b8" }, grid: { color: "rgba(148,163,184,0.1)" } },
+        y: { ticks: { color: "#94a3b8" }, grid: { color: "rgba(148,163,184,0.1)" }, beginAtZero: true }
+      }
+    }
+  });
+
+  // Doughnut (Responderam vs Não)
+  destroyChart(chartResp);
+  const ctx2 = document.getElementById("chartResp").getContext("2d");
+  chartResp = new Chart(ctx2, {
+    type: "doughnut",
+    data: {
+      labels: ["Responderam", "Não responderam"],
+      datasets: [{
+        data: [
+          d.responderam_modelo_inicial || 0,
+          d.nao_responderam || 0
+        ],
+        backgroundColor: ["rgba(34,197,94,0.6)", "rgba(245,158,11,0.6)"],
+        borderColor: ["rgba(34,197,94,1)", "rgba(245,158,11,1)"],
+        borderWidth: 2
+      }]
+    },
+    options: {
+      plugins: {
+        legend: { position: "bottom", labels: { color: "#cbd5e1" } }
+      },
+      cutout: "60%"
+    }
+  });
+}
+
+/* ---------- Métricas + Tabela ---------- */
+async function loadSummary(){
+  const start = $("#start").value;
+  const end   = $("#end").value;
+  const data  = await fetchJSON(`/api/metrics/summary?start=${start}&end=${end}`);
+  const d = data.data || {};
+  $("#c_novos").textContent = d.novos_contatos_mensagens ?? "0";
+  $("#c_resp").textContent  = d.responderam_modelo_inicial ?? "0";
+  $("#c_nao").textContent   = d.nao_responderam ?? "0";
+  $("#c_won").textContent   = d.fecharam_negocio ?? "0";
+  $("#c_lost").textContent  = d.nao_fecharam ?? "0";
+  $("#rangeLabel").textContent = `${data.range.start} → ${data.range.end}`;
+  return d; // <-- devolve para alimentar os gráficos
+}
+
+function badgeReply(v){
+  if(v === 1) return '<span class="badge badge-yes">Sim</span>';
+  return '<span class="badge badge-no">Não</span>';
+}
+function badgeOutcome(v){
+  if(v === 'won')  return '<span class="badge badge-won">Fechou</span>';
+  if(v === 'lost') return '<span class="badge badge-lost">Não fechou</span>';
+  return '<span class="badge bg-secondary">—</span>';
+}
+
+async function loadLeads(){
+  const start = $("#start").value;
+  const end   = $("#end").value;
+  const data  = await fetchJSON(`/api/leads/list?start=${start}&end=${end}`);
+  const tb = $("#tbodyLeads");
+  tb.innerHTML = "";
+
+  if(!data.items || !data.items.length){
+    tb.innerHTML = '<tr><td colspan="6" class="text-center text-muted">Sem dados…</td></tr>';
+    return;
+  }
+
+  for(const it of data.items){
+    const tr = document.createElement("tr");
+    tr.innerHTML = `
+      <td>${it.name || '—'}</td>
+      <td>${it.phone_e164}</td>
+      <td>${fmtTs(it.first_contacted_at)}</td>
+      <td>${badgeReply(it.initial_replied)}</td>
+      <td data-outcome>${badgeOutcome(it.outcome)}</td>
+      <td class="text-end">
+        <div class="btn-group btn-group-sm">
+          <button class="btn btn-success" data-act="won">Fechou</button>
+          <button class="btn btn-danger"  data-act="lost">Não fechou</button>
+        </div>
+      </td>
+    `;
+    tr.querySelectorAll("button[data-act]").forEach(btn=>{
+      btn.addEventListener("click", async ()=>{
+        btn.disabled = true;
+        try{
+          await postJSON("/api/leads/outcome", { numero: it.phone_e164, outcome: btn.dataset.act });
+          tr.querySelector("[data-outcome]").innerHTML = badgeOutcome(btn.dataset.act);
+          const d = await loadSummary();  // atualiza cards
+          updateCharts(d);                 // e gráficos
+        }catch(e){
+          alert("Falha ao marcar resultado: " + e);
+        }finally{
+          btn.disabled = false;
+        }
+      });
+    });
+    tb.appendChild(tr);
+  }
+}
+
+async function refreshAll(){
+  const d = await loadSummary(); // pega dados
+  updateCharts(d);               // plota
+  await loadLeads();             // carrega tabela
+}
+
+function setDefaultMonth(){
+  const now = new Date();
+  const y = now.getFullYear(), m = now.getMonth();
+  const start = new Date(y, m, 1);
+  const end   = new Date(y, m+1, 0);
+  $("#start").value = ymd(start);
+  $("#end").value   = ymd(end);
+}
+
+/** Exporta CSV/XLSX e pergunta onde salvar (quando suportado) */
+async function exportarPlanilha(){
+  const start = $("#start").value;
+  const end   = $("#end").value;
+  const kind  = $("#exportKind").value;     // summary|leads|events|full
+  const fmt   = $("#exportFormat").value;   // csv|xlsx
+
+  const url = `/api/export?kind=${encodeURIComponent(kind)}&format=${encodeURIComponent(fmt)}&start=${encodeURIComponent(start)}&end=${encodeURIComponent(end)}`;
+  const filename = `${kind}_${start}_${end}.${fmt}`;
+
+  try{
+    const r = await fetch(url);
+    if(!r.ok){
+      const t = await r.text();
+      throw new Error(t || "Falha ao exportar");
+    }
+    const blob = await r.blob();
+
+    if ('showSaveFilePicker' in window) {
+      const pickerOpts = {
+        suggestedName: filename,
+        types: [
+          {
+            description: fmt.toUpperCase(),
+            accept: fmt === 'csv'
+              ? {'text/csv': ['.csv']}
+              : {'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet': ['.xlsx']}
+          }
+        ]
+      };
+      const handle = await window.showSaveFilePicker(pickerOpts);
+      const writable = await handle.createWritable();
+      await writable.write(blob);
+      await writable.close();
+    } else {
+      const a = document.createElement('a');
+      const href = URL.createObjectURL(blob);
+      a.href = href;
+      a.download = filename;
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      URL.revokeObjectURL(href);
+    }
+  }catch(e){
+    alert("Erro ao exportar: " + e.message);
+  }
+}
+
+/* --------- Enviar ao atendente (WhatsApp) --------- */
+function defaultPrevMonthYYYYMM(){
+  const d = new Date();
+  d.setMonth(d.getMonth() - 1);
+  const y = d.getFullYear();
+  const m = String(d.getMonth() + 1).padStart(2, "0");
+  return `${y}-${m}`;
+}
+
+async function enviarParaAtendente(){
+  const btn   = document.getElementById("btnEnviarAtendente");
+  const month = (document.getElementById("sendMonth")?.value || "").trim(); // YYYY-MM ou vazio
+  const fmt   = document.getElementById("sendFormat")?.value || "xlsx";
+
+  if (!btn) return;
+
+  const originalHTML = btn.innerHTML;
+  btn.disabled = true;
+  btn.innerHTML = `<span class="spinner-border spinner-border-sm me-2"></span>Enviando...`;
+
+  try{
+    const body = { format: fmt };
+    if (month) body.month = month; // se vazio, backend usa mês anterior
+
+    const r = await fetch("/api/metrics/send-monthly-export", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(body)
+    });
+    const j = await r.json();
+    if (!r.ok || j.ok === false) throw new Error(j.erro || "Falha ao enviar");
+
+    alert(`Enviado ao atendente!\nArquivo: ${j.filename}\nPeríodo: ${j.range.start} → ${j.range.end}`);
+  } catch(e){
+    alert("Erro ao enviar: " + e.message);
+  } finally {
+    btn.disabled = false;
+    btn.innerHTML = originalHTML;
+  }
+}
+
+document.addEventListener("DOMContentLoaded", async ()=>{
+  setDefaultMonth();
+
+  // sugere mês anterior no campo de envio ao atendente, se existir
+  const elMonth = document.getElementById("sendMonth");
+  if (elMonth && !elMonth.value) elMonth.value = defaultPrevMonthYYYYMM();
+
+  await refreshAll();
+
+  $("#filters").addEventListener("submit", async (e)=>{
+    e.preventDefault();
+    await refreshAll();
+  });
+  $("#btnMesAtual").addEventListener("click", async ()=>{
+    setDefaultMonth();
+    await refreshAll();
+  });
+});
+</script>
+
+</body>
+</html>

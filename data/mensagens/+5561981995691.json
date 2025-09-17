@@ -1,0 +1,12 @@
+[
+  {
+    "sender": "sent",
+    "text": "Template 'inicio_conversa_bloco244' enviado para Fisio in Pelve/Clínica Especializada em Fisioterapia pélvica - Dra. Luana Queiroz.",
+    "timestamp": 1756990805
+  },
+  {
+    "sender": "received",
+    "text": "🤖 Olá, sou o atendente virtual da Fisio in Pelve - Dra. Luana Queiroz. Por favor digite o *NÚMERO* da opção desejada.\n\n*1* - AGENDAMENTO \n*2* - DÚVIDAS E SUGESTÕES \n*3* - PRIVADO**\n*4* - OUTROS",
+    "timestamp": 1756990817
+  }
+]

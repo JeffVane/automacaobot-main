@@ -1,0 +1,22 @@
+[
+  {
+    "sender": "sent",
+    "text": "Template 'inicio_conversa_bloco244' enviado para Jason Cavalheiro.",
+    "timestamp": 1756172914
+  },
+  {
+    "sender": "received",
+    "text": "Resposta do botão: Quero saber mais (ID: Quero saber mais)",
+    "timestamp": 1756203468
+  },
+  {
+    "sender": "sent",
+    "text": "Que ótimo! 😃\nPara entender melhor como podemos ajudar, me fala um pouco sobre o seu negócio: qual é o segmento e quais os principais desafios que você enfrenta hoje com contabilidade ou finanças?\n\nAssim eu consigo te mostrar uma solução personalizada. 🚀",
+    "timestamp": 1756203471
+  },
+  {
+    "sender": "received",
+    "text": "Atualmente sei da importância da contabilidade pro meu negócio, pago todo mês mas não tenho certeza o que minha contabilidade tem feito. Pago 300 reais por mês, faturo 15 mil e só emito uma nota. Sou Pj.",
+    "timestamp": 1756206953
+  }
+]

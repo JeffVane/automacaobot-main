@@ -1,0 +1,22 @@
+[
+  {
+    "sender": "sent",
+    "text": "Template 'inicio_conversa_bloco244' enviado para Dínamos Fisioterapia Brasília.",
+    "timestamp": 1757013049
+  },
+  {
+    "sender": "received",
+    "text": "Resposta do botão: Não tenho interesse (ID: Não tenho interesse)",
+    "timestamp": 1757013085
+  },
+  {
+    "sender": "received",
+    "text": "Resposta do botão: ❌ Não receber (ID: opt_out_newsletter)",
+    "timestamp": 1757013093
+  },
+  {
+    "sender": "sent",
+    "text": "Tudo bem! ❌ Não vou enviar conteúdos. Se mudar de ideia, é só me mandar uma mensagem. 🙂",
+    "timestamp": 1757013094
+  }
+]
